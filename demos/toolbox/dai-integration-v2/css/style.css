@@ -57,3 +57,7 @@
 .body-toggle-on {
 	display: block;
 }
+
+.codeBlock {
+	border-top: 1px solid #ccc;
+}
