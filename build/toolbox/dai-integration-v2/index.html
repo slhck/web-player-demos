@@ -1,0 +1,216 @@
+---
+layout: default
+title: Google Dynamic Ad Insertion (DAI) v2
+description: Examples of Google DAI configurations for VOD and Live streams
+published: true
+---
+
+<head>
+    <link rel="shortcut icon" href="//developer.jwplayer.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="template-css/jw-demos.css">
+
+    <link rel="stylesheet" href="../../template-css/jw-demos.css">
+    <link rel="stylesheet" href="css/build.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../../js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+{% include components/site-secondary-header/site-secondary-header.html product="player" %}
+
+
+<div class="demos">
+
+  <div class="demos-single-header">
+    <div class="demos-single-header-container">
+      <h1>Google Dynamic Ad Insertion (DAI) v2</h1>
+      <p>
+        Examples of Google DAI configurations for VOD and Live streams
+      </p>
+    </div>
+  </div>
+
+  <div class="demo-single">
+
+    <div class="demo-nav">
+      <div class="demo-back">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="61.1px" height="100px" viewBox="31.7 11.5 61.1 100" style="enable-background:new 31.7 11.5 61.1 100;" xml:space="preserve">
+          <path d="M89.6,14.7c4.3,4.3,4.3,11.3,0,15.5L58.4,61.5l31.2,31.2c4.3,4.3,4.3,11.3,0,15.5c-4.3,4.3-11.3,4.3-15.7,0l-39-39
+          c-4.3-4.3-4.3-11.3,0-15.5l39.1-39C78.3,10.4,85.3,10.4,89.6,14.7z"/>
+        </svg>
+        <a href="../../">Back to Demos</a>
+      </div>
+      <div class="demo-meta">
+        <div class="demo-license">
+          License: <strong>Enterprise</strong>
+        </div>
+        <div class="demo-version">
+          Player Version: <strong id="demo-player-version"></strong>
+        </div>
+          <div class="demo-author">
+            Author: <strong>JW Player</strong>
+              <span>| <a href="http://github.com/jwplayer">GitHub</a></span>
+          </div>
+      </div>
+      <div class="demo-source-code">
+        <a href="//github.com/jwplayer/jwdeveloper-demos/tree/master/demos/toolbox/dai-integration-v2">Source Code</a>
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="97.5px" viewBox="0 0 100 97.5" enable-background="new 0 0 100 97.5" xml:space="preserve">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M50,0C22.4,0,0,22.4,0,50c0,22.1,14.3,40.8,34.2,47.4
+          	c2.5,0.5,3.4-1.1,3.4-2.4c0-1.2,0-4.3-0.1-8.5c-13.9,3-16.8-6.7-16.8-6.7c-2.3-5.8-5.6-7.3-5.6-7.3c-4.5-3.1,0.3-3,0.3-3
+          	c5,0.4,7.7,5.2,7.7,5.2c4.5,7.6,11.7,5.4,14.6,4.2c0.5-3.2,1.7-5.4,3.2-6.7c-11.1-1.3-22.8-5.6-22.8-24.7c0-5.5,1.9-9.9,5.1-13.4
+          	c-0.5-1.3-2.2-6.3,0.5-13.2c0,0,4.2-1.3,13.7,5.1c4-1.1,8.3-1.7,12.5-1.7c4.2,0,8.5,0.6,12.5,1.7c9.5-6.5,13.7-5.1,13.7-5.1
+          	c2.7,6.9,1,12,0.5,13.2c3.2,3.5,5.1,8,5.1,13.4c0,19.2-11.7,23.4-22.8,24.7c1.8,1.5,3.4,4.6,3.4,9.3c0,6.7-0.1,12.1-0.1,13.7
+          	c0,1.3,0.9,2.9,3.4,2.4C85.7,90.8,100,72.1,100,50C100,22.4,77.6,0,50,0z"/>
+        </svg>
+      </div>
+    </div>
+
+
+    <div class="demo-container">
+
+      <div class="demo-layout-vertical">
+        <div class="demo-layout-content">
+          <!--
+* Copyright 2016 Longtail Ad Solutions Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language
+* governing permissions and limitations under the License.
+-->
+
+<script src="//content.jwplatform.com/libraries/lqsWlr4Z.js"></script>
+
+<div class="description">
+  <p>This page demonstrates JW Player's Google Dynamic Ad Insertion (DAI) Integration for server side ad insertion.</p>
+  <p>For more information, see our <a href="https://support.jwplayer.com/articles/getting-started-with-dai" target="_blank">Getting Started with DAI</a> support article.</p>
+</div>
+
+<div class="container">
+  <div class="left">
+    <div class="button-container">
+      <button
+        class="button button-sm button-theme-brand-2 button-toggle button-toggle-on"
+        data-toggle="vod">
+          VOD
+      </button>
+      <button
+        class="button button-sm button-theme-brand-2 button-toggle"
+        data-toggle="live">
+          Live
+      </button>
+      <button
+        class="button button-sm button-theme-brand-2 button-toggle"
+        data-toggle="customVod">
+          Custom VOD
+      </button>
+      <button
+        class="button button-sm button-theme-brand-2 button-toggle"
+        data-toggle="customLive">
+          Custom Live
+      </button>
+    </div>
+    <div class="content">
+      <div id="vodOrLive" class="body-toggle body-toggle-on">
+        <p>In all examples, the specified "file" is a fallback option, in the event that there is a network error, or the timeout (3000ms) is reached.</p>
+      </div>
+      <div id="customVod" class="body-toggle">
+        <div class="input-group">
+          <label for="cmsId">cmsID</label>
+          <input type="text" name="cmsId" id="cmsId">
+        </div>
+        <div class="input-group">
+          <label for="videoId">videoID</label>
+          <input type="text" name="videoId" id="videoId">
+        </div>
+      </div>
+      <div id="customLive" class="body-toggle">
+        <div class="input-group">
+          <label for="assetKey">assetKey</label>
+          <input type="text" name="assetKey" id="assetKey">
+        </div>
+      </div>
+      <button id="reSetupPlayerButton" class="button button-sm button-theme-brand-2 button-toggle button-toggle-on body-toggle">Re-setup Player</button>
+    </div>
+  </div>
+  <div id="playerElement"></div>
+</div>
+
+        </div>
+      </div>
+
+      <div class="demo-disclaimer">
+        Please Note: This player implementation is a Proof of Concept only provided to show the possibilities of the JW Player and Platform and should not be taken as an offer to create, edit or maintain custom integration or development.
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+<script type="text/javascript">const playerInstance = jwplayer('playerElement');
+
+playerInstance.setup({
+  file: '//playertest.longtailvideo.com/adaptive/bbbfull/bbbfull.m3u8',
+  width: 500,
+  aspectratio: '16:9'
+});
+
+const toggleButtons = document.querySelectorAll('.button-toggle');
+const toggle = function(e) {
+  const previousButton = document.querySelector('.button-toggle-on');
+  const previousBody = document.querySelector('.body-toggle-on');
+  previousButton.classList.remove('button-toggle-on');
+  e.target.classList.add('button-toggle-on');
+  previousBody.classList.remove('body-toggle-on');
+  switch (e.target.dataset.toggle) {
+    case 'vod':
+    case 'live':
+      document.getElementById('reSetupPlayerButton').classList.remove('body-toggle-on');
+      document.getElementById('vodOrLive').classList.add('body-toggle-on');
+      break;
+    default:
+      document.getElementById(e.target.dataset.toggle).classList.add('body-toggle-on');
+      if (!document.getElementById('reSetupPlayerButton').classList.contains('body-toggle-on')) {
+        document.getElementById('reSetupPlayerButton').classList.add('body-toggle-on');
+      }
+      break;
+  }
+};
+
+toggleButtons.forEach((button) => {
+  button.addEventListener('click', toggle);
+});
+
+</script>
+<script type="text/javascript">
+  function setVersion() {
+    if (typeof jwplayer === 'undefined') {
+      setTimeout(setVersion, 100);
+      return;
+    }
+
+    if (jwplayer && jwplayer().id) {
+      jwplayer().on('ready', function() {
+        document.getElementById('demo-player-version').innerHTML = jwplayer.version.split('+')[0];
+      });
+    }
+  }
+
+  setVersion();
+</script>
+  </body>
+</html>
