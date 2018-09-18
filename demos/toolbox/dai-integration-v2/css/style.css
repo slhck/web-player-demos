@@ -52,6 +52,8 @@
 
 .body-toggle {
 	display: none;
+	max-width: 90%;
+	margin: 0 auto;
 }
 
 .body-toggle-on {
@@ -60,4 +62,16 @@
 
 .codeBlock {
 	border-top: 1px solid #ccc;
+}
+
+.code-toggle {
+	display: none;
+}
+
+.code-toggle-on {
+	display: block;
+}
+
+.playerContainer {
+	width: 50%;
 }

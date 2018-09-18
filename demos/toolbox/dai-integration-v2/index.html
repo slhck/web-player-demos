@@ -50,6 +50,7 @@
         <p>In all examples, the specified "file" is a fallback option, in the event that there is a network error, or the timeout (3000ms) is reached.</p>
       </div>
       <div id="customVod" class="body-toggle">
+        <p>In this example, you can insert your <strong>cmsID</strong> and <strong>videoID</strong> values and click the <strong>Re-Setup Player</strong> button to setup the player with those values.</p>
         <div class="input-group">
           <label for="cmsId">cmsID</label>
           <input type="text" name="cmsId" id="cmsId">
@@ -60,6 +61,7 @@
         </div>
       </div>
       <div id="customLive" class="body-toggle">
+        <p>In this example, you can insert your <strong>assetKey</strong> value and click the <strong>Re-Setup Player</strong> button to setup the player with that value.</p>
         <div class="input-group">
           <label for="assetKey">assetKey</label>
           <input type="text" name="assetKey" id="assetKey">
@@ -68,14 +70,69 @@
       <button id="reSetupPlayerButton" class="button button-sm button-theme-brand-2 button-toggle button-toggle-on body-toggle">Re-setup Player</button>
     </div>
   </div>
-  <div id="playerElement"></div>
+  <div class="playerContainer">
+    <div id="playerElement"></div>
+  </div>
 </div>
-<div id="codeBlock" class="codeBlock">
+<div id="codeBlock_vod" class="codeBlock code-toggle code-toggle-on">
   <pre>
     <code>playerInstance.setup({
-  file: '//playertest.longtailvideo.com/adaptive/bbbfull/bbbfull.m3u8',
-  width: 500,
-  aspectratio: '16:9'
+  "playlist": [{
+    "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+    "daiSetting": {
+      "cmsID": 2477953, // your cmsID will go here
+      "videoID": "tears-of-steel" // your videoID will go here
+    }
+  }],
+  "advertising": {
+    "client": "dai"
+  }
+});</code>
+  </pre>
+</div>
+<div id="codeBlock_live" class="codeBlock code-toggle">
+  <pre>
+    <code>playerInstance.setup({
+  "playlist": [{
+    "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+    "daiSetting": {
+      "assetKey": "sN_IYUG8STe1ZzhIIE_ksA" // your assetKey would go here
+    }
+  }],
+  "advertising": {
+    "client": "dai"
+  }
+});</code>
+  </pre>
+</div>
+<div id="codeBlock_customVod" class="codeBlock code-toggle">
+  <pre>
+    <code>playerInstance.setup({
+  "playlist": [{
+    "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+    "daiSetting": {
+      "cmsID": <span id="customVod_cmsID">YOUR_CMSID_HERE</span>,
+      "videoID": <span id="customVod_videoID">YOUR_VIDEOID_HERE</span>
+    }
+  }],
+  "advertising": {
+    "client": "dai"
+  }
+});</code>
+  </pre>
+</div>
+<div id="codeBlock_customLive" class="codeBlock code-toggle">
+  <pre>
+    <code>playerInstance.setup({
+  "playlist": [{
+    "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+    "daiSetting": {
+      "assetKey": <span id="customLive_assetKey">YOUR_ASSETKEY_HERE</span>
+    }
+  }],
+  "advertising": {
+    "client": "dai"
+  }
 });</code>
   </pre>
 </div>
