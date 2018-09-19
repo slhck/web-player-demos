@@ -32,17 +32,7 @@ published: true
 
   <div class="demo-index demo-index-{{indexType}}">
 
-    <ul class="demo-index-nav">
-      {{#categories}}
-        <li><a href="{{&path.href}}{{#directory}}{{directory}}{{/directory}}" {{#current}} class="selected"{{/current}}>{{name}}</a></li>
-      {{/categories}}
-    </ul>
-
-		<select class="demo-index-nav-select">
-			{{#categories}}
-        <option {{#current}}selected="selected"{{/current}} value="{{#directory}}{{directory}}{{/directory}}">{{name}}</option>
-      {{/categories}}
-		</select>
+    {{> category-nav}}
 
     <p class="demo-index-desc">
       {{#categories}}

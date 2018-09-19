@@ -29,11 +29,7 @@ published: true
 
   <div class="demo-index demo-index-{{indexType}}">
 
-    <ul class="demo-index-nav">
-      {{#categories}}
-        <li><a href="{{&path.href}}{{#directory}}{{directory}}{{/directory}}"{{#current}} class="selected"{{/current}}>{{name}}</a></li>
-      {{/categories}}
-    </ul>
+    {{> category-nav}}
 
     <p class="demo-index-desc demo-index-search-results">
       Search results for: <strong></strong>
