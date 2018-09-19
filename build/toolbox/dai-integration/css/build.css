@@ -1,69 +1,77 @@
-/* Ensure that the player uses all available width */
-.container .demo-layout-vertical .demo-layout-content {
-	max-width: 100%;
-	min-width: 0;
-}
-
-.instructions h3 {
-	font-size: 17px;
-	font-weight: 500;
-	text-transform: uppercase;
-}
-
-.instructions h4 {
-	font-size: 13px;
-	font-weight: 500;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-
-.steps {
+.container {
 	display: flex;
-	flex: 1;
 	flex-direction: row;
-	margin-bottom: 30px;
-	padding-bottom: 30px;
-	border-bottom: 1px solid #ccc;
-	justify-content: space-around;
-	align-items: center;
 }
 
-.setup-steps {
-	display: flex;
-	flex-direction: column;
-	min-width: 25%;
-	text-align: center;
-	flex: 1;
-	align-items: center;
-	justify-content: center;
-}
-
-@media (max-width: 640px) {
-	.steps {
-		flex-direction: column;
-	}
-}
-
-#vod {
-	display: block;
-}
-
-#live {
-	display: none;
-}
-
-#streamTypeSelect {
-	text-align: center;
+.left {
 	width: 50%;
 }
 
-.pageDescription {
-	margin-top: 20px;
-	margin-bottom: 20px;
+.button {
+  margin: 0 0 1em;
 }
 
-#title {
-	font-size: 30px;
-	font-weight: bold;
+.button-theme-brand-2:not(.button-toggle-on) {
+  background: #DFF1FF;
+  color: #0E7EF4;
+}
+
+.button-theme-brand-2:not(.button-toggle-on):hover {
+  background: #B1DEFF;
+}
+
+.description {
+	margin-bottom: 2rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid #ccc;
+}
+
+.content {
+	padding: 0.5em;
+}
+
+.input-group {
+	background: #DFF1FF;
+	margin: 1rem auto 0;
+	max-width: 80%;
+}
+
+.input-group label {
+	width: 45%;
+	color: #0E7EF4;
+}
+
+.input-group input {
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+.content button {
+	margin: 10px auto 0;
+}
+
+.body-toggle {
+	display: none;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+.body-toggle-on {
+	display: block;
+}
+
+.codeBlock {
+	border-top: 1px solid #ccc;
+}
+
+.code-toggle {
+	display: none;
+}
+
+.code-toggle-on {
+	display: block;
+}
+
+.playerContainer {
+	width: 50%;
 }

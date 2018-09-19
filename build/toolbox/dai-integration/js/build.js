@@ -1,109 +1,103 @@
+const playerInstance = jwplayer('playerElement');
 
-var playerInstance = jwplayer("myElement");
-let streamType = "vod";
-
-const configs = {
-    "vod": {
-        "playlist": [
-            {
-                "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
-                "daiSetting": {
-                    "cmsID": "19823",
-                    "videoID": "ima-test"
-                }
-            }
-        ],
-        "advertising": {
-            "client": "dai",
-        }
-    },
-    "live": {
-        "playlist": [
-            {
-                "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
-            }
-        ],
-        "advertising": {
-            "client": "dai",
-            "assetKey": "sN_IYUG8STe1ZzhIIE_ksA"
-        }
+const setupVodPlayer = function(cmsId = 2477953, videoId = "tears-of-steel") {
+  playerInstance.setup({
+    "playlist": [{
+      "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+      "daiSetting": {
+        "cmsID": cmsId,
+        "videoID": videoId
+      }
+    }],
+    "advertising": {
+      "client": "dai"
     }
+  });
 };
 
-function setupPlayer() {
-    playerInstance.setup(configs[streamType]);
-}
-
-function setupListeners() {
-    const select = document.getElementById("streamTypeSelect");
-    select.addEventListener("change", swapCodeBlocks, false);
-}
-
-function swapCodeBlocks(event) {
-    oldStreamType = streamType;
-    streamType = event.target.value;
-    
-    setupPlayer();
-
-    document.getElementById(streamType).style.display = "block";
-    document.getElementById(oldStreamType).style.display = "none";
-}
-
-
-setupListeners();
-
-setupPlayer();
-var playerInstance = jwplayer("myElement");
-let streamType = "vod";
-
-const configs = {
-    "vod": {
-        "playlist": [
-            {
-                "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
-                "daiSetting": {
-                    "cmsID": "19823",
-                    "videoID": "ima-test"
-                }
-            }
-        ],
-        "advertising": {
-            "client": "dai",
-        }
-    },
-    "live": {
-        "playlist": [
-            {
-                "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
-            }
-        ],
-        "advertising": {
-            "client": "dai",
-            "assetKey": "sN_IYUG8STe1ZzhIIE_ksA"
-        }
+const setupLivePlayer = function(assetKey = "sN_IYUG8STe1ZzhIIE_ksA") {
+  playerInstance.setup({
+    "playlist": [{
+      "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+      "daiSetting": {
+        "assetKey": assetKey
+      }
+    }],
+    "advertising": {
+      "client": "dai"
     }
+  });
 };
 
-function setupPlayer() {
-    playerInstance.setup(configs[streamType]);
-}
+setupVodPlayer();
 
-function setupListeners() {
-    const select = document.getElementById("streamTypeSelect");
-    select.addEventListener("change", swapCodeBlocks, false);
-}
+const toggleButtons = document.querySelectorAll('.button-toggle');
+const reSetupPlayerButton = document.getElementById('reSetupPlayerButton');
 
-function swapCodeBlocks(event) {
-    oldStreamType = streamType;
-    streamType = event.target.value;
-    
-    setupPlayer();
+const toggle = function(e) {
+  const previousButton = document.querySelector('.button-toggle-on');
+  const previousBody = document.querySelector('.body-toggle-on');
+  previousButton.classList.remove('button-toggle-on');
+  e.target.classList.add('button-toggle-on');
+  previousBody.classList.remove('body-toggle-on');
 
-    document.getElementById(streamType).style.display = "block";
-    document.getElementById(oldStreamType).style.display = "none";
-}
+  document.querySelector('.code-toggle-on').classList.remove('code-toggle-on');
+  document.getElementById('codeBlock_' + e.target.dataset.toggle).classList.add('code-toggle-on');
 
+  const showVodOrLiveBody = function() {
+      reSetupPlayerButton.classList.remove('body-toggle-on');
+      document.getElementById('vodOrLive').classList.add('body-toggle-on');
+  };
 
-setupListeners();
+  switch (e.target.dataset.toggle) {
+    case 'vod':
+      showVodOrLiveBody();
+      setupVodPlayer();
 
-setupPlayer();
+      break;
+
+    case 'live':
+      showVodOrLiveBody();
+      setupLivePlayer();
+
+      break;
+
+    default:
+      document.getElementById(e.target.dataset.toggle).classList.add('body-toggle-on');
+
+      if (!reSetupPlayerButton.classList.contains('body-toggle-on')) {
+        reSetupPlayerButton.classList.add('body-toggle-on');
+      }
+
+      break;
+  }
+};
+
+const handleReSetup = function() {
+  const type = document.querySelector('div.body-toggle-on');
+  const inputs = type.querySelectorAll('input');
+
+  switch (type.id) {
+    case 'customVod':
+      const cmsID = inputs[0].value || 2477953;
+      const videoID = inputs[1].value || 'tears-of-steel';
+      document.getElementById('customVod_cmsID').textContent = cmsID;
+      document.getElementById('customVod_videoID').textContent = `"${videoID}"`;
+      setupVodPlayer(cmsID, videoID);
+      break;
+
+    case 'customLive':
+      const assetKey = inputs[0].value || "sN_IYUG8STe1ZzhIIE_ksA";
+      document.getElementById('customLive_assetKey').textContent = `"${assetKey}"`;
+      setupLivePlayer(assetKey);
+      break;
+  }
+};
+
+reSetupPlayerButton.addEventListener('click', handleReSetup);
+
+toggleButtons.forEach((button) => {
+  if (button.id !== 'reSetupPlayerButton') {
+    button.addEventListener('click', toggle);
+  }
+});
