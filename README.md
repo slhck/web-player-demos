@@ -19,6 +19,10 @@ Then, from the project root directory, `jwdeveloper-demos/`:
 2. Install Bower components:
 
 		$ [sudo] bower install
+		
+3. Install the JW Design System:
+		
+		$ git submodule add git@github.com:jwplayer/jw-design-system.git
 
 3. Run Grunt to compile changes:
 
