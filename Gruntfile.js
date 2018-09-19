@@ -189,7 +189,7 @@ module.exports = function (grunt) {
             return catDemos;
           }
         },
-        template: '_templates/index.mustache',
+        template: '_templates/category-index.mustache',
         dest: 'build/' + cat.directory + '/index.html'
       });
     }
@@ -299,4 +299,3 @@ module.exports = function (grunt) {
     'watch'
   ]);
 };
-
