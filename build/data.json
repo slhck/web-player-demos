@@ -351,11 +351,10 @@
     "description": "Examples of Google DAI configurations for VOD and Live streams",
     "license": "Enterprise",
     "showCode": false,
-    "layout": "vertical",
     "apiCalls": [],
     "author": {
-      "name": "Ian Boynton",
-      "githubUsername": "boyntoni"
+      "name": "Alex Bussey",
+      "githubUsername": "waxidiotic"
     },
     "category": {
       "name": "Toolbox",
