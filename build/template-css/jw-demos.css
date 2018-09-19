@@ -1143,22 +1143,9 @@ a.btn:hover {
   color: rgba(170, 180, 200, 0.5);
   padding: 8px 15px;
 }
-.global-promo {
-  background-color: #169CAC;
-  padding: 15px 20px;
-  font-family: 'Open Sans', sans-serif;
-}
-.global-promo p {
-  color: #fff;
-  font-size: 19px;
-  font-weight: 500;
-}
-.global-promo a {
-  text-decoration: underline;
-  color: #fff;
-}
 .site-header {
   background-color: #000;
+  font-family: 'Open Sans', sans-serif;
 }
 .site-header-container {
   padding: 12px 15px;
@@ -1171,48 +1158,37 @@ a.btn:hover {
 .site-header-container:after {
   clear: both;
 }
-.site-header .logo {
+.site-header-container .logo {
   display: block;
   float: left;
 }
-.site-header .logo:before,
-.site-header .logo:after {
+.site-header-container .logo:before,
+.site-header-container .logo:after {
   content: ' ';
   display: table;
 }
-.site-header .logo:after {
+.site-header-container .logo:after {
   clear: both;
 }
-.site-header .logo img {
+.site-header-container .logo img {
   display: block;
   float: left;
   height: 38px;
   width: auto;
 }
-.site-header .logo img + img {
+.site-header-container .logo img + img {
   margin-left: 5px;
 }
-.site-header .logo span {
-  color: #0B7EF4;
+.site-header-container .logo span {
   display: block;
+  color: #FFFFFF;
   float: left;
   font-size: 15px;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  margin: 10px 0 0 10px;
+  margin: 9px 0 0 10px;
   padding-right: 14px;
   position: relative;
   text-transform: uppercase;
-}
-.site-header .logo span::before {
-  animation: blink 1s steps(5, start) infinite;
-  background-color: #333333;
-  content: '';
-  height: 18px;
-  position: absolute;
-  right: 0;
-  top: 1px;
-  width: 9px;
 }
 .site-header .menu-toggle {
   border: solid 1px #4d4d4d;
@@ -1226,7 +1202,6 @@ a.btn:hover {
   padding: 10px 10px 7px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: border-color 150ms ease, color 150ms ease;
 }
 .site-header .menu-toggle.on {
   border-color: #333333;
@@ -1258,28 +1233,68 @@ a.btn:hover {
   color: #cccccc;
   display: block;
   font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   padding: 15px 0;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 }
-.site-header .menu .link:hover {
-  color: #fff;
-}
 .site-header .menu .btn {
   margin-top: 15px;
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
   font-size: 13px;
   font-weight: 600;
 }
-img.search-icon {
+.site-header .menu img.search-icon {
   margin-top: -2px;
   opacity: 0.8;
 }
-img.search-icon:hover {
+.site-header .menu img.search-icon:hover {
+  opacity: 1;
+}
+.site-header .menu .menu {
+  border-top: solid 1px #191919;
+  clear: both;
+  display: none;
+  float: right;
+  list-style: none;
+  margin-top: 15px;
+  padding-top: 15px;
+  text-align: left;
+  width: 100%;
+}
+.site-header .menu .menu:before,
+.site-header .menu .menu:after {
+  content: ' ';
+  display: table;
+}
+.site-header .menu .menu:after {
+  clear: both;
+}
+.site-header .menu .menu.show {
+  display: block;
+}
+.site-header .menu .menu .link {
+  color: #cccccc;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.site-header .menu .menu .btn {
+  margin-top: 15px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+}
+.site-header .menu .menu img.search-icon {
+  margin-top: -2px;
+  opacity: 0.8;
+}
+.site-header .menu .menu img.search-icon:hover {
   opacity: 1;
 }
 /* ===== large screen adjustments
@@ -1404,18 +1419,18 @@ img.search-icon:hover {
     text-align: center;
   }
 }
-.global-site-footer .footer-base-row .copyright {
+.global-site-footer .footer-base-row .site-footer-copyright {
   color: #475470;
   font-size: 11px;
   font-weight: 400;
 }
 @media screen and (max-width: 1075px) {
-  .global-site-footer .footer-base-row .copyright {
+  .global-site-footer .footer-base-row .site-footer-copyright {
     margin-bottom: 15px;
   }
 }
 @media screen and (max-width: 440px) {
-  .global-site-footer .footer-base-row .copyright {
+  .global-site-footer .footer-base-row .site-footer-copyright {
     font-size: 10px;
   }
 }
@@ -1435,15 +1450,26 @@ img.search-icon:hover {
   }
 }
 .site-secondary-header {
-  background: #0858ab;
+  background: #252525;
   height: 56px;
   font-family: 'Open Sans', sans-serif;
+  border-bottom: 1px solid #131313;
 }
 .site-secondary-header-container {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   max-width: 1400px;
+}
+.site-secondary-header-container a {
+  display: none;
+  width: 100%;
+}
+.site-secondary-header-container a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.site-secondary-header-container .site-secondary-header-dropdown-link {
+  display: none;
 }
 .site-secondary-header-group {
   display: flex;
@@ -1454,27 +1480,29 @@ img.search-icon:hover {
   overflow: hidden;
   position: relative;
   z-index: 2;
+  border-right: 1px solid #000000;
+  background-color: #252525;
+  border-bottom: 1px solid #131313;
+  margin-bottom: -1px;
+}
+.site-secondary-header-dropdown a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.site-secondary-header-dropdown .is-selected {
+  color: white;
+  display: block;
+}
+.site-secondary-header-dropdown.is-open .site-secondary-header-dropdown-link {
+  display: block;
 }
 .site-secondary-header a {
   color: white;
   font-size: 15px;
   font-weight: 600;
-  line-height: 56px;
+  line-height: 55px;
   padding: 0 20px;
   text-align: left;
   text-decoration: none;
-}
-.site-secondary-header-dropdown a {
-  background-color: #0a71dc;
-  color: #b6d8fc;
-  font-size: 15px;
-}
-.site-secondary-header-dropdown .is-selected {
-  color: white;
-}
-.site-secondary-header-dropdown a:hover {
-  background-color: #0965c3;
-  color: white;
 }
 .site-secondary-header a.site-secondary-header-dropdown-arrow {
   background-image: url('//icons.jwplayer.com/icons/white/expand.svg');
@@ -1492,21 +1520,6 @@ img.search-icon:hover {
   width: 56px;
   z-index: 1;
 }
-.site-secondary-header-container > a {
-  background-color: #0B7EF4;
-  display: none;
-  width: 100%;
-}
-.site-secondary-header-container > a:hover {
-  background-color: #0a71dc;
-}
-.site-secondary-header-dropdown-link {
-  display: none;
-}
-.site-secondary-header-dropdown.is-open .site-secondary-header-dropdown-link,
-.site-secondary-header-dropdown .is-selected {
-  display: block;
-}
 @media (min-width: 900px) {
   .site-secondary-header-container {
     flex-direction: row;
@@ -1521,6 +1534,7 @@ img.search-icon:hover {
   .site-secondary-header-container > a {
     display: block;
     text-align: center;
+    border-right: 1px solid #000000;
   }
   .site-secondary-header-group {
     flex: 2;
@@ -1533,13 +1547,12 @@ img.search-icon:hover {
   .site-secondary-header a::before,
   .site-secondary-header-dropdown a::after,
   .site-secondary-header-dropdown.is-open::before {
-    background-color: #0965c3;
+    background-color: #252525;
     content: '';
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
-    width: 1px;
   }
   .site-secondary-header a::before {
     left: auto;
@@ -1600,6 +1613,987 @@ img.search-icon:hover {
 .pagination.prev-next a + span,
 .pagination.prev-next span + span {
   float: right;
+}
+.svg-add {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 12.28025478% 52.2875817%;
+}
+.svg-add-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-advanced {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 87.19745223% 24.47381302%;
+}
+.svg-advanced-dims {
+  width: 100px;
+  height: 47.8px;
+}
+.svg-advertising {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 55.85987261% 0;
+}
+.svg-advertising-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-airplay {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 55.85987261% 34.7340358%;
+}
+.svg-airplay-dims {
+  width: 100px;
+  height: 77.3px;
+}
+.svg-analytics {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 17.01287116% 25.55910543%;
+}
+.svg-analytics-dims {
+  width: 100.3px;
+  height: 82.5px;
+}
+.svg-arrow-left {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 65.35987377% 0;
+}
+.svg-arrow-left-dims {
+  width: 61.1px;
+  height: 100px;
+}
+.svg-arrow-right {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 83.10064344% 13.07189542%;
+}
+.svg-arrow-right-dims {
+  width: 61.3px;
+  height: 100px;
+}
+.svg-audio {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 87.19745223% 32.39215686%;
+}
+.svg-audio-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-billing {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 12.7388535% 62.38303182%;
+}
+.svg-billing-dims {
+  width: 100px;
+  height: 63.5px;
+}
+.svg-calendar {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 99.90849673%;
+}
+.svg-calendar-dims {
+  width: 94.5px;
+  height: 100px;
+}
+.svg-camera-info {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 43.12101911% 29.48466258%;
+}
+.svg-camera-info-dims {
+  width: 100px;
+  height: 50px;
+}
+.svg-change-arrow-down {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 25.172717% 39.21568627%;
+}
+.svg-change-arrow-down-dims {
+  width: 88.9px;
+  height: 100px;
+}
+.svg-change-arrow-up {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 36.33965582% 39.21568627%;
+}
+.svg-change-arrow-up-dims {
+  width: 88.9px;
+  height: 100px;
+}
+.svg-check {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 26.14379085%;
+}
+.svg-check-dims {
+  width: 133.5px;
+  height: 100px;
+}
+.svg-chromecast {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 55.85987261% 12.63583523%;
+}
+.svg-chromecast-dims {
+  width: 100px;
+  height: 73.6px;
+}
+.svg-close {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 55.85987261% 22.69281046%;
+}
+.svg-close-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-cloud {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 63.6051393% 83.16224337%;
+}
+.svg-cloud-dims {
+  width: 98.9px;
+  height: 66.2px;
+}
+.svg-cloud-basic {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 62.7401094% 70.6434652%;
+}
+.svg-cloud-basic-dims {
+  width: 98.9px;
+  height: 66.2px;
+}
+.svg-collapse {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 13.07189542%;
+}
+.svg-collapse-dims {
+  width: 163px;
+  height: 100px;
+}
+.svg-cube {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 24.62695925% 52.2875817%;
+}
+.svg-cube-dims {
+  width: 87.5px;
+  height: 100px;
+}
+.svg-customize {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 36.1656051% 52.2875817%;
+}
+.svg-customize-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-database {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 48.9044586% 51.44694534%;
+}
+.svg-database-dims {
+  width: 100px;
+  height: 87.5px;
+}
+.svg-delete {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 39.21568627%;
+}
+.svg-delete-dims {
+  width: 100.2px;
+  height: 100px;
+}
+.svg-desktop {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 29.78343949% 25.05323813%;
+}
+.svg-desktop-dims {
+  width: 100px;
+  height: 66.7px;
+}
+.svg-developer {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 74.94063242% 0;
+}
+.svg-developer-dims {
+  width: 84.9px;
+  height: 100px;
+}
+.svg-device-landscape {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 62.44536031%;
+}
+.svg-device-landscape-dims {
+  width: 100px;
+  height: 64.3px;
+}
+.svg-device-portrait {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 72.1019721% 13.07189542%;
+}
+.svg-device-portrait-dims {
+  width: 53.4px;
+  height: 100px;
+}
+.svg-documentation {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 64.49101796% 12.48907206%;
+}
+.svg-documentation-dims {
+  width: 50px;
+  height: 64.3px;
+}
+.svg-download {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 12.62945188% 73.76470588%;
+}
+.svg-download-dims {
+  width: 93.2px;
+  height: 100px;
+}
+.svg-drag {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 24.61146497% 72.57877814%;
+}
+.svg-drag-dims {
+  width: 100px;
+  height: 87.5px;
+}
+.svg-duplicate {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 37.35031847% 71.78476021%;
+}
+.svg-duplicate-dims {
+  width: 100px;
+  height: 78.9px;
+}
+.svg-edit {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 87.19745223% 0;
+}
+.svg-edit-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-embed {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 0;
+}
+.svg-embed-dims {
+  width: 175.5px;
+  height: 100px;
+}
+.svg-expand {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 24.30747922% 0;
+}
+.svg-expand-dims {
+  width: 163px;
+  height: 100px;
+}
+.svg-external-page {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 12.7675841% 39.21568627%;
+}
+.svg-external-page-dims {
+  width: 100.2px;
+  height: 100px;
+}
+.svg-fail-alert {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 87.19745223% 45.46405229%;
+}
+.svg-fail-alert-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-hexagon {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 85.76619471% 58.53594771%;
+}
+.svg-hexagon-dims {
+  width: 86.9px;
+  height: 100px;
+}
+.svg-home {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 87.19745223% 71.60784314%;
+}
+.svg-home-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-hyperlink-arrow {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 64.33691756% 20.11015912%;
+}
+.svg-hyperlink-arrow-dims {
+  width: 48px;
+  height: 48px;
+}
+.svg-in-progress {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 86.83660131%;
+}
+.svg-in-progress-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-info {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 12.7388535% 86.83660131%;
+}
+.svg-info-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-key {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 55.85987261% 42.84493284%;
+}
+.svg-key-dims {
+  width: 100px;
+  height: 46px;
+}
+.svg-labs {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 74.13452028% 39.21568627%;
+}
+.svg-labs-dims {
+  width: 76.2px;
+  height: 100px;
+}
+.svg-lightbulb {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 43.12101911% 0;
+}
+.svg-lightbulb-dims {
+  width: 100px;
+  height: 122.7px;
+}
+.svg-link {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 25.47770701% 86.80256109%;
+}
+.svg-link-dims {
+  width: 100px;
+  height: 99.7px;
+}
+.svg-lock {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 73.46238667% 52.2875817%;
+}
+.svg-lock-dims {
+  width: 68.8px;
+  height: 100px;
+}
+.svg-mobile {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 25.47770701% 61.10975312%;
+}
+.svg-mobile-dims {
+  width: 100px;
+  height: 46.8px;
+}
+.svg-monetize-simple {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 91.8618267% 87.06832298%;
+}
+.svg-monetize-simple-dims {
+  width: 31px;
+  height: 60px;
+}
+.svg-playlist {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.93630573% 12.90322581%;
+}
+.svg-playlist-dims {
+  width: 100px;
+  height: 90px;
+}
+.svg-playlist-dynamic {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.93630573% 24.83660131%;
+}
+.svg-playlist-dynamic-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-playlist-manual {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.93630573% 35.98461348%;
+}
+.svg-playlist-manual-dims {
+  width: 100px;
+  height: 59.1px;
+}
+.svg-print {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.93630573% 44.40910826%;
+}
+.svg-print-dims {
+  width: 100px;
+  height: 78.9px;
+}
+.svg-publish {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.93630573% 55.94771242%;
+}
+.svg-publish-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-recommendations {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.93630573% 66.65825022%;
+}
+.svg-recommendations-dims {
+  width: 100px;
+  height: 72.9px;
+}
+.svg-search {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.07805001% 78.54901961%;
+}
+.svg-search-dims {
+  width: 93.2px;
+  height: 100px;
+}
+.svg-settings {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 38.21656051% 86.76854754%;
+}
+.svg-settings-dims {
+  width: 100px;
+  height: 99.4px;
+}
+.svg-sharing {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 43.12101911% 16.41691196%;
+}
+.svg-sharing-dims {
+  width: 100px;
+  height: 117.6px;
+}
+.svg-sort {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 11.61647203% 99.90849673%;
+}
+.svg-sort-dims {
+  width: 71.5px;
+  height: 100px;
+}
+.svg-support-email {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 50.08917197% 71.17810293%;
+}
+.svg-support-email-dims {
+  width: 100px;
+  height: 72.2px;
+}
+.svg-support-phone {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.93630573% 0;
+}
+.svg-support-phone-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-tag {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 97.66467066% 83.71954133%;
+}
+.svg-tag-dims {
+  width: 50px;
+  height: 27.8px;
+}
+.svg-unlocked {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 73.46238667% 26.14379085%;
+}
+.svg-unlocked-dims {
+  width: 68.8px;
+  height: 100px;
+}
+.svg-upload {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 73.76470588%;
+}
+.svg-upload-dims {
+  width: 100px;
+  height: 100px;
+}
+.svg-usage {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 52.2875817%;
+}
+.svg-usage-dims {
+  width: 96.4px;
+  height: 100px;
+}
+.svg-video {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 21.84693741% 13.07189542%;
+}
+.svg-video-dims {
+  width: 138.9px;
+  height: 100px;
+}
+.svg-wrench {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 50.95541401% 84.5595723%;
+}
+.svg-wrench-dims {
+  width: 100px;
+  height: 79.4px;
+}
+.svg-airplay-off {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 37.76549632%;
+}
+.svg-airplay-off-dims {
+  width: 561.1px;
+  height: 433.6px;
+}
+.svg-airplay-on {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 32.05152372% 52.45965597%;
+}
+.svg-airplay-on-dims {
+  width: 495px;
+  height: 382.5px;
+}
+.svg-arrow-left {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 96.20437522% 85.20980474%;
+}
+.svg-arrow-left-dims {
+  width: 313.6px;
+  height: 313.6px;
+}
+.svg-arrow-right {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 84.07739864% 83.00789364%;
+}
+.svg-arrow-right-dims {
+  width: 313.6px;
+  height: 313.6px;
+}
+.svg-audio-tracks {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.76266798% 16.58719838%;
+}
+.svg-audio-tracks-dims {
+  width: 433.6px;
+  height: 433.6px;
+}
+.svg-buffer {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 0;
+}
+.svg-buffer-dims {
+  width: 612px;
+  height: 612px;
+}
+.svg-captions-off {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 52.9403343%;
+}
+.svg-captions-off-dims {
+  width: 510.1px;
+  height: 408.1px;
+}
+.svg-captions-on {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 16.10214969% 52.9403343%;
+}
+.svg-captions-on-dims {
+  width: 510.1px;
+  height: 408.1px;
+}
+.svg-chromecast-off {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 22.10583348%;
+}
+.svg-chromecast-off-dims {
+  width: 589.1px;
+  height: 433.5px;
+}
+.svg-chromecast-on {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 35.47273764% 37.08104274%;
+}
+.svg-chromecast-on-dims {
+  width: 519.8px;
+  height: 382.5px;
+}
+.svg-close {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 84.07739864% 72.15067165%;
+}
+.svg-close-dims {
+  width: 313.6px;
+  height: 313.6px;
+}
+.svg-discover {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.56013534% 31.27912273%;
+}
+.svg-discover-dims {
+  width: 427px;
+  height: 347.7px;
+}
+.svg-dvr {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 39.49840225% 0;
+}
+.svg-dvr-dims {
+  width: 579.9px;
+  height: 257.8px;
+}
+.svg-email {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 17.99089393% 37.42080962%;
+}
+.svg-email-dims {
+  width: 559.2px;
+  height: 408.1px;
+}
+.svg-embed {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 19.95890813% 0;
+}
+.svg-embed-dims {
+  width: 611.7px;
+  height: 476.8px;
+}
+.svg-facebook {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 73.19128788% 0;
+}
+.svg-facebook-dims {
+  width: 510px;
+  height: 510px;
+}
+.svg-fullscreen {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 98.87280059% 73.52016014%;
+}
+.svg-fullscreen-dims {
+  width: 404.4px;
+  height: 404.4px;
+}
+.svg-fullscreen-not {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 98.98165138% 59.01070189%;
+}
+.svg-fullscreen-not-dims {
+  width: 408px;
+  height: 408.1px;
+}
+.svg-google {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 15.99116859% 70.08058227%;
+}
+.svg-google-dims {
+  width: 507.5px;
+  height: 509.1px;
+}
+.svg-link {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 70.10401189%;
+}
+.svg-link-dims {
+  width: 507px;
+  height: 510px;
+}
+.svg-linkedIn {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 73.19128788% 37.88863712%;
+}
+.svg-linkedIn-dims {
+  width: 510px;
+  height: 509.9px;
+}
+.svg-live {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 19.01488009% 20.78663134%;
+}
+.svg-live-dims {
+  width: 579.9px;
+  height: 257.8px;
+}
+.svg-next {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 84.52711788% 33.2750936%;
+}
+.svg-next-dims {
+  width: 331.5px;
+  height: 397.5px;
+}
+.svg-pause {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 95.99039117% 44.4018899%;
+}
+.svg-pause-dims {
+  width: 306.1px;
+  height: 408.2px;
+}
+.svg-pinterest {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 56.93181818% 34.49492886%;
+}
+.svg-pinterest-dims {
+  width: 510px;
+  height: 510.3px;
+}
+.svg-play {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 31.70213431% 69.87300529%;
+}
+.svg-play-dims {
+  width: 477.9px;
+  height: 501.1px;
+}
+.svg-playback-error {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 56.97858091% 15.46127245%;
+}
+.svg-playback-error-dims {
+  width: 512.6px;
+  height: 512.7px;
+}
+.svg-playlist {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 99.97852541%;
+}
+.svg-playlist-dims {
+  width: 459px;
+  height: 408px;
+}
+.svg-quality-100 {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 98.27038862% 39.03398364%;
+}
+.svg-quality-100-dims {
+  width: 24px;
+  height: 24px;
+}
+.svg-quality-25 {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 97.61357417% 39.03398364%;
+}
+.svg-quality-25-dims {
+  width: 24px;
+  height: 24px;
+}
+.svg-quality-50 {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 96.95675972% 39.03398364%;
+}
+.svg-quality-50-dims {
+  width: 24px;
+  height: 24px;
+}
+.svg-quality-75 {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 98.92720307% 39.03398364%;
+}
+.svg-quality-75-dims {
+  width: 24px;
+  height: 24px;
+}
+.svg-reddit {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 39.29167737% 9.43389322%;
+}
+.svg-reddit-dims {
+  width: 563.6px;
+  height: 469.3px;
+}
+.svg-replay {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 86.50458716% 0;
+}
+.svg-replay-dims {
+  width: 408px;
+  height: 473.9px;
+}
+.svg-rewind-10 {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 46.92491511% 67.91420757%;
+}
+.svg-rewind-10-dims {
+  width: 497.6px;
+  height: 423.2px;
+}
+.svg-settings {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 99.99073216% 0;
+}
+.svg-settings-dims {
+  width: 441px;
+  height: 459.2px;
+}
+.svg-share {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 71.4655571% 18.94502229%;
+}
+.svg-share-dims {
+  width: 433.5px;
+  height: 510px;
+}
+.svg-stop {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 85.17871661% 60.70160638%;
+}
+.svg-stop-dims {
+  width: 357.1px;
+  height: 357.1px;
+}
+.svg-tumblr {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 83.13348616% 17.27859409%;
+}
+.svg-tumblr-dims {
+  width: 275.4px;
+  height: 459.3px;
+}
+.svg-twitter {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 57.02361757% 0;
+}
+.svg-twitter-dims {
+  width: 515.1px;
+  height: 415.8px;
+}
+.svg-volume-0 {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 0 85.43730843%;
+}
+.svg-volume-0-dims {
+  width: 477px;
+  height: 396.2px;
+}
+.svg-volume-100 {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 62.31407547% 67.54473873%;
+}
+.svg-volume-100-dims {
+  width: 484.5px;
+  height: 408px;
+}
+.svg-volume-50 {
+  background: url("icons-dashboard.svg") no-repeat;
+  background: url("icons-player.svg") no-repeat;
+  background-position: 85.83522986% 47.42675886%;
+}
+.svg-volume-50-dims {
+  width: 382.5px;
+  height: 396.2px;
 }
 .demos {
   color: #000;
