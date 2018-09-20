@@ -146,40 +146,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-function init() {
-  var player, logs;
-
-  &#x2F;&#x2F; For demo purposes
-  if (typeof jwplayer === &#39;undefined&#39;) {
-    setTimeout(init, 100);
-    return;
-  }
-
-  player = jwplayer(&#39;container&#39;);
-  logs = jwTest.makeLogger(&#39;container&#39;);
-
-  player.setup({
-    displaytitle: false,
-    preload:&#39;metadata&#39;,
-    file: &#39;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;i3q4gcBi.mp4&#39;,
-    image:&#39;&#x2F;&#x2F;content.jwplatform.com&#x2F;thumbs&#x2F;i3q4gcBi.jpg&#39;
-  });
-
-  player.on(&#39;ready&#39;, function() {
-    var qoe = this.qoe();
-    logs.log(&#39;The player set up in&#39;, JSON.stringify(qoe.setupTime),&#39;ms.&#39;);
-  });
-
-  player.on(&#39;firstFrame&#39;, function() {
-    var qoe = this.qoe();
-    logs.log(&#39;The player took&#39;, JSON.stringify(qoe.firstFrame),&#39;ms to get to the first frame of video.&#39;);
-  });
-}
-
-init();
-
-function init() {
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;function init() {
   var player, logs;
 
   &#x2F;&#x2F; For demo purposes
@@ -228,40 +195,7 @@ init();
         </div>
       </div>
     </div>
-<script type="text/javascript">
-function init() {
-  var player, logs;
-
-  // For demo purposes
-  if (typeof jwplayer === 'undefined') {
-    setTimeout(init, 100);
-    return;
-  }
-
-  player = jwplayer('container');
-  logs = jwTest.makeLogger('container');
-
-  player.setup({
-    displaytitle: false,
-    preload:'metadata',
-    file: '//content.jwplatform.com/videos/i3q4gcBi.mp4',
-    image:'//content.jwplatform.com/thumbs/i3q4gcBi.jpg'
-  });
-
-  player.on('ready', function() {
-    var qoe = this.qoe();
-    logs.log('The player set up in', JSON.stringify(qoe.setupTime),'ms.');
-  });
-
-  player.on('firstFrame', function() {
-    var qoe = this.qoe();
-    logs.log('The player took', JSON.stringify(qoe.firstFrame),'ms to get to the first frame of video.');
-  });
-}
-
-init();
-
-function init() {
+<script type="text/javascript">function init() {
   var player, logs;
 
   // For demo purposes

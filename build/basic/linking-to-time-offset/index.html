@@ -105,35 +105,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-var timeIntervalUrl = window.location.href + &#39;#t=30&#39;;
-var playerContainer = document.querySelector(&#39;.timeContainer&#39;);
-
-function forceRefresh(){
-  location.reload();
-}
-
-playerContainer.innerHTML = &#39;&lt;a href=&quot;&#39; + timeIntervalUrl + &#39;&quot; onclick=&quot;forceRefresh()&quot;&gt;Click here&lt;&#x2F;a&gt; to reload the page with a time offset of 30 seconds. The link simply appends #t=30 to the URL.&#39;
-
-var offset;
-var shouldPlay;
-
-
-if(window.location.hash) {
-     offset = window.location.hash.substr(3);
-     shouldPlay = true;
-}
-
-jwplayer().on(&#39;ready&#39;, function(event){
- if(shouldPlay === true){
-   jwplayer().play();
- }
-});
-
-jwplayer().on(&#39;firstFrame&#39;, function() { 
-jwplayer().seek(offset)
-});
-var timeIntervalUrl = window.location.href + &#39;#t=30&#39;;
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;var timeIntervalUrl = window.location.href + &#39;#t=30&#39;;
 var playerContainer = document.querySelector(&#39;.timeContainer&#39;);
 
 function forceRefresh(){
@@ -177,35 +149,7 @@ jwplayer().seek(offset)
         </div>
       </div>
     </div>
-<script type="text/javascript">
-var timeIntervalUrl = window.location.href + '#t=30';
-var playerContainer = document.querySelector('.timeContainer');
-
-function forceRefresh(){
-  location.reload();
-}
-
-playerContainer.innerHTML = '<a href="' + timeIntervalUrl + '" onclick="forceRefresh()">Click here</a> to reload the page with a time offset of 30 seconds. The link simply appends #t=30 to the URL.'
-
-var offset;
-var shouldPlay;
-
-
-if(window.location.hash) {
-     offset = window.location.hash.substr(3);
-     shouldPlay = true;
-}
-
-jwplayer().on('ready', function(event){
- if(shouldPlay === true){
-   jwplayer().play();
- }
-});
-
-jwplayer().on('firstFrame', function() { 
-jwplayer().seek(offset)
-});
-var timeIntervalUrl = window.location.href + '#t=30';
+<script type="text/javascript">var timeIntervalUrl = window.location.href + '#t=30';
 var playerContainer = document.querySelector('.timeContainer');
 
 function forceRefresh(){

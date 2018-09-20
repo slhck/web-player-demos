@@ -106,46 +106,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-var player1 = jwplayer(&quot;player1&quot;);
-var player2 = jwplayer(&quot;player2&quot;);
-var player3 = jwplayer(&quot;player3&quot;);
-
-&#x2F;&#x2F; When a player size is set to a fixed height of 40px, the player will enter audio mode.
-
-player1.setup({
-  file: &quot;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;1b02B03R-g8UjtXW6.m4a&quot;,
-});
-
-player2.setup({
-  file: &quot;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;kbs0WLBI-g8UjtXW6.m4a&quot;,
-});
-
-player3.setup({
-  file: &quot;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;KJKBQC7h-g8UjtXW6.m4a&quot;,
-});
-
-player1.on(&#39;play&#39;, function() {
-  pausePlayers(1);
-});
-
-player2.on(&#39;play&#39;, function() {
-  pausePlayers(2);
-});
-
-player3.on(&#39;play&#39;, function() {
-  pausePlayers(3);
-});
-
-function pausePlayers(playing) {
-  for (var i = 1; i &lt; 4; i++) {
-   if (i != playing) {
-     jwplayer(&quot;player&quot; + i).pause(true);
-   }
-  }
-};
-
-var player1 = jwplayer(&quot;player1&quot;);
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;var player1 = jwplayer(&quot;player1&quot;);
 var player2 = jwplayer(&quot;player2&quot;);
 var player3 = jwplayer(&quot;player3&quot;);
 
@@ -200,46 +161,7 @@ function pausePlayers(playing) {
         </div>
       </div>
     </div>
-<script type="text/javascript">
-var player1 = jwplayer("player1");
-var player2 = jwplayer("player2");
-var player3 = jwplayer("player3");
-
-// When a player size is set to a fixed height of 40px, the player will enter audio mode.
-
-player1.setup({
-  file: "//content.jwplatform.com/videos/1b02B03R-g8UjtXW6.m4a",
-});
-
-player2.setup({
-  file: "//content.jwplatform.com/videos/kbs0WLBI-g8UjtXW6.m4a",
-});
-
-player3.setup({
-  file: "//content.jwplatform.com/videos/KJKBQC7h-g8UjtXW6.m4a",
-});
-
-player1.on('play', function() {
-  pausePlayers(1);
-});
-
-player2.on('play', function() {
-  pausePlayers(2);
-});
-
-player3.on('play', function() {
-  pausePlayers(3);
-});
-
-function pausePlayers(playing) {
-  for (var i = 1; i < 4; i++) {
-   if (i != playing) {
-     jwplayer("player" + i).pause(true);
-   }
-  }
-};
-
-var player1 = jwplayer("player1");
+<script type="text/javascript">var player1 = jwplayer("player1");
 var player2 = jwplayer("player2");
 var player3 = jwplayer("player3");
 

@@ -115,63 +115,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-  var message = document.querySelector(&#39;.message&#39;);
-  var tag = &#39;assets&#x2F;preroll.xml&#39;;
-  var player = jwplayer(&#39;player&#39;);
-
-  player.setup({
-    playlist: &#39;&#x2F;&#x2F;cdn.jwplayer.com&#x2F;v2&#x2F;media&#x2F;hWF9vG66&#39;,
-    advertising: {
-      client: &#39;vast&#39;
-    }
-  });
-
-  player.on(&#39;play&#39;,function() {
-    showButton();
-  });
-
-  player.on(&#39;pause&#39;,function() {
-    hideButton(&#39;Unpause the video to continue.&#39;);
-  });
-
-  player.on(&#39;complete&#39;, function() {
-    hideButton(&#39;Restart video to continue.&#39;);
-  });
-
-  player.on(&#39;adPlay&#39;, function() {
-    hideButton(&#39;Ad playing, please wait (or skip it)&#39;)
-  });
-
-  player.on(&#39;adPause&#39;, function() {
-    hideButton(&#39;Unpause the ad to continue.&#39;)
-  });
-
-  player.on(&#39;adSkipped&#39;, function() {
-    showButton();
-  });
-
-  player.on(&#39;adComplete&#39;, function() {
-    showButton();
-  });
-
-  function triggerAd() {
-    player.playAd(tag);
-  };
-
-  function showButton() {
-    message.innerHTML = &#39;Play an Ad&#39;;
-    message.classList.add(&#39;button&#39;);
-    message.addEventListener(&#39;click&#39;, triggerAd);
-  };
-
-  function hideButton(messageText) {
-    message.innerHTML = messageText;
-    message.classList.remove(&#39;button&#39;);
-    message.removeEventListener(&#39;click&#39;, triggerAd);
-  };
-
-  var message = document.querySelector(&#39;.message&#39;);
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;  var message = document.querySelector(&#39;.message&#39;);
   var tag = &#39;assets&#x2F;preroll.xml&#39;;
   var player = jwplayer(&#39;player&#39;);
 
@@ -243,63 +187,7 @@ published: true
         </div>
       </div>
     </div>
-<script type="text/javascript">
-  var message = document.querySelector('.message');
-  var tag = 'assets/preroll.xml';
-  var player = jwplayer('player');
-
-  player.setup({
-    playlist: '//cdn.jwplayer.com/v2/media/hWF9vG66',
-    advertising: {
-      client: 'vast'
-    }
-  });
-
-  player.on('play',function() {
-    showButton();
-  });
-
-  player.on('pause',function() {
-    hideButton('Unpause the video to continue.');
-  });
-
-  player.on('complete', function() {
-    hideButton('Restart video to continue.');
-  });
-
-  player.on('adPlay', function() {
-    hideButton('Ad playing, please wait (or skip it)')
-  });
-
-  player.on('adPause', function() {
-    hideButton('Unpause the ad to continue.')
-  });
-
-  player.on('adSkipped', function() {
-    showButton();
-  });
-
-  player.on('adComplete', function() {
-    showButton();
-  });
-
-  function triggerAd() {
-    player.playAd(tag);
-  };
-
-  function showButton() {
-    message.innerHTML = 'Play an Ad';
-    message.classList.add('button');
-    message.addEventListener('click', triggerAd);
-  };
-
-  function hideButton(messageText) {
-    message.innerHTML = messageText;
-    message.classList.remove('button');
-    message.removeEventListener('click', triggerAd);
-  };
-
-  var message = document.querySelector('.message');
+<script type="text/javascript">  var message = document.querySelector('.message');
   var tag = 'assets/preroll.xml';
   var player = jwplayer('player');
 

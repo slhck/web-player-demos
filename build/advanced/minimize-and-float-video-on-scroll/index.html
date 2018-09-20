@@ -92,91 +92,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-&#x2F;&#x2F; initialize jwplayer
-var playerInstance = jwplayer(&#39;player&#39;);
-
-&#x2F;&#x2F; player dom elements
-var playerContainerEl = document.querySelector(&#39;.player-container&#39;);
-
-&#x2F;&#x2F; returns video player position from top of document
-function getElementOffsetTop(el) {
-  var boundingClientRect = el.getBoundingClientRect();
-  var bodyEl = document.body;
-  var docEl = document.documentElement;
-  var scrollTop = window.pageYOffset || docEl.scrollTop || bodyEl.scrollTop;
-  var clientTop = docEl.clientTop || bodyEl.clientTop || 0;
-  return Math.round(boundingClientRect.top + scrollTop - clientTop);
-}
-
-&#x2F;&#x2F; returns the current y scroll position
-function getScrollTop() {
-  var docEl = document.documentElement;
-  return (window.pageYOffset || docEl.scrollTop) - (docEl.clientTop || 0);
-}
-
-&#x2F;&#x2F; configure jwplayer instance
-playerInstance.setup({
-  autostart: true,
-  file: &#39;&#x2F;&#x2F;content.jwplatform.com&#x2F;manifests&#x2F;vM7nH0Kl.m3u8&#39;,
-  primary: &#39;html5&#39;,
-  setFullscreen: true,
-  width: &#39;100%&#39;
-});
-
-&#x2F;&#x2F; when jwplayer instance is ready
-playerInstance.on(&#39;ready&#39;, function() {
-        var config = playerInstance.getConfig();
-        var utils = playerInstance.utils;
-        &#x2F;&#x2F; get height of player element
-        var playerHeight = config.containerHeight;
-
-        &#x2F;&#x2F; get player element position from top of document
-        var playerOffsetTop = getElementOffsetTop(playerContainerEl);
-
-        &#x2F;&#x2F; set player container to match height of actual video element
-        &#x2F;&#x2F; this prevents container from disappearing and changing element positions
-        &#x2F;&#x2F; on page when player becomes minimized. this also leaves a nice visual
-        &#x2F;&#x2F; placeholder space for minimized player to return to when appropriate
-        playerContainerEl.style.height = playerHeight + &#39;px&#39;;
-
-        &#x2F;&#x2F; below we handle window scroll event without killing performance
-        &#x2F;&#x2F; this is a minimal approach. please consider implementing something more extensive:
-        &#x2F;&#x2F; i.e. http:&#x2F;&#x2F;joji.me&#x2F;en-us&#x2F;blog&#x2F;how-to-develop-high-performance-onscroll-event
-
-        &#x2F;&#x2F; determine player display when scroll event is called
-        &#x2F;&#x2F; if inline player is no longer visible in viewport, add class
-        &#x2F;&#x2F; .player-minimize to minimize and float. otherwise, remove the class to put
-        &#x2F;&#x2F; player back to inline inline position
-        function onScrollViewHandler() {
-            var minimize = getScrollTop() &gt;= playerOffsetTop;
-
-            utils.toggleClass(playerContainerEl, &#39;player-minimize&#39;, minimize);
-            &#x2F;&#x2F; update the player&#39;s size so the controls are adjusted
-            playerInstance.resize();
-        }
-
-        &#x2F;&#x2F; namespace for whether or not we are waiting for setTimeout() to finish
-        var isScrollTimeout = false;
-
-        &#x2F;&#x2F; window onscroll event handler
-        window.onscroll = function() {
-            &#x2F;&#x2F; skip if we&#39;re waiting on a scroll update timeout to finish
-            if (isScrollTimeout) return;
-            &#x2F;&#x2F; flag that a new timeout will begin
-            isScrollTimeout = true;
-            &#x2F;&#x2F; otherwise, call scroll event view handler
-            onScrollViewHandler();
-            &#x2F;&#x2F; set new timeout
-            setTimeout(function() {
-                &#x2F;&#x2F; reset timeout flag to false (no longer waiting)
-                isScrollTimeout = false;
-            }, 80);
-
-        };
-
-    });
-&#x2F;&#x2F; initialize jwplayer
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;&#x2F;&#x2F; initialize jwplayer
 var playerInstance = jwplayer(&#39;player&#39;);
 
 &#x2F;&#x2F; player dom elements
@@ -276,91 +192,7 @@ playerInstance.on(&#39;ready&#39;, function() {
         </div>
       </div>
     </div>
-<script type="text/javascript">
-// initialize jwplayer
-var playerInstance = jwplayer('player');
-
-// player dom elements
-var playerContainerEl = document.querySelector('.player-container');
-
-// returns video player position from top of document
-function getElementOffsetTop(el) {
-  var boundingClientRect = el.getBoundingClientRect();
-  var bodyEl = document.body;
-  var docEl = document.documentElement;
-  var scrollTop = window.pageYOffset || docEl.scrollTop || bodyEl.scrollTop;
-  var clientTop = docEl.clientTop || bodyEl.clientTop || 0;
-  return Math.round(boundingClientRect.top + scrollTop - clientTop);
-}
-
-// returns the current y scroll position
-function getScrollTop() {
-  var docEl = document.documentElement;
-  return (window.pageYOffset || docEl.scrollTop) - (docEl.clientTop || 0);
-}
-
-// configure jwplayer instance
-playerInstance.setup({
-  autostart: true,
-  file: '//content.jwplatform.com/manifests/vM7nH0Kl.m3u8',
-  primary: 'html5',
-  setFullscreen: true,
-  width: '100%'
-});
-
-// when jwplayer instance is ready
-playerInstance.on('ready', function() {
-        var config = playerInstance.getConfig();
-        var utils = playerInstance.utils;
-        // get height of player element
-        var playerHeight = config.containerHeight;
-
-        // get player element position from top of document
-        var playerOffsetTop = getElementOffsetTop(playerContainerEl);
-
-        // set player container to match height of actual video element
-        // this prevents container from disappearing and changing element positions
-        // on page when player becomes minimized. this also leaves a nice visual
-        // placeholder space for minimized player to return to when appropriate
-        playerContainerEl.style.height = playerHeight + 'px';
-
-        // below we handle window scroll event without killing performance
-        // this is a minimal approach. please consider implementing something more extensive:
-        // i.e. http://joji.me/en-us/blog/how-to-develop-high-performance-onscroll-event
-
-        // determine player display when scroll event is called
-        // if inline player is no longer visible in viewport, add class
-        // .player-minimize to minimize and float. otherwise, remove the class to put
-        // player back to inline inline position
-        function onScrollViewHandler() {
-            var minimize = getScrollTop() >= playerOffsetTop;
-
-            utils.toggleClass(playerContainerEl, 'player-minimize', minimize);
-            // update the player's size so the controls are adjusted
-            playerInstance.resize();
-        }
-
-        // namespace for whether or not we are waiting for setTimeout() to finish
-        var isScrollTimeout = false;
-
-        // window onscroll event handler
-        window.onscroll = function() {
-            // skip if we're waiting on a scroll update timeout to finish
-            if (isScrollTimeout) return;
-            // flag that a new timeout will begin
-            isScrollTimeout = true;
-            // otherwise, call scroll event view handler
-            onScrollViewHandler();
-            // set new timeout
-            setTimeout(function() {
-                // reset timeout flag to false (no longer waiting)
-                isScrollTimeout = false;
-            }, 80);
-
-        };
-
-    });
-// initialize jwplayer
+<script type="text/javascript">// initialize jwplayer
 var playerInstance = jwplayer('player');
 
 // player dom elements

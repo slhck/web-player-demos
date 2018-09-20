@@ -106,39 +106,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-var player = jwplayer(&#39;player&#39;);
-
-&#x2F;&#x2F; Trigger error on player setup
-player.setup({
-  file: &quot;&#x2F;&#x2F;content.jwplatform.com&#x2F;&#x2F;videos&#x2F;not-a-real-video-file.mp4&quot;
-});
-
-&#x2F;&#x2F; Load custom video file on error
-player.on(&#39;error&#39;, function() {
-  player.load({
-    file:&quot;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;7RtXk3vl-52qL9xLP.mp4&quot;,
-    image:&quot;&#x2F;&#x2F;content.jwplatform.com&#x2F;thumbs&#x2F;7RtXk3vl-480.jpg&quot;
-  });
-  player.play();
-});
-
-&#x2F;&#x2F; Also load custom video file on buffer
-player.on(&#39;buffer&#39;, function() {
-  theTimeout = setTimeout(function() {
-    player.load({
-      file:&quot;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;7RtXk3vl-52qL9xLP.mp4&quot;,
-      image:&quot;&#x2F;&#x2F;content.jwplatform.com&#x2F;thumbs&#x2F;7RtXk3vl-480.jpg&quot;
-    });
-    player.play();
-  }, 5000);
-});
-
-player.on(&#39;play&#39;, function() {
-  clearTimeout(theTimeout);
-});
-
-var player = jwplayer(&#39;player&#39;);
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;var player = jwplayer(&#39;player&#39;);
 
 &#x2F;&#x2F; Trigger error on player setup
 player.setup({
@@ -186,39 +154,7 @@ player.on(&#39;play&#39;, function() {
         </div>
       </div>
     </div>
-<script type="text/javascript">
-var player = jwplayer('player');
-
-// Trigger error on player setup
-player.setup({
-  file: "//content.jwplatform.com//videos/not-a-real-video-file.mp4"
-});
-
-// Load custom video file on error
-player.on('error', function() {
-  player.load({
-    file:"//content.jwplatform.com/videos/7RtXk3vl-52qL9xLP.mp4",
-    image:"//content.jwplatform.com/thumbs/7RtXk3vl-480.jpg"
-  });
-  player.play();
-});
-
-// Also load custom video file on buffer
-player.on('buffer', function() {
-  theTimeout = setTimeout(function() {
-    player.load({
-      file:"//content.jwplatform.com/videos/7RtXk3vl-52qL9xLP.mp4",
-      image:"//content.jwplatform.com/thumbs/7RtXk3vl-480.jpg"
-    });
-    player.play();
-  }, 5000);
-});
-
-player.on('play', function() {
-  clearTimeout(theTimeout);
-});
-
-var player = jwplayer('player');
+<script type="text/javascript">var player = jwplayer('player');
 
 // Trigger error on player setup
 player.setup({
