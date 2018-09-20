@@ -13,49 +13,126 @@
 * express or implied. See the License for the specific language
 * governing permissions and limitations under the License.
 -->
+
 <script src="//content.jwplatform.com/libraries/lqsWlr4Z.js"></script>
-<div class="pageDescription">
-    <p>This page demonstrates JW Player's Google Dynamic Ad Insertion (DAI) Integration for server side ad insertion.</p>
-    <p>For more information, see our <a href="https://support.jwplayer.com/articles/getting-started-with-dai" target="_blank">Getting Started with DAI</a> support article.</p>
+
+<div class="description">
+  <p>This page demonstrates JW Player's Google Dynamic Ad Insertion (DAI) Integration for server side ad insertion.</p>
+  <p>For more information, see our <a href="https://support.jwplayer.com/articles/getting-started-with-dai" target="_blank">Getting Started with DAI</a> support article.</p>
 </div>
-<div id="myElement"></div>
-<div class="instructions">
-    <div class="steps">
-       <div class="setup-steps">
-            <p>In both examples, the specified "file" is a fallback option, in the event that there is a network error, or the timeout (3000ms) is reached.</p>
-        </div>
-        <div class="setup-steps">
-            <p>Select Stream Type</p>
-            <select id="streamTypeSelect">
-                <option value="vod">VOD</option>
-                <option value="live">Live</option>
-            </select>
-        </div>
+
+<div class="container">
+  <div class="left">
+    <div class="button-container">
+      <button
+        class="button button-sm button-theme-brand-2 button-toggle button-toggle-on"
+        data-toggle="vod">
+          VOD
+      </button>
+      <button
+        class="button button-sm button-theme-brand-2 button-toggle"
+        data-toggle="live">
+          Live
+      </button>
+      <button
+        class="button button-sm button-theme-brand-2 button-toggle"
+        data-toggle="customVod">
+          Custom VOD
+      </button>
+      <button
+        class="button button-sm button-theme-brand-2 button-toggle"
+        data-toggle="customLive">
+          Custom Live
+      </button>
     </div>
-        <pre><code id="vod">var playerInstance = jwplayer("myElement")
-playerInstance.setup({
-    "playlist": [
-        {
-            "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
-            "daiSetting": {
-                "cmsID": "19823",
-                "videoID": "ima-test"
-            }
-        }
-    ],
-    "advertising": {
-        "client": "dai",
+    <div class="content">
+      <div id="vodOrLive" class="body-toggle body-toggle-on">
+        <p>In all examples, the specified "file" is a fallback option, in the event that there is a network error, or the timeout (3000ms) is reached.</p>
+      </div>
+      <div id="customVod" class="body-toggle">
+        <p>In this example, you can insert your <strong>cmsID</strong> and <strong>videoID</strong> values and click the <strong>Re-Setup Player</strong> button to setup the player with those values.</p>
+        <div class="input-group">
+          <label for="cmsId">cmsID</label>
+          <input type="text" name="cmsId" id="cmsId">
+        </div>
+        <div class="input-group">
+          <label for="videoId">videoID</label>
+          <input type="text" name="videoId" id="videoId">
+        </div>
+      </div>
+      <div id="customLive" class="body-toggle">
+        <p>In this example, you can insert your <strong>assetKey</strong> value and click the <strong>Re-Setup Player</strong> button to setup the player with that value.</p>
+        <div class="input-group">
+          <label for="assetKey">assetKey</label>
+          <input type="text" name="assetKey" id="assetKey">
+        </div>
+      </div>
+      <button id="reSetupPlayerButton" class="button button-sm button-theme-brand-2 button-toggle button-toggle-on body-toggle">Re-setup Player</button>
+    </div>
+  </div>
+  <div class="playerContainer">
+    <div id="playerElement"></div>
+  </div>
+</div>
+<div id="codeBlock_vod" class="codeBlock code-toggle code-toggle-on">
+  <pre>
+    <code>playerInstance.setup({
+  "playlist": [{
+    "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+    "daiSetting": {
+      "cmsID": 2477953, // your cmsID will go here
+      "videoID": "tears-of-steel" // your videoID will go here
     }
-});</code><code id="live">var playerInstance = jwplayer("myElement")
-playerInstance.setup({
-    "playlist": [
-        {
-            "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
-        }
-    ],
-    "advertising": {
-        "client": "dai",
-        "assetKey": "sN_IYUG8STe1ZzhIIE_ksA"
+  }],
+  "advertising": {
+    "client": "dai"
+  }
+});</code>
+  </pre>
+</div>
+<div id="codeBlock_live" class="codeBlock code-toggle">
+  <pre>
+    <code>playerInstance.setup({
+  "playlist": [{
+    "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+    "daiSetting": {
+      "assetKey": "sN_IYUG8STe1ZzhIIE_ksA" // your assetKey would go here
     }
-});</code></pre>
+  }],
+  "advertising": {
+    "client": "dai"
+  }
+});</code>
+  </pre>
+</div>
+<div id="codeBlock_customVod" class="codeBlock code-toggle">
+  <pre>
+    <code>playerInstance.setup({
+  "playlist": [{
+    "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+    "daiSetting": {
+      "cmsID": <span id="customVod_cmsID">YOUR_CMSID_HERE</span>,
+      "videoID": <span id="customVod_videoID">YOUR_VIDEOID_HERE</span>
+    }
+  }],
+  "advertising": {
+    "client": "dai"
+  }
+});</code>
+  </pre>
+</div>
+<div id="codeBlock_customLive" class="codeBlock code-toggle">
+  <pre>
+    <code>playerInstance.setup({
+  "playlist": [{
+    "file": "//content.jwplatform.com/manifests/Qlh3p9ly.m3u8",
+    "daiSetting": {
+      "assetKey": <span id="customLive_assetKey">YOUR_ASSETKEY_HERE</span>
+    }
+  }],
+  "advertising": {
+    "client": "dai"
+  }
+});</code>
+  </pre>
 </div>
