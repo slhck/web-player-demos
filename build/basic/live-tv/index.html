@@ -106,37 +106,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-var playerInstance = jwplayer(&quot;myElement&quot;);
-
-&#x2F;&#x2F; In order for this demo to work, duration must be included for each playlist item.
-
-playerInstance.setup({
-    &quot;playlist&quot;: &quot;&#x2F;&#x2F;content.jwplatform.com&#x2F;feeds&#x2F;DrqpQIzP.rss&quot;
-});
-
-playerInstance.on(&#39;displayClick&#39;, function() {
-	playerInstance.pause();
-});
-    
-playerInstance.on(&#39;ready&#39;, function() {
-    var seconds = new Date().getMinutes()*60 + new Date().getSeconds();
-    var playlist = playerInstance.getPlaylist();
-    var offset = 0;
-
-    for (var index=0; index &lt; playlist.length; index++) {
-        var duration = Math.round(playlist[index][&#39;duration&#39;]);
-        if(offset + duration &gt; seconds) {
-            playerInstance.playlistItem(index);
-            playerInstance.seek(seconds-offset);
-            break;
-        } else {
-            offset += duration;
-        }
-    }
-});
-
-var playerInstance = jwplayer(&quot;myElement&quot;);
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;var playerInstance = jwplayer(&quot;myElement&quot;);
 
 &#x2F;&#x2F; In order for this demo to work, duration must be included for each playlist item.
 
@@ -182,37 +152,7 @@ playerInstance.on(&#39;ready&#39;, function() {
         </div>
       </div>
     </div>
-<script type="text/javascript">
-var playerInstance = jwplayer("myElement");
-
-// In order for this demo to work, duration must be included for each playlist item.
-
-playerInstance.setup({
-    "playlist": "//content.jwplatform.com/feeds/DrqpQIzP.rss"
-});
-
-playerInstance.on('displayClick', function() {
-	playerInstance.pause();
-});
-    
-playerInstance.on('ready', function() {
-    var seconds = new Date().getMinutes()*60 + new Date().getSeconds();
-    var playlist = playerInstance.getPlaylist();
-    var offset = 0;
-
-    for (var index=0; index < playlist.length; index++) {
-        var duration = Math.round(playlist[index]['duration']);
-        if(offset + duration > seconds) {
-            playerInstance.playlistItem(index);
-            playerInstance.seek(seconds-offset);
-            break;
-        } else {
-            offset += duration;
-        }
-    }
-});
-
-var playerInstance = jwplayer("myElement");
+<script type="text/javascript">var playerInstance = jwplayer("myElement");
 
 // In order for this demo to work, duration must be included for each playlist item.
 

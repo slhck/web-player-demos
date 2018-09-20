@@ -101,36 +101,7 @@ MediaID and PlayerID are available in your Account Dashboard. -->
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-const playerInstance = jwplayer(&#39;player&#39;);
-
-playerInstance.setup({
-  file: &#39;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;3XnJSIm4-injeKYZS.mp4&#39;,
-  fwassetid: &#39;jw_test_asset_h&#39;,
-  duration: 500,
-  advertising: {
-    client: &#39;freewheel&#39;,
-    freewheel: {
-      networkid: 90750,
-      &#x2F;&#x2F; The &#39;adManagerUrl&#39; specified below should
-      &#x2F;&#x2F; be the URL you receive from Freewheel.
-      adManagerUrl: &quot;https:&#x2F;&#x2F;mssl.fwmrm.net&#x2F;p&#x2F;jw_html5_test&#x2F;AdManager.js&quot;,
-      serverid: &quot;https:&#x2F;&#x2F;demo.v.fwmrm.net&#x2F;ad&#x2F;g&#x2F;1&quot;,
-      profileid: &quot;90750:jw_html5_test&quot;,
-      sectionid: &quot;jw_test_site_section&quot;
-    },
-    adscheduleid: &#39;12345&#39;,
-    schedule: {
-      adbreak: {
-        offset: &#39;pre&#39;,
-        tag: &#39;placeholder_preroll&#39;
-      }
-    },
-    vpaidcontrols: true,
-    skipoffset: 3
-  }
-});
-const playerInstance = jwplayer(&#39;player&#39;);
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;const playerInstance = jwplayer(&#39;player&#39;);
 
 playerInstance.setup({
   file: &#39;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;3XnJSIm4-injeKYZS.mp4&#39;,
@@ -175,36 +146,7 @@ playerInstance.setup({
         </div>
       </div>
     </div>
-<script type="text/javascript">
-const playerInstance = jwplayer('player');
-
-playerInstance.setup({
-  file: '//content.jwplatform.com/videos/3XnJSIm4-injeKYZS.mp4',
-  fwassetid: 'jw_test_asset_h',
-  duration: 500,
-  advertising: {
-    client: 'freewheel',
-    freewheel: {
-      networkid: 90750,
-      // The 'adManagerUrl' specified below should
-      // be the URL you receive from Freewheel.
-      adManagerUrl: "https://mssl.fwmrm.net/p/jw_html5_test/AdManager.js",
-      serverid: "https://demo.v.fwmrm.net/ad/g/1",
-      profileid: "90750:jw_html5_test",
-      sectionid: "jw_test_site_section"
-    },
-    adscheduleid: '12345',
-    schedule: {
-      adbreak: {
-        offset: 'pre',
-        tag: 'placeholder_preroll'
-      }
-    },
-    vpaidcontrols: true,
-    skipoffset: 3
-  }
-});
-const playerInstance = jwplayer('player');
+<script type="text/javascript">const playerInstance = jwplayer('player');
 
 playerInstance.setup({
   file: '//content.jwplatform.com/videos/3XnJSIm4-injeKYZS.mp4',
