@@ -53,11 +53,37 @@ module.exports = function (grunt) {
       copy = [],
       concat = {},
       mustacheRender = [],
+      env = {
+        dev: true,
+        staging: false,
+        prod: false
+      },
       path = {
+        host: 'developer.jwplayer.com',
         file: '//developer.jwplayer.com/',
-        href: '../../',
+        href: '/'
       };
 
+    // if a `local-config.json` file exists, override configurable data
+    if (grunt.file.exists('local-config.json')) {
+      var local = grunt.file.readJSON('local-config.json');
+      path.file = local.path.file ? local.path.file : path.file;
+      path.href = local.path.href ? local.path.href : path.href;
+    }
+    // if a `--deploy-*` option was passed to specify build type
+    if (grunt.option('deploy-production') || grunt.option('deploy-staging')) {
+      path.file = '/';
+      path.href = '/jw-player/demos/';
+      if (grunt.option('deploy-production')) {
+        env.dev = false;
+        env.prod = true;
+        path.host = 'developer.jwplayer.com';
+      } else {
+        env.dev = false;
+        env.staging = true;
+        path.host = 'staging-developer.jwplayer.com';
+      }
+    }
     // sort array/object alphabetically on the `directory` property
     function sortABC(a, b) {
       var prop = 'directory';
