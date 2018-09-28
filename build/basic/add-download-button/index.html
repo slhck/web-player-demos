@@ -102,28 +102,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-var player = jwplayer(&#39;player&#39;);
-
-player.setup({
-  playlist: &#39;https:&#x2F;&#x2F;cdn.jwplayer.com&#x2F;v2&#x2F;media&#x2F;8L4m9FJB&#39;
-});
-
-player.addButton(
-  &#x2F;&#x2F;This portion is what designates the graphic used for the button
-  &quot;&#x2F;&#x2F;icons.jwplayer.com&#x2F;icons&#x2F;white&#x2F;download.svg&quot;,
-  &#x2F;&#x2F;This portion determines the text that appears as a tooltip
-  &quot;Download Video&quot;,
-  &#x2F;&#x2F;This portion designates the functionality of the button itself
-  function() {
-    &#x2F;&#x2F;With the below code, we&#39;re grabbing the file that&#39;s currently playing
-    window.location.href = player.getPlaylistItem()[&#39;file&#39;];
-  },
-  &#x2F;&#x2F;And finally, here we set the unique ID of the button itself.
-  &quot;download&quot;
-);
-
-var player = jwplayer(&#39;player&#39;);
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;var player = jwplayer(&#39;player&#39;);
 
 player.setup({
   playlist: &#39;https:&#x2F;&#x2F;cdn.jwplayer.com&#x2F;v2&#x2F;media&#x2F;8L4m9FJB&#39;
@@ -160,28 +139,7 @@ player.addButton(
         </div>
       </div>
     </div>
-<script type="text/javascript">
-var player = jwplayer('player');
-
-player.setup({
-  playlist: 'https://cdn.jwplayer.com/v2/media/8L4m9FJB'
-});
-
-player.addButton(
-  //This portion is what designates the graphic used for the button
-  "//icons.jwplayer.com/icons/white/download.svg",
-  //This portion determines the text that appears as a tooltip
-  "Download Video",
-  //This portion designates the functionality of the button itself
-  function() {
-    //With the below code, we're grabbing the file that's currently playing
-    window.location.href = player.getPlaylistItem()['file'];
-  },
-  //And finally, here we set the unique ID of the button itself.
-  "download"
-);
-
-var player = jwplayer('player');
+<script type="text/javascript">var player = jwplayer('player');
 
 player.setup({
   playlist: 'https://cdn.jwplayer.com/v2/media/8L4m9FJB'

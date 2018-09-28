@@ -163,37 +163,7 @@ var logMessage = function(message) {
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-var player = jwplayer(&quot;player&quot;);
-
-player.setup({
-    file: &#39;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;1g8jjku3-cIp6U8lV.mp4&#39;,
-    image: &#39;&#x2F;&#x2F;content.jwplatform.com&#x2F;thumbs&#x2F;1g8jjku3-720.jpg&#39;,
-});
-
-player.on(&#39;time&#39;, function(e) {
-    $cookie.setItem(&#39;resumevideodata&#39;, Math.floor(e.position) + &#39;:&#39; + player.getDuration());
-});
-
-player.on(&#39;ready&#39;, function() {
-    var cookieData = $cookie.getItem(&#39;resumevideodata&#39;);
-    if(cookieData) {
-        var resumeAt = cookieData.split(&#39;:&#39;)[0],
-            videoDur = cookieData.split(&#39;:&#39;)[1];
-        if(parseInt(resumeAt) &lt; parseInt(videoDur)) {
-            player.seek(resumeAt);
-            logMessage(&#39;Resuming at &#39; + resumeAt); &#x2F;&#x2F;for demo purposes
-        }
-        else if(cookieData &amp;&amp; !(parseInt(resumeAt) &lt; parseInt(videoDur))) {
-            logMessage(&#39;Video ended last time! Will skip resume behavior&#39;); &#x2F;&#x2F;for demo purposes
-        }
-    }
-    else {
-        logMessage(&#39;No video resume cookie detected. Refresh page.&#39;);
-    }
-});
-
-var player = jwplayer(&quot;player&quot;);
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;var player = jwplayer(&quot;player&quot;);
 
 player.setup({
     file: &#39;&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;1g8jjku3-cIp6U8lV.mp4&#39;,
@@ -239,37 +209,7 @@ player.on(&#39;ready&#39;, function() {
         </div>
       </div>
     </div>
-<script type="text/javascript">
-var player = jwplayer("player");
-
-player.setup({
-    file: '//content.jwplatform.com/videos/1g8jjku3-cIp6U8lV.mp4',
-    image: '//content.jwplatform.com/thumbs/1g8jjku3-720.jpg',
-});
-
-player.on('time', function(e) {
-    $cookie.setItem('resumevideodata', Math.floor(e.position) + ':' + player.getDuration());
-});
-
-player.on('ready', function() {
-    var cookieData = $cookie.getItem('resumevideodata');
-    if(cookieData) {
-        var resumeAt = cookieData.split(':')[0],
-            videoDur = cookieData.split(':')[1];
-        if(parseInt(resumeAt) < parseInt(videoDur)) {
-            player.seek(resumeAt);
-            logMessage('Resuming at ' + resumeAt); //for demo purposes
-        }
-        else if(cookieData && !(parseInt(resumeAt) < parseInt(videoDur))) {
-            logMessage('Video ended last time! Will skip resume behavior'); //for demo purposes
-        }
-    }
-    else {
-        logMessage('No video resume cookie detected. Refresh page.');
-    }
-});
-
-var player = jwplayer("player");
+<script type="text/javascript">var player = jwplayer("player");
 
 player.setup({
     file: '//content.jwplatform.com/videos/1g8jjku3-cIp6U8lV.mp4',

@@ -102,40 +102,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-  var titleDiv = document.getElementById(&#39;title&#39;);
-  var artistDiv = document.getElementById(&#39;artist&#39;);
-  var imageDiv = document.getElementById(&#39;image&#39;);
-  var player = jwplayer(&#39;player&#39;);
-
-  &#x2F;&#x2F; Set up the player with an HLS stream that includes timed metadata
-  player.setup({
-    file: &#39;assets&#x2F;index.m3u8&#39;
-  });
-
-  &#x2F;&#x2F; Retrieve metadata
-  player.on(&#39;meta&#39;, function(e) {
-    if (e.metadata) {
-      var title = e.metadata.title;
-      var artist = e.metadata.artist;
-      var imageUrl = e.metadata.url;
-
-      title ? titleDiv.innerHTML = title : titleDiv.innerHTML = &#39;Unknown&#39;;
-      artist ? artistDiv.innerHTML = artist : artistDiv.innerHTML = &#39;Unknown&#39;;
-      imageUrl ? imageDiv.src = imageUrl : imageDiv.src = &#39;assets&#x2F;jwlogo.png&#39;;
-    };
-  });
-
-  &#x2F;&#x2F; Handle reset of player at end of content
-  player.on(&#39;error&#39;, function(e) {
-    if (e.message === &#39;The live stream is either down or has ended&#39;) {
-      player.load({
-        file: &#39;assets&#x2F;index.m3u8&#39;
-      });
-    }
-  });
-
-  var titleDiv = document.getElementById(&#39;title&#39;);
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;  var titleDiv = document.getElementById(&#39;title&#39;);
   var artistDiv = document.getElementById(&#39;artist&#39;);
   var imageDiv = document.getElementById(&#39;image&#39;);
   var player = jwplayer(&#39;player&#39;);
@@ -184,40 +151,7 @@ published: true
         </div>
       </div>
     </div>
-<script type="text/javascript">
-  var titleDiv = document.getElementById('title');
-  var artistDiv = document.getElementById('artist');
-  var imageDiv = document.getElementById('image');
-  var player = jwplayer('player');
-
-  // Set up the player with an HLS stream that includes timed metadata
-  player.setup({
-    file: 'assets/index.m3u8'
-  });
-
-  // Retrieve metadata
-  player.on('meta', function(e) {
-    if (e.metadata) {
-      var title = e.metadata.title;
-      var artist = e.metadata.artist;
-      var imageUrl = e.metadata.url;
-
-      title ? titleDiv.innerHTML = title : titleDiv.innerHTML = 'Unknown';
-      artist ? artistDiv.innerHTML = artist : artistDiv.innerHTML = 'Unknown';
-      imageUrl ? imageDiv.src = imageUrl : imageDiv.src = 'assets/jwlogo.png';
-    };
-  });
-
-  // Handle reset of player at end of content
-  player.on('error', function(e) {
-    if (e.message === 'The live stream is either down or has ended') {
-      player.load({
-        file: 'assets/index.m3u8'
-      });
-    }
-  });
-
-  var titleDiv = document.getElementById('title');
+<script type="text/javascript">  var titleDiv = document.getElementById('title');
   var artistDiv = document.getElementById('artist');
   var imageDiv = document.getElementById('image');
   var player = jwplayer('player');

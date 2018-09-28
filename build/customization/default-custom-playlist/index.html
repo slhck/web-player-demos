@@ -134,72 +134,7 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-&#x2F;&#x2F; Start Playlist Overlay Example
-function initInPlayer(playlistId) {
-  jwplayer(&#39;in-player-demo&#39;).setup({
-    displaytitle: true,
-    logo: false,
-    playlist: &#39;https:&#x2F;&#x2F;cdn.jwplayer.com&#x2F;v2&#x2F;playlists&#x2F;&#39; + playlistId
-    &#x2F;&#x2F; By default, the parameter visualplaylist is true.
-  });
-};
-
-initInPlayer(&#39;6tYY3mSy&#39;);
-&#x2F;&#x2F; End Playlist Overlay Example
-
-&#x2F;&#x2F; Start Playlist Shelf Example
-function initOutPlayer(playlistId) {
-  var playerInstance = jwplayer(&#39;out-player-demo&#39;)
-    .setup({
-      displaytitle: false,
-      logo: false,
-      autostart: false,
-      playlist: &#39;https:&#x2F;&#x2F;cdn.jwplayer.com&#x2F;v2&#x2F;playlists&#x2F;&#39; + playlistId,
-      width: &#39;100%&#39;,
-      aspectratio: &#39;16:9&#39;,
-      visualplaylist: false
-    });
-
-  initPlaylist(playerInstance);
-}
-
-function initPlaylist(player) {
-  $.ajax(player.getPlaylist()).then(function(data) {
-    var playlistWrapper = $(&#39;.playlist-wrapper&#39;);
-    var playlistTemplate = Handlebars.compile($(&#39;#out-player-playlist-template&#39;).html());
-    playlistWrapper.html(playlistTemplate(data));
-
-    playlistWrapper.on(&#39;click&#39;, &#39;.playlist-item-link&#39;, setVideo.bind(this, data.playlist, player));
-    player.on(&#39;playlistItem&#39;, setActive);
-  });
-}
-
-function setVideo(playlist, player, e) {
-  var currentVideo = $(e.target).closest(&#39;a&#39;).data(&#39;mediaid&#39;);
-  var videoIndex = playlist.findIndex(function(video) {
-    return currentVideo === video.mediaid;
-  });
-
-  e.preventDefault();
-
-  player.playlistItem(videoIndex);
-}
-
-function setActive(e) {
-  var id = e.item.mediaid;
-
-  $(&#39;.playlist-item-link&#39;).removeClass(&#39;active&#39;)
-    .filter(function(item) {
-      return $(this).data(&#39;mediaid&#39;) === id;
-    })
-    .addClass(&#39;active&#39;);
-}
-
-initOutPlayer(&#39;6tYY3mSy&#39;);
-&#x2F;&#x2F; End Playlist Shelf Example
-
-&#x2F;&#x2F; Start Playlist Overlay Example
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;&#x2F;&#x2F; Start Playlist Overlay Example
 function initInPlayer(playlistId) {
   jwplayer(&#39;in-player-demo&#39;).setup({
     displaytitle: true,
@@ -280,72 +215,7 @@ initOutPlayer(&#39;6tYY3mSy&#39;);
         </div>
       </div>
     </div>
-<script type="text/javascript">
-// Start Playlist Overlay Example
-function initInPlayer(playlistId) {
-  jwplayer('in-player-demo').setup({
-    displaytitle: true,
-    logo: false,
-    playlist: 'https://cdn.jwplayer.com/v2/playlists/' + playlistId
-    // By default, the parameter visualplaylist is true.
-  });
-};
-
-initInPlayer('6tYY3mSy');
-// End Playlist Overlay Example
-
-// Start Playlist Shelf Example
-function initOutPlayer(playlistId) {
-  var playerInstance = jwplayer('out-player-demo')
-    .setup({
-      displaytitle: false,
-      logo: false,
-      autostart: false,
-      playlist: 'https://cdn.jwplayer.com/v2/playlists/' + playlistId,
-      width: '100%',
-      aspectratio: '16:9',
-      visualplaylist: false
-    });
-
-  initPlaylist(playerInstance);
-}
-
-function initPlaylist(player) {
-  $.ajax(player.getPlaylist()).then(function(data) {
-    var playlistWrapper = $('.playlist-wrapper');
-    var playlistTemplate = Handlebars.compile($('#out-player-playlist-template').html());
-    playlistWrapper.html(playlistTemplate(data));
-
-    playlistWrapper.on('click', '.playlist-item-link', setVideo.bind(this, data.playlist, player));
-    player.on('playlistItem', setActive);
-  });
-}
-
-function setVideo(playlist, player, e) {
-  var currentVideo = $(e.target).closest('a').data('mediaid');
-  var videoIndex = playlist.findIndex(function(video) {
-    return currentVideo === video.mediaid;
-  });
-
-  e.preventDefault();
-
-  player.playlistItem(videoIndex);
-}
-
-function setActive(e) {
-  var id = e.item.mediaid;
-
-  $('.playlist-item-link').removeClass('active')
-    .filter(function(item) {
-      return $(this).data('mediaid') === id;
-    })
-    .addClass('active');
-}
-
-initOutPlayer('6tYY3mSy');
-// End Playlist Shelf Example
-
-// Start Playlist Overlay Example
+<script type="text/javascript">// Start Playlist Overlay Example
 function initInPlayer(playlistId) {
   jwplayer('in-player-demo').setup({
     displaytitle: true,
