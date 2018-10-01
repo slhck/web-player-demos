@@ -56,10 +56,10 @@ h3 strong {
 	display: flex;
 }
 
-.jw-widget {
-	text-align: left;
-	font-family: 'Lato', sans-serif;
-	font-weight: 900;
+#widget-video-player-shelf-widget {
+	height: 200px;
+	background-color: #f4f5f7;
+	margin-bottom: 40px;
 }
 
 #ads-video-player {
@@ -81,41 +81,4 @@ h3 strong {
 
 section {
 	margin: 40px 0;
-}
-
-.promo {
-	padding: 20px;
-	border-radius: 6px;
-	text-align: left;
-	background: -moz-linear-gradient(45deg, rgba(255,70,100,1) 0%, rgba(255,182,0,1) 100%);
-	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,70,100,1)), color-stop(100%, rgba(255,182,0,1)));
-	background: -webkit-linear-gradient(45deg, rgba(255,70,100,1) 0%, rgba(255,182,0,1) 100%);
-	background: -o-linear-gradient(45deg, rgba(255,70,100,1) 0%, rgba(255,182,0,1) 100%);
-	background: -ms-linear-gradient(45deg, rgba(255,70,100,1) 0%, rgba(255,182,0,1) 100%);
-	background: linear-gradient(45deg, rgba(255,70,100,1) 0%, rgba(255,182,0,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4664', endColorstr='#ffb600', GradientType=1 );
-}
-
-.promo:hover {
-	text-decoration: none;
-}
-
-.promo img {
-	width: 30px;
-	position: relative;
-	top: 8px;
-	opacity: .85;
-}
-
-.promo:hover img {
-	opacity: 1;
-}
-
-.promo h2 {
-	color: #fff;
-	display: inline;
-	font-weight: 700;
-	font-size: 17px;
-	text-align: left;
-	margin-left: 5px;
 }
