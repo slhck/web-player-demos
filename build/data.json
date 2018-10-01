@@ -723,28 +723,6 @@
     "directory": "out-player-widget-article"
   },
   {
-    "title": "Out-Player Widget on a Single Page Video Site",
-    "description": "Build a single page video site using this JavaScript-based widget to embed multiple JW Platform-hosted video feeds.",
-    "license": "All",
-    "showCode": false,
-    "apiCalls": [
-      ".load()",
-      ".getViewable()",
-      ".on('playlistItem')",
-      ".play()"
-    ],
-    "author": {
-      "name": "JW Player",
-      "githubUsername": "jwplayer"
-    },
-    "category": {
-      "name": "Advanced",
-      "directory": "advanced",
-      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
-    },
-    "directory": "out-player-widget-video-site"
-  },
-  {
     "title": "Outstream Advertising",
     "description": "Trigger an in-read ad to autoplay once it comes into view and collapse the video player after ad completion.",
     "license": "Enterprise",
