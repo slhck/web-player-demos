@@ -151,3 +151,7 @@
         display: none; }
     #streamroot-demo-holder .container .content-holder .graphs {
       display: none; }
+
+#streamroot-demo-holder ul li {
+  list-style: none;
+}

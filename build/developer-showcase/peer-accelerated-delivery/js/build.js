@@ -1,14 +1,19 @@
-(function () {
+(function (jwplayer) {
 	'use strict';
 
-	jwplayer('streamroot-player')
+	var dnaConfig={},
+		player;
+	var playerConfig = {
+		"maxBufferLength": 30
+	}
+
+
+	jwplayer('demoplayer')
 		.setup({
 			playlist: [{
-				file: 'https://wowza-cloudfront.streamroot.io/liveorigin/stream4/playlist.m3u8'
+				file: 'https://demo-live.streamroot.io/index.m3u8'
 			}],
-			p2pConfig: {
-				streamrootKey: 'demoswebsiteandpartners',
-			},
+			dnaConfig: {},
 			hlsjsConfig: {
 				liveSyncDuration: 40,
 				liveMaxLatencyDuration: 80
@@ -16,17 +21,38 @@
 			logo: {
 				file: './assets/logo.png',
 				link: 'https://streamroot.io',
-				position: 'top-left'
+				position: 'top-left',
+				margin: 25
 			},
 			width: 600,
 			height: 400,
-			autostart: true
+			autostart: true,
+			mute: true
 		});
 
-	if (!Streamroot.p2pAvailable) {
-		document.querySelector('#streamroot-graphs-left').setAttribute('style', 'display:none');
-		document.querySelector('#streamroot-graphs-right').setAttribute('style', 'display:none');
+	function showSR() {
+		document.querySelector('#streamroot-demo-holder .content-holder .graphs').setAttribute('style', 'display:inline-block');
+	}
+
+	function hideSR() {
 		document.querySelector('#warning-not-compatible').setAttribute('style', 'display:block');
 	}
 
-})();
+	var checks = 0;
+	(function checkStreamroot() {
+		if (Streamroot.instances.length > 0) {
+			if (!Streamroot.instances[0].dnaDownloadEnabled || !Streamroot.instances[0].dnaUploadEnabled) {
+				hideSR();
+			} else {
+				showSR();
+			}
+		} else if (checks < 5) {
+			checks++;
+			setTimeout(checkStreamroot, 500);
+		} else {
+			console.log('ouch');
+			hideSR();
+		}
+	})()
+
+})(jwplayer);
