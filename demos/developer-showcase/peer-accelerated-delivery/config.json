@@ -1,6 +1,6 @@
 {
-  "title": "Peer-Accelerated Delivery",
-  "description": "A visualization of Streamroot's hybrid HTTP-P2P streaming integrated with JW Player in HTML5.",
+  "title": "Hybrid Peer-to-Peer Delivery",
+  "description": "A visualization of Streamroot’s hybrid webRTC-based P2P video CDN integrated with JW Player in HTML5.",
   "license": "All",
   "showCode": false,
   "apiCalls": ["registerProvider()"],
