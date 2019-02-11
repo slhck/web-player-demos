@@ -12,25 +12,23 @@ If you don't already have Node.js, please [download and install](//nodejs.org/en
 
 Then, from the project root directory, `jwdeveloper-demos/`:
 
-1. Install Node modules:
+Install node dependencies:
 
-		$ [sudo] npm install
+```
+yarn install
+```
 
-2. Install Bower components:
+Run Grunt to compile changes:
 
-		$ [sudo] bower install
-		
-3. Install the JW Design System:
-		
-		$ git submodule add git@github.com:jwplayer/jw-design-system.git
+```
+grunt
+```
 
-3. Run Grunt to compile changes:
+Run Grunt to compile changes and serve locally:
 
-		$ grunt
-
-4. Run Grunt to compile changes and serve locally:
-
-		$ grunt serve
+```
+grunt serve
+```
 
 ### Demo Structure
 
