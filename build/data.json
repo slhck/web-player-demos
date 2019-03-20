@@ -364,28 +364,6 @@
     "directory": "dai-integration"
   },
   {
-    "title": "Default vs. Custom Playlist Displays",
-    "description": "Display JW Player’s default in-player playlist overlay using the setup config or implement a custom out-player playlist shelf using the Javascript API.",
-    "license": "All",
-    "showCode": true,
-    "apiCalls": [
-      "on('playlistItem')",
-      "playlistItem()",
-      "getPlaylist()"
-    ],
-    "layout": "vertical",
-    "author": {
-      "name": "Joshua Hatcher",
-      "githubUsername": "joshuahatcher"
-    },
-    "category": {
-      "name": "Customization",
-      "directory": "customization",
-      "description": "Below you can find enterprise-oriented demos and code examples to inspire custom implementations that feature your content and brand.<br>Check back as more demos and examples are added to support new features."
-    },
-    "directory": "default-custom-playlist"
-  },
-  {
     "title": "Demo Starter Kit",
     "description": "Create your own demo! We've provided a basic demo setup to help you get started.",
     "license": "All",
