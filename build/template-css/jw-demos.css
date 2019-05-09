@@ -349,25 +349,25 @@ Markdown
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v16/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v16/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v16/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
 }
 *,
 *:before,
@@ -1785,74 +1785,26 @@ a.btn:hover {
 .demo-index-list li .header.android-sdk {
   color: #FF0046;
 }
-.demo-index-list li .header.android-sdk svg {
-  fill: #FF0046;
-}
-.demo-index-list li .header.android-sdk .icon:before {
-  background-image: url('/img/android-white.svg');
-}
 .demo-index-list li .header.ios-sdk {
   color: #FF0046;
-}
-.demo-index-list li .header.ios-sdk svg {
-  fill: #FF0046;
-}
-.demo-index-list li .header.ios-sdk .icon:before {
-  background-image: url('/img/apple-white.svg');
 }
 .demo-index-list li .header.basic {
   color: #FFB600;
 }
-.demo-index-list li .header.basic svg {
-  fill: #FFB600;
-}
-.demo-index-list li .header.basic .icon:before {
-  background-image: url('/img/embed.svg');
-}
 .demo-index-list li .header.developer-showcase {
   color: #7864FF;
-}
-.demo-index-list li .header.developer-showcase svg {
-  fill: #7864FF;
-}
-.demo-index-list li .header.developer-showcase .icon:before {
-  background-image: url('/img/wrench.svg');
 }
 .demo-index-list li .header.innovation {
   color: #FF4664;
 }
-.demo-index-list li .header.innovation svg {
-  fill: #FF4664;
-}
-.demo-index-list li .header.innovation .icon:before {
-  background-image: url('/img/cube.svg');
-}
 .demo-index-list li .header.toolbox {
   color: #2BBECF;
-}
-.demo-index-list li .header.toolbox svg {
-  fill: #2BBECF;
-}
-.demo-index-list li .header.toolbox .icon:before {
-  background-image: url('/img/wrench.svg');
 }
 .demo-index-list li .header.advanced {
   color: #FF9400;
 }
-.demo-index-list li .header.advanced svg {
-  fill: #FF9400;
-}
-.demo-index-list li .header.advanced .icon:before {
-  background-image: url('/img/advanced.svg');
-}
 .demo-index-list li .header.customization {
   color: #475470;
-}
-.demo-index-list li .header.customization svg {
-  fill: #475470;
-}
-.demo-index-list li .header.customization .icon:before {
-  background-image: url('/img/customize.svg');
 }
 .demo-index-list li .body {
   padding: 20px 20px 30px;
@@ -1977,7 +1929,6 @@ a.btn:hover {
   background-image: none;
   width: auto;
 }
-.demo-container div,
 .demo-container p {
   font-size: 15px;
 }
