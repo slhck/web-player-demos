@@ -20,7 +20,13 @@ let playlistUrls = [
 for (let i = 0; i < playlistUrls.length; i++) {
   fetch(`${playlistUrls[i]}`).
     then(resp => resp.json()).
-    then(data => createPlaylistList(data));
+    then(data => {
+      createPlaylistList(data)
+      if (i === 0) {
+        updatePlaylist(data)
+        addVideoToQueue(data.playlist[0])
+      }
+    })
 }
 
 // Puts a playlist's title and # of videos on the DOM
@@ -93,6 +99,7 @@ function addVideoToQueue(playlist) {
   if (playing.length === 0) {
     playing.push(playlist);
     createPlayer(playing);
+    console.log('in function')
   } else if (found === undefined) {
     queue.push(playlist);
     addVideoToDom(playlist);
@@ -107,7 +114,7 @@ function createPlayer(list){
     image: video.image,
     title: video.title,
     description: video.description,
-    autostart: true
+    autostart: false
   });
   mainPlayer.on('complete', handleNextVideo);
 }
