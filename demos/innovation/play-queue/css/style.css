@@ -111,7 +111,7 @@ p {
   }
 }
 .playing-and-queue {
-  background: linear-gradient(to right bottom, #21252e, #dadde2);
+  background: black;
   padding: 25px 30px 30px 30px;
   flex-grow: 1;
   overflow: scroll;
