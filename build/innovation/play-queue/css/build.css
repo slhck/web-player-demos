@@ -59,7 +59,6 @@ p {
 @media (max-width: 790px) {
   .chosen-playlist {
     min-height: 230px;
-    overflow-y: hidden;
   }
 }
 .chosen-playlist__video-cont {
