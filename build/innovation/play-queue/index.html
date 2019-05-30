@@ -1,0 +1,365 @@
+---
+layout: default
+title: Play Queue
+description: Build your own queue.
+published: true
+---
+
+<head>
+    <link rel="shortcut icon" href="//developer.jwplayer.com/img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="../../template-css/jw-demos.css">
+    <link rel="stylesheet" href="css/build.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../../js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+{% include components/site-secondary-header/site-secondary-header.html product="player" %}
+
+<div class="demos">
+
+  <div class="demos-single-header">
+    <div class="demos-single-header-container">
+      <h1>Play Queue</h1>
+      <p>
+        Build your own queue.
+      </p>
+    </div>
+  </div>
+
+  <div class="demo-single">
+
+    <div class="demo-nav">
+      <div class="demo-back">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="61.1px" height="100px" viewBox="31.7 11.5 61.1 100" style="enable-background:new 31.7 11.5 61.1 100;" xml:space="preserve">
+          <path d="M89.6,14.7c4.3,4.3,4.3,11.3,0,15.5L58.4,61.5l31.2,31.2c4.3,4.3,4.3,11.3,0,15.5c-4.3,4.3-11.3,4.3-15.7,0l-39-39
+          c-4.3-4.3-4.3-11.3,0-15.5l39.1-39C78.3,10.4,85.3,10.4,89.6,14.7z"/>
+        </svg>
+        <a href="../../">Back to Demos</a>
+      </div>
+      <div class="demo-meta">
+        <div class="demo-license">
+          License: <strong>All</strong>
+        </div>
+        <div class="demo-version">
+          Player Version: <strong id="demo-player-version"></strong>
+        </div>
+          <div class="demo-author">
+            Author: <strong>McKenzie Fiege</strong>
+              <span>| <a href="http://github.com/mckenziefiege">GitHub</a></span>
+          </div>
+      </div>
+      <div class="demo-source-code">
+        <a href="//github.com/jwplayer/jwdeveloper-demos/tree/master/demos/innovation/play-queue">Source Code</a>
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="97.5px" viewBox="0 0 100 97.5" enable-background="new 0 0 100 97.5" xml:space="preserve">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M50,0C22.4,0,0,22.4,0,50c0,22.1,14.3,40.8,34.2,47.4
+          	c2.5,0.5,3.4-1.1,3.4-2.4c0-1.2,0-4.3-0.1-8.5c-13.9,3-16.8-6.7-16.8-6.7c-2.3-5.8-5.6-7.3-5.6-7.3c-4.5-3.1,0.3-3,0.3-3
+          	c5,0.4,7.7,5.2,7.7,5.2c4.5,7.6,11.7,5.4,14.6,4.2c0.5-3.2,1.7-5.4,3.2-6.7c-11.1-1.3-22.8-5.6-22.8-24.7c0-5.5,1.9-9.9,5.1-13.4
+          	c-0.5-1.3-2.2-6.3,0.5-13.2c0,0,4.2-1.3,13.7,5.1c4-1.1,8.3-1.7,12.5-1.7c4.2,0,8.5,0.6,12.5,1.7c9.5-6.5,13.7-5.1,13.7-5.1
+          	c2.7,6.9,1,12,0.5,13.2c3.2,3.5,5.1,8,5.1,13.4c0,19.2-11.7,23.4-22.8,24.7c1.8,1.5,3.4,4.6,3.4,9.3c0,6.7-0.1,12.1-0.1,13.7
+          	c0,1.3,0.9,2.9,3.4,2.4C85.7,90.8,100,72.1,100,50C100,22.4,77.6,0,50,0z"/>
+        </svg>
+      </div>
+    </div>
+
+      <div class="demo-api-reference">
+        <div class="demo-api-reference-link">
+          <a href="/jw-player/docs/developer-guide/api/javascript_api_reference/">API Reference</a>
+        </div>
+        <div class="demo-api-calls-label">
+          This demo includes:
+        </div>
+        <ul class="demo-api-calls">
+            <li><code>setup()</code></li>
+            <li><code>on(&#39;complete&#39;)</code></li>
+        </ul>
+      </div>
+
+    <div class="demo-container">
+
+      <div class="demo-layout-vertical">
+        <div class="demo-layout-content">
+          <!--
+* Copyright 2016 Longtail Ad Solutions Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language
+* governing permissions and limitations under the License.
+-->
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<script src="https://content.jwplatform.com/libraries/qLeYbORD.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<div class="content">
+  <div class="playlists">
+    <h2 class="heading-secondary">Playlists</h2>
+    <div class="playlists__container"></div>
+  </div>
+  <div class="chosen-playlist">
+    <h2 class="heading-secondary chosen-playlist__title"></h2>
+    <div class="chosen-playlist__container"></div>
+  </div>
+  <div class="playing-and-queue">
+    <div class="playing">
+      <h2 class="heading-secondary now-playing">Now Playing</h2>
+      <div id="player"></div>
+    </div>
+    <div class="queue">
+      <h2 class="heading-secondary play-queue">Play Queue</h2>
+      <div class="queue__headings-cont">
+        <p class="queue__section-headings">preview</p>
+        <p class="queue__section-headings title">title</p>
+        <p class="queue__section-headings duration">duration</p>
+      </div>
+      <div class="queue__container">
+        <ul id="sortable1" class="connectedSortable"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+
+      <div class="demo-disclaimer">
+        Please Note: This player implementation is a Proof of Concept only provided to show the possibilities of the JW Player and Platform and should not be taken as an offer to create, edit or maintain custom integration or development.
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+<script type="text/javascript">'use strict';
+
+const queueContainer = document.querySelector('.queue__container');
+const container = document.querySelector('.chosen-playlist__container');
+const title = document.querySelector('.chosen-playlist__title');
+const sortable = document.querySelector('#sortable1')
+
+let chosenPlaylist = {};
+let queue = [];
+let playing = [];
+var selected;
+let mainPlayer;
+let playlistUrls = [
+  "https://cdn.jwplayer.com/v2/playlists/dcrdWciC",
+  "https://cdn.jwplayer.com/v2/playlists/0FDAGB12",
+  "https://cdn.jwplayer.com/v2/playlists/f49AJ8N4"
+];
+
+// iterate over urls to fetch from each url & pass each fetch response to createPlaylistList which puts them on the DOM
+for (let i = 0; i < playlistUrls.length; i++) {
+  fetch(`${playlistUrls[i]}`).
+    then(resp => resp.json()).
+    then(data => createPlaylistList(data));
+}
+
+// Puts a playlist's title and # of videos on the DOM
+function createPlaylistList(playlistData) {
+  const playlistContainer = document.querySelector('.playlists__container');
+  const container = document.createElement('div');
+  const h3 = document.createElement('h3');
+  const p = document.createElement('p');
+
+  container.classList.add('playlists__playlist');
+  h3.classList.add('heading-tertiary', 'clickable');
+  p.classList.add('playlists__text');
+
+  h3.innerText = `${playlistData.title}`;
+  p.innerText = `${playlistData.playlist.length} videos`;
+
+  playlistContainer.append(container);
+  container.append(h3, p);
+
+  h3.addEventListener('click', function() {
+    updatePlaylist(playlistData);
+  })
+}
+
+// Event listener for the h3 element of the playlist's title.
+// Loops through each playlist item and calls createPlaylistVideoItems function
+function updatePlaylist(playlist) {
+  if (chosenPlaylist !== playlist) {
+    chosenPlaylist = playlist;
+    container.innerHTML = "";
+    title.innerText = playlist.title;
+
+    for (let i = 0; i < playlist.playlist.length; i++) {
+      createPlaylistVideoItems(playlist.playlist[i], container);
+    }
+  }
+}
+
+// Updates DOM to show all video images & titles. Can click 'add to playlist'
+function createPlaylistVideoItems(playlist, container){
+  const div = document.createElement('div');
+  const image = document.createElement('img');
+  const button = document.createElement('button');
+  const h3 = document.createElement('h3');
+  const textContainer = document.createElement('div');
+
+  div.classList.add('chosen-playlist__video-cont');
+  image.classList.add('chosen-playlist__image');
+  button.classList.add('chosen-playlist__button');
+  h3.classList.add('heading-tertiary', 'playlist-title');
+  textContainer.classList.add('chosen-playlist__text-cont');
+
+  h3.textContent = playlist.title;
+  image.src = playlist.image;
+  button.textContent = "+ Add to Queue";
+
+  container.append(div);
+  div.append(image, textContainer);
+  textContainer.append(h3, button);
+
+  button.addEventListener('click', function() {
+    addVideoToQueue(playlist);
+  })
+}
+
+// Event listener for 'Add to queue' button. Pushes video object into the queue.
+// Creates new player for first video in the queue. Passes each video item to addVideoToDom function
+function addVideoToQueue(playlist) {
+  let found = queue.find(obj => obj === playlist);
+  if (playing.length === 0) {
+    playing.push(playlist);
+    createPlayer(playing);
+  } else if (found === undefined) {
+    queue.push(playlist);
+    addVideoToDom(playlist);
+  }
+}
+
+// Creates a new player setup with the first item in the queue. Adds event listener to player
+function createPlayer(list){
+  let video = list[0];
+  mainPlayer = jwplayer("player").setup({
+    file: video.sources[0].file,
+    image: video.image,
+    title: video.title,
+    description: video.description,
+    autostart: true
+  });
+  mainPlayer.on('complete', handleNextVideo);
+}
+
+// Player event when video is complete
+// Removes first queue__item child of queue__container from the DOM
+// Removes first element from queue array & passes new queue to createPlayer
+function handleNextVideo(){
+  playing.shift();
+  let removed = queue.shift()
+  playing.push(removed)
+  createPlayer(playing);
+  sortable.firstElementChild.remove();
+}
+
+// Adds new queue item to the DOM. Event Listener added to the 'x'
+function addVideoToDom(playlist) {
+  const div = document.createElement('div');
+  const div2 = document.createElement('div');
+  const div3 = document.createElement('div');
+  const div4 = document.createElement('div');
+  const li = document.createElement('li');
+  const image = document.createElement('img');
+  const h3 = document.createElement('h3');
+  const p = document.createElement('p');
+  const selector = document.createElement('div');
+  const cross = document.createElement('div');
+
+  li.id = playlist.title;
+
+  div.classList.add('queue__item');
+  div2.classList.add('queue__text-cont');
+  div3.classList.add('title-container')
+  div4.classList.add('secondary-container')
+  image.classList.add('queue__image');
+  h3.classList.add('heading-tertiary', 'no-margin');
+  p.classList.add('queue__text');
+  selector.classList.add('queue__selector');
+  cross.classList.add('queue__cross');
+
+  let minutes = Math.floor(playlist.duration / 60);
+  let seconds = playlist.duration - minutes * 60
+  minutes.toString().length === 1 ? minutes = `0${minutes}` : minutes = minutes
+  seconds.toString().length === 1 ? seconds = `${seconds}0` : seconds = seconds
+  let time = `${minutes}:${seconds}`
+
+  image.src = playlist.image;
+  h3.innerText = playlist.title;
+  p.innerText = time;
+
+  sortable.append(li);
+  li.append(div);
+  div.append(image, div2)
+  div2.append(div3, div4);
+  div3.append(h3)
+  div4.append(p, selector, cross)
+
+  selector.innerHTML += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="ds-icon-dashboard-drag"><path d="M20.5 22h-17a1.5 1.5 0 0 1 0-3h17a1.5 1.5 0 0 1 0 3zM18.5 13.61h-13a1.5 1.5 0 0 1 0-3h13a1.5 1.5 0 0 1 0 3zM20.5 5h-17a1.5 1.5 0 0 1 0-3h17a1.5 1.5 0 0 1 0 3z"/></svg>'
+  cross.innerHTML += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="ds-icon-dashboard-cross"><path d="M14.83 12l6.58-6.59a2 2 0 0 0-2.82-2.82L12 9.17 5.41 2.59a2 2 0 0 0-2.82 2.82L9.17 12l-6.58 6.59a2 2 0 1 0 2.82 2.82L12 14.83l6.59 6.58a2 2 0 0 0 2.82-2.82z"/></svg>'
+  cross.addEventListener('click', function(e) {
+    removeItemFromQueue(e, playlist);
+  })
+}
+// Event Listener for 'x' to remove the video item from the queue
+// Removes video queue element from the DOM
+function removeItemFromQueue(e, playlist) {
+  queue = queue.filter(obj => obj !== playlist);
+  e.target.closest('li').remove()
+}
+
+// Function to handle drag and drop events. When an item is dropped, rearranges the order of the queue.
+$( "#sortable1" ).sortable({
+  connectWith: ".connectedSortable",
+  handle: ".queue__selector",
+  stop: function(event, ui) {
+    $('.connectedSortable').each(function() {
+      let array = $(this).sortable("toArray");
+      let h3 = event.toElement.closest('li').id;
+      let i = queue.findIndex(obj => obj.title === h3);
+      let obj = queue.find(obj => obj.title === h3);
+      let x = [...queue];
+      x.splice(i,1);
+      let foundIndex = array.findIndex(obj => obj === h3);
+      x.splice(foundIndex, 0, obj);
+      queue = x;
+    });
+  }
+});
+</script>
+<script type="text/javascript">
+  function setVersion() {
+    if (typeof jwplayer === 'undefined') {
+      setTimeout(setVersion, 100);
+      return;
+    }
+
+    if (jwplayer && jwplayer().id) {
+      jwplayer().on('ready', function() {
+        document.getElementById('demo-player-version').innerHTML = jwplayer.version.split('+')[0];
+      });
+    }
+  }
+
+  setVersion();
+</script>
+  </body>
+</html>

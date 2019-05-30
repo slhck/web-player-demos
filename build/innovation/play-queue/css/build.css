@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
+
+.hover {
+  cursor: pointer;
+}
+.hover:hover {
+  color: #d8dde6;
+}
+.hover:active {
+  color: #a0acc2;
+}
+p {
+  color: #a0acc2 !important;
+  font-size: 12px !important;
+}
+.content {
+  display: flex;
+  height: 100vh;
+  text-align: left;
+}
+@media (max-width: 790px) {
+  .content {
+    flex-direction: column;
+  }
+}
+.playlists {
+  background-color: #2f3542;
+  padding: 25px 30px 30px 30px;
+}
+@media (max-width: 900px) {
+  .playlists {
+    padding: 20px;
+  }
+}
+@media (max-width: 790px) {
+  .playlists {
+    height: 200px;
+    overflow: scroll;
+  }
+}
+.playlists__playlist {
+  margin: 25px 0;
+}
+.playlists__text {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #a0acc2;
+}
+.chosen-playlist {
+  padding: 25px 30px 30px 30px;
+  background-color: #262a35;
+  overflow: scroll;
+}
+@media (max-width: 900px) {
+  .chosen-playlist {
+    padding: 20px;
+  }
+}
+@media (max-width: 790px) {
+  .chosen-playlist {
+    min-height: 230px;
+    overflow-y: hidden;
+  }
+}
+.chosen-playlist__video-cont {
+  display: flex;
+  margin: 25px 0;
+  max-width: 350px;
+}
+@media (max-width: 1011px) {
+  .chosen-playlist__video-cont {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 790px) {
+  .chosen-playlist__container {
+    display: flex;
+  }
+}
+.chosen-playlist__image {
+  max-height: 80px;
+  max-width: 140px;
+}
+.chosen-playlist__button {
+  font-family: 'Lato', sans-serif;
+  background-color: transparent;
+  color: #f3f5f8;
+  font-weight: bold;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+}
+.chosen-playlist__button:hover {
+  color: #d8dde6;
+}
+.chosen-playlist__button:active {
+  color: #a0acc2;
+}
+.chosen-playlist__text-cont {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@media (max-width: 1011px) {
+  .chosen-playlist__text-cont {
+    margin: 10px 0 0 0;
+  }
+}
+.playing-and-queue {
+  background: linear-gradient(to right bottom, #21252e, #dadde2);
+  padding: 25px 30px 30px 30px;
+  flex-grow: 1;
+  overflow: scroll;
+  min-width: 450px;
+}
+@media (max-width: 900px) {
+  .playing-and-queue {
+    padding: 20px;
+  }
+}
+@media (max-width: 820px) {
+  .playing-and-queue {
+    min-width: 400px;
+  }
+}
+@media (max-width: 790px) {
+  .playing-and-queue {
+    min-width: 350px;
+  }
+}
+@media (max-width: 390px) {
+  .playing-and-queue {
+    min-width: 300px;
+  }
+}
+.jwplayer {
+  margin: 20px 0;
+  height: 320;
+  width: 570;
+}
+.now-playing {
+  margin-bottom: 20px;
+}
+.queue__section-headings {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.queue__headings-cont {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .queue__headings-cont {
+    display: none;
+  }
+}
+.queue__item {
+  display: flex;
+}
+.queue__image {
+  height: 50px;
+  width: 80px;
+  margin: 2px;
+}
+@media (max-width: 820px) {
+  .queue__image {
+    display: none;
+  }
+}
+.queue__text {
+  color: #a0acc2;
+  margin: 0;
+  font-weight: 100;
+  font-size: 15px;
+}
+.queue__cross {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  fill: #8a99b4;
+  margin-left: 20px;
+}
+.queue__selector {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  fill: #f3f5f8;
+  margin-left: 20px;
+}
+.queue__selector:hover {
+  fill: #d8dde6;
+}
+.queue__selector:active {
+  fill: #a0acc2;
+}
+.queue__text-cont {
+  width: 100%;
+  margin: 2px;
+  display: flex;
+  background-color: #323b4e;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 820px) {
+  .queue__text-cont {
+    padding: 10px;
+  }
+}
+.secondary-container {
+  display: flex;
+  margin-right: 10px;
+}
+.title {
+  margin: 0 !important;
+  padding-left: 18px;
+}
+.duration {
+  margin: 0 !important;
+  padding-left: 170px;
+}
+.playlist-title {
+  margin-bottom: 10px;
+}
+.play-queue {
+  margin-bottom: 20px;
+}
+.no-margin {
+  margin: 0;
+  width: 150px;
+  margin-left: 10px;
+}
+.clickable {
+  cursor: pointer;
+}
+.clickable:hover {
+  color: #d8dde6;
+}
+.clickable:active {
+  color: #a0acc2;
+}
+.heading-secondary {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #f3f5f8;
+}
+.heading-tertiary {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #f3f5f8;
+}
+#sortable1 {
+  padding: 0;
+  list-style-type: none;
+}
