@@ -11,8 +11,8 @@ let playing = [];
 var selected;
 let mainPlayer;
 let playlistUrls = [
-  "https://cdn.jwplayer.com/v2/playlists/dcrdWciC",
   "https://cdn.jwplayer.com/v2/playlists/0FDAGB12",
+  "https://cdn.jwplayer.com/v2/playlists/dcrdWciC",
   "https://cdn.jwplayer.com/v2/playlists/f49AJ8N4"
 ];
 
