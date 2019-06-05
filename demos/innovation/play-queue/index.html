@@ -29,16 +29,25 @@
   </div>
   <div class="playing-and-queue">
     <div class="playing">
-      <h2 class="heading-secondary now-playing">Now Playing</h2>
+      <h2 class="heading-secondary">Now playing</h2>
       <div id="player"></div>
     </div>
     <div class="queue">
-      <h2 class="heading-secondary play-queue">Play Queue</h2>
-      <div class="queue__headings-cont">
-        <p class="queue__section-headings">preview</p>
-        <p class="queue__section-headings title">title</p>
-        <p class="queue__section-headings duration">duration</p>
+      <h2 class="heading-secondary">Play Queue</h2>
+      <p class="queue__title">Now Playing</p>
+      <div class="now-playing">
+        <div class="now-playing__item">
+          <div class="now-playing__item--1">
+            <svg class="now-playing__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="ds-icon-dashboard-device-desktop"><path d="M19 5v10H5V5h14m1-3H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM15.33 22H8.67a1.5 1.5 0 0 1 0-3h6.66a1.5 1.5 0 0 1 0 3z"/></svg>
+            <img class="now-playing__image" src="">
+            <p class="now-playing__text"></p>
+          </div>
+          <div class="now-playing__item--2">
+            <p class="now-playing__text"></p>
+          </div>
+        </div>
       </div>
+      <p class="queue__title">Drag to Reorder List</p>
       <div class="queue__container">
         <ul id="sortable1" class="connectedSortable"></ul>
       </div>
