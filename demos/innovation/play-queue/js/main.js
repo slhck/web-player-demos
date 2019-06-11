@@ -39,7 +39,7 @@ function createPlaylistList(playlistData) {
   const playlistContainer = document.querySelector('.playlists__container');
   const container = document.createElement('div');
   const h3 = document.createElement('h3');
-  const p = document.createElement('p');
+  const p = document.createElement('span');
 
   container.classList.add('playlists__playlist');
   h3.classList.add('heading-tertiary', 'clickable');
@@ -236,7 +236,7 @@ function handleFullScreen({ fullscreen: isFullscreen }) {
       div1.classList.add('queue__item--1');
       div2.classList.add('queue__item--2')
       image.classList.add('queue__image');
-      h3.classList.add('heading-tertiary', 'no-margin');
+      h3.classList.add('queue__item--heading', 'no-margin');
       p.classList.add('queue__text');
       cross.classList.add('queue__cross');
       overlay.classList.add('middle');
@@ -374,7 +374,7 @@ function addVideoToDom(playlist) {
   const li = document.createElement('li');
   const image = document.createElement('img');
   const h3 = document.createElement('h3');
-  const p = document.createElement('p');
+  const p = document.createElement('span');
   const selector = document.createElement('div');
   const cross = document.createElement('div');
   const overlay = document.createElement('div');
@@ -386,7 +386,7 @@ function addVideoToDom(playlist) {
   div1.classList.add('queue__item--1');
   div2.classList.add('queue__item--2')
   image.classList.add('queue__image');
-  h3.classList.add('heading-tertiary', 'no-margin');
+  h3.classList.add('queue__item--heading', 'no-margin');
   p.classList.add('queue__text');
   selector.classList.add('queue__selector');
   cross.classList.add('queue__cross');
