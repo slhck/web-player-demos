@@ -131,6 +131,11 @@ p {
   -webkit-filter: opacity(30%);
   filter: opacity(30%);
 }
+
+.playlist-title {
+  margin-bottom: 10px;
+}
+
 .playing-and-queue {
   background: black;
   padding: 25px 30px 30px 30px;
@@ -172,6 +177,7 @@ p {
 .queue__title {
   font-size: 12px;
   color: #8a99b4;
+  margin: 10px 0;
 }
 .queue__item {
   background-color: #323b4e;
@@ -250,9 +256,10 @@ p {
 }
 .now-playing__text {
   margin: 0;
-  font-weight: 100;
   font-size: 15px;
   margin: 0 20px;
+  color: #f3f5f8 !important;
+  font-weight: 400 !important;
 }
 .now-playing__icon {
   margin: 0 20px;
@@ -279,6 +286,7 @@ p {
   margin: 0;
   width: 150px;
   margin-left: 10px;
+  font-size: 12px !important;
 }
 .clickable {
   cursor: pointer;
@@ -294,10 +302,11 @@ p {
   font-weight: 100;
   font-size: 20px;
   color: #f3f5f8;
+  font-weight: 400;
 }
 .heading-tertiary {
   font-family: 'Lato', sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 15px;
   color: #f3f5f8;
 }
@@ -438,4 +447,12 @@ a:hover {
   .chosen-playlist__container {
     display: flex;
   }
+}
+
+.clickable {
+  margin-bottom: 5px;
+}
+
+.now-playing__heading {
+  margin-bottom: 10px;
 }
