@@ -6,6 +6,8 @@ const title = document.querySelector('.chosen-playlist__title');
 const sortable = document.querySelector('#sortable1')
 const videoCont = document.querySelector('.chosen-playlist__container')
 const nowPlayingButton = '<svg class="chosen-playlist__add" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="ds-icon-dashboard-play"><path d="M20.11 10.34l-12-8A2 2 0 0 0 5 4v16a2 2 0 0 0 3.11 1.66l12-8a2 2 0 0 0 0-3.32z"/></svg> Now Playing'
+let playlistMenuShown = false;
+let chosenPlaylistMenuShown = false;
 
 let chosenPlaylist = {};
 let queue = [];
@@ -34,12 +36,78 @@ for (let i = 0; i < playlistUrls.length; i++) {
     })
 }
 
+
+// Adding event listeners to menus to rotate on click
+const playlistMenu = document.querySelector('.menu-playlist')
+const chosenPlaylistMenu = document.querySelector('.menu-chosen-playlist')
+const playlist = document.querySelector('.playlists__container')
+const chosenPlaylistCont = document.querySelector('.chosen-playlist__container')
+const chosenTitle = document.querySelector('.chosen-playlist__title')
+const playlistTitle = document.querySelector('.playlists-title')
+
+
+playlistMenu.addEventListener('click', function() {
+  rotateMenu(playlistMenu)
+})
+
+chosenPlaylistMenu.addEventListener('click', function() {
+  rotateMenu(chosenPlaylistMenu)
+})
+
+function rotateMenu(element) {
+  const playCont = document.querySelector('.playlists')
+  const chosenplayCont = document.querySelector('.chosen-playlist')
+  let button = element.querySelector('svg')
+  const text = element.querySelector('.menu-text')
+  if (button.classList.contains('normal')) {
+    button.classList.add('rotate')
+    button.classList.remove('normal')
+    text.style.display = 'none'
+    if (element === playlistMenu) {
+      playlistMenuShown = true;
+      playCont.classList.add('remove-padding')
+      element.classList.remove('playlist-no-show')
+      element.classList.add('playlist-show')
+      playlist.classList.add('hidden')
+      playlistTitle.classList.add('rotate-title')
+    }
+    if (element === chosenPlaylistMenu) {
+      chosenPlaylistMenuShown = true;
+      chosenplayCont.classList.add('remove-padding')
+      element.classList.remove('chosen-no-show')
+      element.classList.add('chosen-show')
+      chosenPlaylistCont.classList.add('hidden')
+      chosenTitle.classList.add('rotate-title')
+    }
+  } else if (button.classList.contains('rotate')) {
+    button.classList.remove('rotate')
+    button.classList.add('normal')
+    text.style.display = 'block'
+    if (element === playlistMenu) {
+      playlistMenuShown = false;
+      playCont.classList.remove('remove-padding')
+      element.classList.add('playlist-no-show')
+      element.classList.remove('playlist-show')
+      playlist.classList.remove('hidden')
+      playlistTitle.classList.remove('rotate-title')
+    }
+    if (element === chosenPlaylistMenu) {
+      chosenPlaylistMenuShown = false;
+      chosenplayCont.classList.remove('remove-padding')
+      element.classList.add('chosen-no-show')
+      element.classList.remove('chosen-show')
+      chosenPlaylistCont.classList.remove('hidden')
+      chosenTitle.classList.remove('rotate-title')
+    }
+  }
+}
+
 // Puts a playlist's title and # of videos on the DOM
 function createPlaylistList(playlistData) {
   const playlistContainer = document.querySelector('.playlists__container');
   const container = document.createElement('div');
   const h3 = document.createElement('h3');
-  const p = document.createElement('span');
+  const p = document.createElement('p');
 
   container.classList.add('playlists__playlist');
   h3.classList.add('heading-tertiary', 'clickable');
@@ -236,7 +304,7 @@ function handleFullScreen({ fullscreen: isFullscreen }) {
       div1.classList.add('queue__item--1');
       div2.classList.add('queue__item--2')
       image.classList.add('queue__image');
-      h3.classList.add('queue__item--heading', 'no-margin');
+      h3.classList.add('heading-tertiary', 'no-margin');
       p.classList.add('queue__text');
       cross.classList.add('queue__cross');
       overlay.classList.add('middle');
@@ -330,8 +398,8 @@ function loadPlayer (list) {
     image: video.image,
     title: video.title,
     description: video.description,
-    autostart: false
   });
+  jwplayer().play()
 }
 
 
@@ -374,7 +442,7 @@ function addVideoToDom(playlist) {
   const li = document.createElement('li');
   const image = document.createElement('img');
   const h3 = document.createElement('h3');
-  const p = document.createElement('span');
+  const p = document.createElement('p');
   const selector = document.createElement('div');
   const cross = document.createElement('div');
   const overlay = document.createElement('div');
@@ -386,7 +454,7 @@ function addVideoToDom(playlist) {
   div1.classList.add('queue__item--1');
   div2.classList.add('queue__item--2')
   image.classList.add('queue__image');
-  h3.classList.add('queue__item--heading', 'no-margin');
+  h3.classList.add('heading-tertiary', 'no-margin');
   p.classList.add('queue__text');
   selector.classList.add('queue__selector');
   cross.classList.add('queue__cross');
