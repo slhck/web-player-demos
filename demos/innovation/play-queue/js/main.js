@@ -6,8 +6,6 @@ const title = document.querySelector('.chosen-playlist__title');
 const sortable = document.querySelector('#sortable1')
 const videoCont = document.querySelector('.chosen-playlist__container')
 const nowPlayingButton = '<svg class="chosen-playlist__add" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="ds-icon-dashboard-play"><path d="M20.11 10.34l-12-8A2 2 0 0 0 5 4v16a2 2 0 0 0 3.11 1.66l12-8a2 2 0 0 0 0-3.32z"/></svg> Now Playing'
-let playlistMenuShown = false;
-let chosenPlaylistMenuShown = false;
 
 let chosenPlaylist = {};
 let queue = [];
@@ -64,7 +62,6 @@ function rotateMenu(element) {
     button.classList.remove('normal')
     text.style.display = 'none'
     if (element === playlistMenu) {
-      playlistMenuShown = true;
       playCont.classList.add('remove-padding')
       element.classList.remove('playlist-no-show')
       element.classList.add('playlist-show')
@@ -72,7 +69,6 @@ function rotateMenu(element) {
       playlistTitle.classList.add('rotate-title')
     }
     if (element === chosenPlaylistMenu) {
-      chosenPlaylistMenuShown = true;
       chosenplayCont.classList.add('remove-padding')
       element.classList.remove('chosen-no-show')
       element.classList.add('chosen-show')
@@ -84,7 +80,6 @@ function rotateMenu(element) {
     button.classList.add('normal')
     text.style.display = 'block'
     if (element === playlistMenu) {
-      playlistMenuShown = false;
       playCont.classList.remove('remove-padding')
       element.classList.add('playlist-no-show')
       element.classList.remove('playlist-show')
@@ -92,7 +87,6 @@ function rotateMenu(element) {
       playlistTitle.classList.remove('rotate-title')
     }
     if (element === chosenPlaylistMenu) {
-      chosenPlaylistMenuShown = false;
       chosenplayCont.classList.remove('remove-padding')
       element.classList.add('chosen-no-show')
       element.classList.remove('chosen-show')
