@@ -93,12 +93,8 @@ published: true
 
 <p>Donec eget urna sit amet tellus varius efficitur ac sodales lorem. Nullam id elit eros. Etiam finibus nunc vel ante condimentum, eu ullamcorper lorem commodo. Maecenas pretium, nulla id iaculis convallis, lectus dui feugiat arcu, sit amet placerat augue turpis quis ante. Sed sit amet ornare dui. Ut maximus suscipit dictum. Fusce vitae justo tortor. Cras ac vestibulum augue, sed tristique felis. Nam tincidunt sapien velit, dignissim tempus justo laoreet in.</p>
 
-<div class="jw-ad">
-  <div class="jw-ad-label">Advertisement</div>
-	<div class="jw-ad-media-container">
-  	<div id="player"></div>
-  </div>
-</div>
+<div id="player"></div>
+
 
 <p>Vivamus eleifend congue lectus, quis ullamcorper tortor accumsan non. Duis vitae mattis tortor. Nulla vitae odio enim. Praesent eu orci at elit venenatis luctus. Praesent at luctus mauris. Maecenas accumsan posuere varius. Suspendisse id vehicula mauris. Vestibulum id neque vitae dui lobortis eleifend non sed erat. Nunc posuere augue nec turpis ornare facilisis. Vivamus lectus justo, commodo sed molestie consequat, dictum sed est. Maecenas semper velit placerat ex finibus rhoncus. Duis nisi justo, pharetra ac ipsum ac, gravida venenatis risus. Praesent eu est ultrices, lobortis felis quis, volutpat augue. Mauris non varius lacus. Etiam pulvinar ornare lectus et tristique.</p>
 
@@ -108,120 +104,21 @@ published: true
 
         </div>
           <div class="demo-layout-code">
-            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;&#x2F;&#x2F; math functions related to scroll and offset positions relative to player
-var getScrollTop = function() {
-	var documentEl = document.documentElement;
-	return (window.pageYOffset || documentEl.scrollTop) - (documentEl.clientTop || 0);
-};
-var getElementOffsetTop = function(el) {
-	var bodyRect = document.body.getBoundingClientRect(),
-		elRect = el.getBoundingClientRect();
-	return elRect.top - bodyRect.top;
-};
-var	getAdInView = function() {
-	var scrollBoundary = playerOffsetTop + (playerHeight &#x2F; 2),
-		scrollTop = getScrollTop();
-	return (window.innerHeight + scrollTop) &gt; scrollBoundary &amp;&amp; scrollTop &lt; scrollBoundary;
-};
-
-&#x2F;&#x2F; cross-browser event binding method
-var setEventListener = function(el, ev, fn) {
-	var eventMethod = window.addEventListener ? &#39;addEventListener&#39; : &#39;attachEvent&#39;,
-		eventName = window.addEventListener ? ev : &#39;on&#39; + ev;
-	el[eventMethod](eventName, fn, false);
-};
-
-&#x2F;&#x2F; get element margin top and bottom totat height
-var getMarginHeight = function(el) {
-	if (document.all) {
-		return parseInt(el.currentStyle.marginTop, 10) + parseInt(el.currentStyle.marginBottom, 10);
-	} else {
-		return parseInt(document.defaultView.getComputedStyle(el, &#39;&#39;).getPropertyValue(&#39;margin-top&#39;)) + parseInt(document.defaultView.getComputedStyle(el, &#39;&#39;).getPropertyValue(&#39;margin-bottom&#39;));
-	}
-};
-
-&#x2F;&#x2F; check if ad is in view, ad visible class when necessary (but only the first time it&#39;s in view)
-var setAdDisplayState = function() {
-	if (getAdInView()) {
-		if (!new RegExp(&#39;(^| )jw-ad-visible( |$)&#39;, &#39;gi&#39;).test(adEl.className)) {
-			adEl.className += (adEl.className ? &#39; &#39; : &#39;&#39;) + &#39;jw-ad-visible&#39;;
-			adEl.style.maxHeight = adLabelEl.offsetHeight + getMarginHeight(adLabelEl) + adMediaContainerEl.offsetHeight + getMarginHeight(adMediaContainerEl) + &#39;px&#39;;
-		}
-		if (playerInstance.getState() === &#39;idle&#39; || playerInstance.getState() === &#39;paused&#39;) {
-			setTimeout(function() {
-				playerInstance.play();
-			}, 0);
-		}
-	} else {
-		if (playerInstance.getState() === &#39;playing&#39;) {
-			setTimeout(function() {
-				playerInstance.pause();
-			}, 0);
-		}
-	}
-};
-
-&#x2F;&#x2F; player elements and utility vars
-var playerInstance = jwplayer(&#39;player&#39;),
-	adEl = document.querySelector(&#39;.jw-ad&#39;),
-	adLabelEl = document.querySelector(&#39;.jw-ad-label&#39;),
-  adMediaContainerEl = document.querySelector(&#39;.jw-ad-media-container&#39;),
-  playerHeight,
-  playerOffsetTop = getElementOffsetTop(adEl),
-	isScrollTimeout = false; &#x2F;&#x2F; namespace for whether or not we are waiting for setTimeout() to finish
-
-&#x2F;&#x2F; player setup
-playerInstance.setup({
-  file: &#39;http:&#x2F;&#x2F;content.jwplatform.com&#x2F;videos&#x2F;mX3zaT5H-Zq6530MP.mp4&#39;,
-  advertising: {
-    client: &#39;vast&#39;,
-    tag: &#39;https:&#x2F;&#x2F;playertest.longtailvideo.com&#x2F;vast-30s-ad.xml&#39;
-  }
-});
-
-playerInstance.on(&#39;ready&#39;, function() {
-
-	&#x2F;&#x2F; get player container height
-	playerHeight = adMediaContainerEl.offsetHeight;
-
-	&#x2F;&#x2F; mute by default
-	playerInstance.setMute(true);
-
-	&#x2F;&#x2F; unmute&#x2F;mute player on adMediaContainerEl mouse enter&#x2F;leave
-	setEventListener(adMediaContainerEl, &#39;mouseenter&#39;, function() {
-		playerInstance.setMute(false);
-	});
-
-	setEventListener(adMediaContainerEl, &#39;mouseleave&#39;, function() {
-		playerInstance.setMute(true);
-	});
-
-	&#x2F;&#x2F; handle ad display state on page load
-	setTimeout(setAdDisplayState(), 1000);
-
-  &#x2F;&#x2F; attach scroll event listener to window
-  setEventListener(window, &#39;scroll&#39;, function() {
-		&#x2F;&#x2F; skip if we&#39;re waiting on a scroll update timeout to finish
-		if (isScrollTimeout) return;
-		&#x2F;&#x2F; flag that a new timeout will begin
-		isScrollTimeout = true;
-		&#x2F;&#x2F; otherwise, execute scroll event handler
-		setAdDisplayState();
-		&#x2F;&#x2F; set new timeout
-		setTimeout(function() {
-			&#x2F;&#x2F; reset timeout flag to false (no longer waiting)
-			isScrollTimeout = false;
-		}, 100);
-  });
-});
-
-&#x2F;&#x2F; handle when ad is complete or encounters error
-playerInstance.on(&#39;complete adComplete adError&#39;, function() {
-	adEl.style.maxHeight = &#39;0px&#39;;
-  setTimeout(function() {
-    playerInstance.remove();
-    adMediaContainerEl.parentNode.removeChild(adMediaContainerEl);
-  }, 500 &#x2F;* should be the same duration as css transition *&#x2F;);
+            <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;jwplayer(&#39;player&#39;).setup({
+    width:&quot;100%&quot;,
+    advertising: {
+        outstream: true,
+        endstate :&quot;close&quot;,
+        adscheduleid: &quot;sample01&quot;,
+        autoplayadsmuted: true,
+        client: &quot;googima&quot;,
+        schedule: {
+            &quot;adbreak-preroll&quot;: {
+                offset: &quot;pre&quot;,
+                tag: &quot;https:&#x2F;&#x2F;pubads.g.doubleclick.net&#x2F;gampad&#x2F;ads?sz=640x480&amp;iu=&#x2F;124319096&#x2F;external&#x2F;single_ad_samples&amp;ciu_szs=300x250&amp;impl=s&amp;gdfp_req=1&amp;env=vp&amp;output=vast&amp;unviewed_position_start=1&amp;cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&amp;correlator=&quot;
+            }
+        }
+    }
 });
 &lt;/script&gt;</code></pre>
           </div>
@@ -241,120 +138,21 @@ playerInstance.on(&#39;complete adComplete adError&#39;, function() {
         </div>
       </div>
     </div>
-<script type="text/javascript">// math functions related to scroll and offset positions relative to player
-var getScrollTop = function() {
-	var documentEl = document.documentElement;
-	return (window.pageYOffset || documentEl.scrollTop) - (documentEl.clientTop || 0);
-};
-var getElementOffsetTop = function(el) {
-	var bodyRect = document.body.getBoundingClientRect(),
-		elRect = el.getBoundingClientRect();
-	return elRect.top - bodyRect.top;
-};
-var	getAdInView = function() {
-	var scrollBoundary = playerOffsetTop + (playerHeight / 2),
-		scrollTop = getScrollTop();
-	return (window.innerHeight + scrollTop) > scrollBoundary && scrollTop < scrollBoundary;
-};
-
-// cross-browser event binding method
-var setEventListener = function(el, ev, fn) {
-	var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent',
-		eventName = window.addEventListener ? ev : 'on' + ev;
-	el[eventMethod](eventName, fn, false);
-};
-
-// get element margin top and bottom totat height
-var getMarginHeight = function(el) {
-	if (document.all) {
-		return parseInt(el.currentStyle.marginTop, 10) + parseInt(el.currentStyle.marginBottom, 10);
-	} else {
-		return parseInt(document.defaultView.getComputedStyle(el, '').getPropertyValue('margin-top')) + parseInt(document.defaultView.getComputedStyle(el, '').getPropertyValue('margin-bottom'));
-	}
-};
-
-// check if ad is in view, ad visible class when necessary (but only the first time it's in view)
-var setAdDisplayState = function() {
-	if (getAdInView()) {
-		if (!new RegExp('(^| )jw-ad-visible( |$)', 'gi').test(adEl.className)) {
-			adEl.className += (adEl.className ? ' ' : '') + 'jw-ad-visible';
-			adEl.style.maxHeight = adLabelEl.offsetHeight + getMarginHeight(adLabelEl) + adMediaContainerEl.offsetHeight + getMarginHeight(adMediaContainerEl) + 'px';
-		}
-		if (playerInstance.getState() === 'idle' || playerInstance.getState() === 'paused') {
-			setTimeout(function() {
-				playerInstance.play();
-			}, 0);
-		}
-	} else {
-		if (playerInstance.getState() === 'playing') {
-			setTimeout(function() {
-				playerInstance.pause();
-			}, 0);
-		}
-	}
-};
-
-// player elements and utility vars
-var playerInstance = jwplayer('player'),
-	adEl = document.querySelector('.jw-ad'),
-	adLabelEl = document.querySelector('.jw-ad-label'),
-  adMediaContainerEl = document.querySelector('.jw-ad-media-container'),
-  playerHeight,
-  playerOffsetTop = getElementOffsetTop(adEl),
-	isScrollTimeout = false; // namespace for whether or not we are waiting for setTimeout() to finish
-
-// player setup
-playerInstance.setup({
-  file: 'http://content.jwplatform.com/videos/mX3zaT5H-Zq6530MP.mp4',
-  advertising: {
-    client: 'vast',
-    tag: 'https://playertest.longtailvideo.com/vast-30s-ad.xml'
-  }
-});
-
-playerInstance.on('ready', function() {
-
-	// get player container height
-	playerHeight = adMediaContainerEl.offsetHeight;
-
-	// mute by default
-	playerInstance.setMute(true);
-
-	// unmute/mute player on adMediaContainerEl mouse enter/leave
-	setEventListener(adMediaContainerEl, 'mouseenter', function() {
-		playerInstance.setMute(false);
-	});
-
-	setEventListener(adMediaContainerEl, 'mouseleave', function() {
-		playerInstance.setMute(true);
-	});
-
-	// handle ad display state on page load
-	setTimeout(setAdDisplayState(), 1000);
-
-  // attach scroll event listener to window
-  setEventListener(window, 'scroll', function() {
-		// skip if we're waiting on a scroll update timeout to finish
-		if (isScrollTimeout) return;
-		// flag that a new timeout will begin
-		isScrollTimeout = true;
-		// otherwise, execute scroll event handler
-		setAdDisplayState();
-		// set new timeout
-		setTimeout(function() {
-			// reset timeout flag to false (no longer waiting)
-			isScrollTimeout = false;
-		}, 100);
-  });
-});
-
-// handle when ad is complete or encounters error
-playerInstance.on('complete adComplete adError', function() {
-	adEl.style.maxHeight = '0px';
-  setTimeout(function() {
-    playerInstance.remove();
-    adMediaContainerEl.parentNode.removeChild(adMediaContainerEl);
-  }, 500 /* should be the same duration as css transition */);
+<script type="text/javascript">jwplayer('player').setup({
+    width:"100%",
+    advertising: {
+        outstream: true,
+        endstate :"close",
+        adscheduleid: "sample01",
+        autoplayadsmuted: true,
+        client: "googima",
+        schedule: {
+            "adbreak-preroll": {
+                offset: "pre",
+                tag: "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator="
+            }
+        }
+    }
 });
 </script>
 <script type="text/javascript">
