@@ -83,10 +83,10 @@ function setupPlayer() {
  */
 $.ajax({
   /**
-   * Fun fact: You can use a single video's media ID with the Feeds API and it
+   * Fun fact: You can use a single video's media ID with the Feeds API v1 and it
    * will return a playlist with one video. Pretty nifty!
    */
-  url: '//content.jwplatform.com/feeds/CSh1f2GU.json',
+  url: '//content.jwplatform.com/feeds/oSRD4xzP.json',
   dataType: 'JSON'
 }).done(function(data) {
   /**
