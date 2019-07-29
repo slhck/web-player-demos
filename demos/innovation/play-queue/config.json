@@ -1,0 +1,12 @@
+{
+  "title": "Play Queue",
+  "description": "Build your own queue.",
+  "license": "All",
+  "showCode": false,
+  "layout": "vertical",
+  "apiCalls": ["setup()", "on('complete')"],
+  "author": {
+  	"name": "McKenzie Fiege",
+  	"githubUsername": "mckenziefiege"
+  }
+}

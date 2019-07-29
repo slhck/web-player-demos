@@ -2,7 +2,7 @@
   "name": "jwdeveloper-demos",
   "version": "0.0.0",
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "grunt": "^1.0.4",
     "grunt-contrib-clean": "^0.4.1",
     "grunt-contrib-concat": "^0.3.0",
     "grunt-contrib-connect": "^1.0.2",
@@ -10,11 +10,11 @@
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-mustache-render": "^1.9.2",
-    "load-grunt-tasks": "^3.5.2",
-    "jw-design-ui-toolkit": "github:jwplayer/jw-design-ui-toolkit"
+    "jw-design-ui-toolkit": "github:jwplayer/jw-design-ui-toolkit",
+    "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {
     "highlight.js": "^9.13.1",
-    "mustache": "^2.2.1"
+    "mustache": "^3.0.1"
   }
 }
