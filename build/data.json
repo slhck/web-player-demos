@@ -637,28 +637,6 @@
     "directory": "multiple-ad-companions"
   },
   {
-    "title": "Loading Multiple Playlists",
-    "description": "Load and toggle between multiple playlists to control the player state",
-    "license": "All",
-    "showCode": true,
-    "layout": "vertical",
-    "apiCalls": [
-      "load()",
-      "on('playlistItem')",
-      "playlistItem()"
-    ],
-    "author": {
-      "name": "John Kreitlow",
-      "githubUsername": "radium-v"
-    },
-    "category": {
-      "name": "Developer Showcase",
-      "directory": "developer-showcase",
-      "description": "Below you can find a starter kit to create your own demo along with demos and code examples submitted by our users.<br>Check back as more demos and examples are added to support new features."
-    },
-    "directory": "multiple-playlists"
-  },
-  {
     "title": "Mutually Exclusive Playback",
     "description": "A demo setup with multiple players. When one of them starts, the others are automatically paused.",
     "license": "All",
