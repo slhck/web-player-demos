@@ -271,25 +271,6 @@
     "directory": "closed-captions"
   },
   {
-    "title": "CSS Skin with Floating Time Slider",
-    "description": "Example of customizing the player theme with floating time slider.",
-    "license": "All",
-    "showCode": "true",
-    "layout": "vertical",
-    "author": {
-      "name": "Matthew Martindale",
-      "githubUsername": "madikarizma",
-      "email": "madikarizma@gmail.com"
-    },
-    "apiCalls": [],
-    "category": {
-      "name": "Developer Showcase",
-      "directory": "developer-showcase",
-      "description": "Below you can find a starter kit to create your own demo along with demos and code examples submitted by our users.<br>Check back as more demos and examples are added to support new features."
-    },
-    "directory": "css-skin-floating-time-slider"
-  },
-  {
     "title": "Custom UI for JW8",
     "description": "How to modify the JW8 player CSS with custom fonts, an inline timeslider, and branded colors in the control bar & settings menu.",
     "license": "All",
@@ -362,24 +343,6 @@
       "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
     },
     "directory": "dai-integration"
-  },
-  {
-    "title": "Demo Starter Kit",
-    "description": "Create your own demo! We've provided a basic demo setup to help you get started.",
-    "license": "All",
-    "showCode": true,
-    "layout": "horizontal",
-    "apiCalls": [],
-    "author": {
-      "name": "JW Player",
-      "githubUsername": "jwplayer"
-    },
-    "category": {
-      "name": "Developer Showcase",
-      "directory": "developer-showcase",
-      "description": "Below you can find a starter kit to create your own demo along with demos and code examples submitted by our users.<br>Check back as more demos and examples are added to support new features."
-    },
-    "directory": "demo-starter-kit"
   },
   {
     "title": "Dynamic Ad Playback",
@@ -458,29 +421,6 @@
       "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
     },
     "directory": "hlsv4-audio-tracks"
-  },
-  {
-    "title": "Hot Spots",
-    "description": "This demo uses hyperlink icons to navigate to additional information or another point in the video.",
-    "license": "All",
-    "showCode": false,
-    "apiCalls": [
-      "addButton()",
-      "on('ready')",
-      "on('time')",
-      "on('seek')",
-      "seek()"
-    ],
-    "author": {
-      "name": "JW Player",
-      "githubUsername": "jwplayer"
-    },
-    "category": {
-      "name": "Innovation",
-      "directory": "innovation",
-      "description": "Below you can find experimental demos and code examples combining JW Player with other plugins and APIs in fun, creative ways.<br>Check back as more demos and examples are added to support new features."
-    },
-    "directory": "hot-spots"
   },
   {
     "title": "Interactive Transcripts",
@@ -854,28 +794,6 @@
       "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
     },
     "directory": "sharing-bar-on-scroll"
-  },
-  {
-    "title": "Timeline Interaction",
-    "description": "This demo shows Google Maps markers synced to a video timeline.",
-    "license": "All",
-    "showCode": false,
-    "apiCalls": [
-      "on('ready')",
-      "on('complete')",
-      "on('time')",
-      "on('beforePlay')"
-    ],
-    "author": {
-      "name": "JW Player",
-      "githubUsername": "jwplayer"
-    },
-    "category": {
-      "name": "Innovation",
-      "directory": "innovation",
-      "description": "Below you can find experimental demos and code examples combining JW Player with other plugins and APIs in fun, creative ways.<br>Check back as more demos and examples are added to support new features."
-    },
-    "directory": "timeline-interaction"
   },
   {
     "title": "Video Ad Scheduling",
