@@ -1,14 +1,12 @@
 {
-  "title": "Ad Rules",
-  "description": "Ad rules allow publishers to customize when ads get served to their viewers.",
+  "title": "Resuming Playback",
+  "description": "The startOnSeek ad rule allows publishers to determine whether or not viewers should be shown pre-rolls when seeking on subsequent visits.",
   "license": "Enterprise",
-  "showCode": false,
-  "layout": "horizontal",
-  "apiCalls": [
-    ""
-  ],
+  "showCode": true,
+  "layout": "vertical",
+  "apiCalls": [ "on('time')" ],
   "author": {
-  	"name": "Alex Bussey",
-  	"githubUsername": "waxidiotic"
+    "name": "Alex Bussey",
+    "githubUsername": "waxidiotic"
   }
 }

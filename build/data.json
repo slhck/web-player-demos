@@ -796,6 +796,26 @@
     "directory": "sharing-bar-on-scroll"
   },
   {
+    "title": "Resuming Playback",
+    "description": "The startOnSeek ad rule allows publishers to determine whether or not viewers should be shown pre-rolls when seeking on subsequent visits.",
+    "license": "Enterprise",
+    "showCode": true,
+    "layout": "vertical",
+    "apiCalls": [
+      "on('time')"
+    ],
+    "author": {
+      "name": "Alex Bussey",
+      "githubUsername": "waxidiotic"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "start-on-seek"
+  },
+  {
     "title": "Video Ad Scheduling",
     "description": "This demo visualizes the main components of the IAB VAST3 advertising standards, including Skipping, Companions, Overlays and Podding.",
     "license": "Enterprise",
