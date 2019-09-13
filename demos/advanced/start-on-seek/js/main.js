@@ -21,6 +21,5 @@
 	});
 
 	startOnSeek.addEventListener('change', function(e) {
-		e.preventDefault();
 		localStorage['jwplayer.startOnSeek'] = startOnSeek.value;
 	});
