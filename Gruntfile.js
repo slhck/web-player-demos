@@ -88,7 +88,7 @@ module.exports = grunt => {
 		run: {
 			dev: {
 				cmd: 'node',
-				args: [ 'ejstest.js' ]
+				args: [ 'build.js' ]
 			}
 		},
 
