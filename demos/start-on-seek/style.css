@@ -1,0 +1,41 @@
+form {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
+}
+
+form *,
+form *::before,
+form *::after {
+	box-sizing: inherit;
+}
+
+.player-options {
+	display: flex;
+	max-width: 480px;
+	margin: 0 auto 35px;
+	justify-content: space-around;
+}
+
+.player-options label {
+	color: #000;
+}
+
+.explanation span {
+	font-weight: bold;
+	display: none;
+}
+
+.explanation .is-shown {
+	display: inline;
+}
+
+.ad-rules-link {
+	margin-top: 35px;
+}
+
+.refresh {
+	margin-bottom: 35px;
+}
