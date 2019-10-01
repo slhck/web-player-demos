@@ -1,0 +1,13 @@
+.complete {
+	color: #090;
+}
+
+.progress-indicator input[type=checkbox],
+.progress-indicator input[type=checkbox]:not(:checked) ~ .complete,
+.progress-indicator input[type=checkbox]:checked ~ .incomplete {
+	display: none;
+}
+
+#remaining::before {
+	content: attr(value);
+}

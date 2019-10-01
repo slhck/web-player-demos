@@ -1,0 +1,50 @@
+#overlay {
+	background: #ff9400;
+	color: #fff;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	line-height: 40px;
+	margin: 0 auto;
+	text-align: center;
+	width: 860px;
+}
+
+#overlay strong {
+	color: #fff;
+}
+
+#grid {
+	margin: 0 auto;
+	width: 860px;
+}
+
+#grid td {
+	background: #475470;
+	border: 1px solid #333c50;
+	color: #fff;
+	cursor: pointer;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	height: 50px;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+	width: 120px;
+}
+
+#grid td:hover {
+	background-color: #ff9400;
+	color: #333c50;
+	text-decoration: underline;
+}
+
+#grid td a {
+	text-decoration: none;
+}
+
+#grid td.play div {
+	background-color: rgba(255,148,0,.8);
+	color: #fff;
+	height: 48px;
+}

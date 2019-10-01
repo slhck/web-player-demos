@@ -1,0 +1,62 @@
+:root {
+	--size: 300px;
+	--half-size: calc(var(--size) / 2);
+}
+
+.cube-container {
+	display: flex;
+	justify-content: center;
+	padding: 200px 0;
+	perspective: calc(var(--size) * 3);
+	align-items: center;
+}
+
+.cube {
+	width: var(--size);
+	height: var(--size);
+	position: relative;
+	animation: cube-rotate 30s linear forwards infinite;
+	transform-style: preserve-3d;
+}
+
+.side {
+	backface-visibility: hidden;
+	height: var(--size);
+	position: absolute;
+	width: var(--size);
+}
+
+.side.top {
+	transform: translateY(calc(-1 * var(--half-size))) rotateX(90deg);
+	transform-origin: 0 50%;
+}
+
+.side.bottom {
+	transform: translateY(var(--half-size)) rotateX(-90deg);
+}
+
+.side.left {
+	transform: translateX(calc(-1 * var(--half-size))) rotateY(-90deg);
+}
+
+.side.right {
+	transform: translateX(var(--half-size)) rotateY(90deg);
+}
+
+.side.front {
+	transform: translateZ(var(--half-size));
+}
+
+.side.back {
+	transform: translateZ(calc(-1 * var(--half-size))) rotateX(180deg);
+}
+
+@keyframes cube-rotate {
+	0% {
+		transform: rotateX(-720deg) rotateY(360deg);
+	}
+
+	to {
+		transform: rotateX(720deg) rotateY(-360deg) rotateZ(360deg);
+	}
+}

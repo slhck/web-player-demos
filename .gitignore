@@ -1,6 +1,2 @@
-.DS_Store
-/bower_components
-/node_modules
-/npm-debug.log
-/local-config.json
-demos/customization/feeds-js/node_modules
+node_modules
+dist

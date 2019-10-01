@@ -1,0 +1,15 @@
+#logger {
+	background-color: #242a38;
+	border-radius: 0 0 5px 5px;
+	color: #d9dde6;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0 0 20px;
+	padding: 20px;
+}
+
+@media screen and (max-width: 425px) {
+	#logger {
+		font-size: 14px;
+	}
+}

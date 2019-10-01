@@ -1,0 +1,70 @@
+@import "@design/jw-design-library/dist/less/code-colors";
+
+.hljs-comment,
+.hljs-quote {
+	color: @ds-color-code-background-inline;
+}
+
+.hljs-comment {
+	font-style: italic;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: @ds-color-code-pink;
+}
+
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: @ds-color-code-orange;
+}
+
+.hljs-attribute {
+	color: #e7c547;
+}
+
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: @ds-color-code-green;
+}
+
+.hljs-title,
+.hljs-section {
+	color: @ds-color-code-blue;
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+	color: @ds-color-code-purple;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	background: @ds-color-code-background;
+	color: @ds-color-code-text;
+	padding: 0.5em;
+	font-family: @ds-global-font-family-code;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}

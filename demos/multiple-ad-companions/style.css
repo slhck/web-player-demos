@@ -1,0 +1,40 @@
+.container {
+	display: inline-grid;
+	gap: 10px 10px;
+}
+
+.ad {
+	background-color: rgba(11, 126, 244, 0.1);
+	border: 1px solid #ccc;
+}
+
+.player {
+	background: #000;
+	height: 318px;
+	grid-area: 2 / 2 / 2 / 3;
+	width: 567px;
+}
+
+.top {
+	grid-area: 1 / 2 / 2 / 4;
+	height: 66px;
+	width: 766px;
+}
+
+.left {
+	grid-area: 2 / 1 / 6 / 1;
+	height: 600px;
+	width: 160px;
+}
+
+.right {
+	grid-area: 2 / 3 / 3 / 4;
+	height: 250px;
+	width: 300px;
+}
+
+.bottom {
+	grid-area: 3 / 2;
+	height: 32px;
+	width: 480px;
+}

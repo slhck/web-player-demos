@@ -1,0 +1,35 @@
+.header {
+	width: 100%;
+	text-align: left;
+}
+
+h3 strong {
+	font-weight: 700;
+}
+
+.twitter-share-button {
+	margin-left: 10px;
+}
+
+.ds-page p {
+	text-align: left;
+	margin-bottom: 30px;
+	font-size: 17px;
+	line-height: 25px;
+}
+
+.ds-page p span {
+	font-size: 42px;
+	font-weight: 600;
+	padding-right: 5px;
+}
+
+.ds-page p:first-of-type::first-letter {
+	font-size: 300%;
+	padding-right: 5px;
+	vertical-align: baseline;
+}
+
+section {
+	margin: 40px 0;
+}

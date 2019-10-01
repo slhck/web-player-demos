@@ -1,0 +1,7 @@
+.git*
+data
+dist
+Dockerfile
+node_modules
+README.md
+yarn.lock

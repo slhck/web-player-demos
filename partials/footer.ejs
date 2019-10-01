@@ -1,0 +1,10 @@
+</div>
+<% if (locals.library) { %><script src="https://cdn.jwplayer.com/libraries/<%= library %>.js"></script><% } %>
+<% if (locals.scripts) { %><% locals.scripts.forEach(p => { %><script src="<%= p %>"></script><% }); } %>
+<% if (locals.scriptContent) { %><script src="demo.js"></script><% } %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

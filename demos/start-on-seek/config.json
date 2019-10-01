@@ -1,0 +1,12 @@
+{
+  "title": "Resuming Playback",
+  "description": "The startOnSeek ad rule allows publishers to determine whether or not viewers should be shown pre-rolls when seeking on subsequent visits.",
+  "license": "Enterprise",
+  "showCode": true,
+  "layout": "vertical",
+  "apiCalls": [ "on('time')" ],
+  "author": {
+    "name": "Alex Bussey",
+    "githubUsername": "waxidiotic"
+  }
+}
