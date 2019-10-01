@@ -38,7 +38,7 @@ module.exports = grunt => {
 			options: {
 				keepSpecialComments: 0,
 				processImport: false,
-				sourceMap: true
+				sourceMap: false
 			},
 			build: {
 				files: [
@@ -46,8 +46,7 @@ module.exports = grunt => {
 						cwd: 'dist/css',
 						dest: 'dist/css',
 						expand: true,
-						ext: '.min.css',
-						src: ['*.css']
+						src: ['*.min.css']
 					}
 				]
 			}
@@ -77,10 +76,6 @@ module.exports = grunt => {
 			},
 
 			build: {
-				src: ['dist/css/*.css']
-			},
-
-			dev: {
 				src: ['dist/css/*.min.css']
 			}
 		},
@@ -128,9 +123,8 @@ module.exports = grunt => {
 				files: ['src/less/**/*.less'],
 				tasks: [
 					'stylelint',
-					'less',
-					'postcss',
-					'cssmin'
+					'less:build',
+					'postcss'
 				]
 			}
 		}
@@ -150,8 +144,8 @@ module.exports = grunt => {
 		'stylelint',
 		'clean',
 		'copy',
-		'less',
-		'postcss',
+		'less:build',
+		'postcss:build',
 		'cssmin'
 	]);
 
