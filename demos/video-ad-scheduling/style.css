@@ -1,28 +1,37 @@
+.demo-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
 #adplayer {
-	padding: 0;
 	display: inline-flex;
+	padding: 0;
 }
 
 #adrectangle {
-	width: 300px;
-	height: 250px;
-	background-image: url('../assets/sintel.jpg');
+	background-image: url("assets/sintel.jpg");
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	height: 250px;
 	margin-left: 30px;
+	width: 300px;
 }
 
 #timeline {
-	position: relative;
+	display: flex;
+	flex-flow: row wrap;
 	margin: 0 auto;
+	overflow: hidden;
 	padding-bottom: 30px;
+	position: relative;
 }
 
 #highlight {
-	transition: width 0.25s;
-	position: absolute;
-	left: 40px;
-	top: 0;
+	background: transparent url("assets/highlight.png") 0 0 no-repeat;
 	height: 50px;
+	left: 20px;
+	position: absolute;
+	top: 0;
+	transition: width 150ms linear;
 	width: 0;
-	background: transparent url('../assets/highlight.png') 0 0 no-repeat;
 }
