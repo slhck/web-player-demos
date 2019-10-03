@@ -1,0 +1,14 @@
+<%- include(`${partialsPath}/head`, {
+	description: 'JW Player web demos',
+	title: 'JW Player web demos',
+	isIndex: true
+}); %>
+<%- include(`${partialsPath}/license`); %>
+
+<ul>
+	<% configs.forEach(c => { %><li><a href="<%= c.slug %>/"><%= c.title %></a></li><% }); %>
+</ul>
+
+<%- include(`${partialsPath}/footer`, {
+	isIndex: true
+}); %>

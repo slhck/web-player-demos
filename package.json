@@ -6,26 +6,23 @@
     "license": "UNLICENSED",
     "private": true,
     "dependencies": {
-        "@design/components": "^0.3.1",
-        "@design/ds-layout": "^1.0.6",
-        "@design/jw-design-library": "github:jwplayer/jw-design-library#v5.2.4",
-        "ejs": "^2.7.1",
-        "express": "^4.17.1",
-        "fs-extra": "^8.1.0",
-        "grunt-contrib-connect": "^2.1.0",
-        "grunt-run": "^0.8.1",
-        "serve-favicon": "^2.5.0"
+        "@design/jw-design-library": "github:jwplayer/jw-design-library#v5.2.4"
     },
     "devDependencies": {
         "@lodder/grunt-postcss": "^1.0.9",
         "autoprefixer": "^9.6.1",
+        "ejs": "^2.7.1",
+        "eslint": "^6.5.1",
+        "fs-extra": "^8.1.0",
         "grunt": "^1.0.4",
         "grunt-cli": "^1.3.2",
         "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-connect": "^2.1.0",
         "grunt-contrib-copy": "^1.0.0",
         "grunt-contrib-cssmin": "^3.0.0",
         "grunt-contrib-less": "^2.0.0",
         "grunt-contrib-watch": "^1.1.0",
+        "grunt-run": "^0.8.1",
         "grunt-stylelint": "^0.11.1",
         "stylelint": "^11.0.0"
     },

@@ -81,7 +81,7 @@ module.exports = grunt => {
 		},
 
 		run: {
-			dev: {
+			build: {
 				cmd: 'node',
 				args: [ 'build.js' ]
 			}
@@ -108,10 +108,7 @@ module.exports = grunt => {
 					debounceDelay: 1000,
 					livereload: true
 				},
-				tasks: [
-					'default',
-					'run:dev'
-				]
+				tasks: [ 'default' ]
 			},
 
 			styles: {
@@ -146,7 +143,8 @@ module.exports = grunt => {
 		'copy',
 		'less:build',
 		'postcss:build',
-		'cssmin'
+		'cssmin',
+		'run:build'
 	]);
 
 	grunt.registerTask('dev', 'Watch for changes', [

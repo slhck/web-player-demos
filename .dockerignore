@@ -1,5 +1,4 @@
 .git*
-data
 dist
 Dockerfile
 node_modules

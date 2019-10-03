@@ -17,7 +17,7 @@ function setupPlayer() {
     width: '100%'
   });
 
-  playerInstance.on('firstFrame', e => container.classList.remove('is-fading'));
+  playerInstance.on('firstFrame', () => container.classList.remove('is-fading'));
 
   playerInstance.on('complete', () => isReady = false);
 
@@ -36,7 +36,7 @@ function setupPlayer() {
       nextIndex = nextIndex >= fullPlaylist.length ? 0 : nextIndex;
       posterImage = fullPlaylist[nextIndex]['image'];
       const img = document.createElement('img');
-      img.onload = e => container.style.backgroundImage = `url(${posterImage})`;
+      img.onload = () => container.style.backgroundImage = `url(${posterImage})`;
       img.src = posterImage;
     }
   });

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const ejs = require('ejs');
 const fs = require('fs-extra');
 const path = require('path');
@@ -17,7 +19,6 @@ const getFile = (dir, name, exts = []) => {
 		return null;
 	}
 
-
 	const ext = exts.pop();
 	try {
 		return fs.readFileSync(path.format({ name, dir, ext }), 'utf8');
@@ -30,13 +31,13 @@ const getFile = (dir, name, exts = []) => {
 
 const demoSlugs = fs.readdirSync(demosPath);
 
+const configs = [];
 demoSlugs.forEach(slug => {
 	const srcDir = path.join(demosPath, slug);
 	const destDir = path.join(dist, slug);
 	const doc = getFile(srcDir, 'index', ['.html', '.ejs']);
 	const scriptContent = getFile(srcDir, 'demo', ['.js']);
 	const styleContent = getFile(srcDir, 'style', ['.css']);
-	const config = JSON.parse(getFile(srcDir, 'config', ['.json']));
 
 	const content = [
 		include('head'),
@@ -44,15 +45,19 @@ demoSlugs.forEach(slug => {
 		doc,
 		include('scriptview'),
 		include('footer')
-	].join('');
+	].join('\n');
 
-	const output = ejs.render(content, {
+	const config = {
+		...JSON.parse(getFile(srcDir, 'config', ['.json'])),
 		scriptContent,
 		styleContent,
 		slug,
-		partialsPath,
-		...config
-	}, ejsOptions);
+		partialsPath
+	}
+
+	const output = ejs.render(content, config, ejsOptions);
+
+	configs.push(config);
 
 	const fileDest = path.format({
 		dir: destDir,
@@ -67,6 +72,20 @@ demoSlugs.forEach(slug => {
 		}
 
 		fs.writeFileSync(fileDest, output);
-		console.log(`${fileDest} written.`);
+		// console.log(`${fileDest} written.`);
 	});
 });
+
+const indexTemplate = fs.readFileSync(`${partialsPath}/index.ejs`, 'utf8');
+
+const index = ejs.render(indexTemplate, {
+	demoSlugs,
+	partialsPath,
+	configs
+});
+
+fs.writeFileSync(path.format({
+	dir: dist,
+	ext: '.html',
+	name: 'index'
+}), index);
