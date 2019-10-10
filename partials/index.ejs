@@ -8,7 +8,4 @@
 <ul>
 	<% configs.forEach(c => { %><li><a href="<%= c.slug %>/"><%= c.title %></a></li><% }); %>
 </ul>
-
-<%- include(`${partialsPath}/footer`, {
-	isIndex: true
-}); %>
+<%- include(`${partialsPath}/footer`, { isIndex: true }); -%>

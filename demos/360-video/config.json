@@ -5,9 +5,6 @@
   "library": "lqsWlr4Z",
   "showCode": false,
   "layout": "horizontal",
-  "apiCalls": [
-    ""
-  ],
   "author": {
   	"name": "JW Player",
   	"githubUsername": "jwplayer"
