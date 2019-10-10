@@ -1,5 +1,4 @@
-// initialize jwplayer
-const playerInstance = jwplayer('player').setup({
+jwplayer('player').setup({
   playlist: 'https://cdn.jwplayer.com/v2/media/vM7nH0Kl?sources=mp4',
   autostart: true,
   floating: true,
