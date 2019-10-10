@@ -1,12 +1,13 @@
 </div>
-<%_ if (locals.library) { _%><script src="https://cdn.jwplayer.com/libraries/<%= library _%>.js"></script><%_ } _%>
-<%_ if (locals.scripts) { _%><%_ locals.scripts.forEach(p => { _%><script src="<%= p _%>"></script><%_ }); } _%>
-<%_ if (locals.scriptContent) { _%><script src="demo.js"></script><%_ } _%>
-
 <%_ if (!locals.isIndex) { _%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <% } _%>
+
+<%_ if (locals.library) { _%><script src="https://cdn.jwplayer.com/libraries/<%= library _%>.js"></script><%_ } _%>
+<%_ if (locals.scripts) { _%><%_ locals.scripts.forEach(p => { _%><script src="<%= p _%>"></script><%_ }); } _%>
+<%_ if (locals.scriptContent) { _%><script src="demo.js"></script><%_ } _%>
+
 </body>
 </html>
