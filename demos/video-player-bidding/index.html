@@ -1,77 +1,31 @@
-<script src="https://cdn.jwplayer.com/libraries/lqsWlr4Z.js"></script>
-<div class="pageDescription">
-    <p>This page demonstrates JW Player's Video Player Bidding solution powered by SpotX. <br>For more information, see our <a href="https://support.jwplayer.com/customer/portal/articles/2921974-getting-started-with-video-player-bidding" target="_blank">Getting Started</a> guide.</p>
-</div>
-<div id="myElement"></div>
-<div class="instructions">
-	<div class="steps">
-		<div class="setup-steps">
-            <h3 id="bid-request">(no ad bid request yet)</h3>
-            <h3 id="bid-response">(no ad bid response yet)</h3>
-            <h3 id="impression">(no ad impression yet)</h3>
-        </div>
-        <div class="setup-steps">
-            <p>Select Mediation Layer</p>
-            <select id="mediationLayerSelect">
-                <option value="dfp">DFP</option>
-                <option value="jwp">JW Player</option>
-            </select>
-        </div>
-    </div>
-        <pre><code id="dfp">var playerInstance = jwplayer("myElement")
-playerInstance.setup({
-    "file": "https://content.jwplatform.com/videos/1g8jjku3-cIp6U8lV.mp4",
-    "image": "http://d3el35u4qe4frz.cloudfront.net/bkaovAYt-480.jpg",
-    "advertising": {
-        "client": "googima",
-        "schedule": {
-            "adBreak": {
-                "tag": "//pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/137679306/HB_Dev_Center_Example&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&correlator=",
-                "offset": "pre"
-            }
-        },
-        "bids": {
-            "settings": {
-                "mediationLayerAdServer": "dfp",
-                "floorPriceCents": 2,
-                "floorPriceCurrency": "usd",
-                "bidTimeout": 1000
-            },
-            "bidders": [
-                {
-                    "name": "SpotX",
-                    "id": "85394"
-                }
-            ]
-        }
-    }
-});</code><code id="jwp">var playerInstance = jwplayer("myElement")
-playerInstance.setup({
-    "file": "https://content.jwplatform.com/videos/1g8jjku3-cIp6U8lV.mp4",
-    "image": "http://d3el35u4qe4frz.cloudfront.net/bkaovAYt-480.jpg",
-    "advertising": {
-        "client": "googima",
-        "schedule": {
-            "adBreak": {
-                "tag": "//pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=sample_ct%3Dskippablelinear&correlator=",
-                "offset": "pre"
-            }
-        },
-        "bids": {
-            "settings": {
-                "mediationLayerAdServer": "jwp",
-                "floorPriceCents": 2,
-                "floorPriceCurrency": "usd",
-                "bidTimeout": 1000
-            },
-            "bidders": [
-                {
-                    "name": "SpotX",
-                    "id": "85394"
-                }
-            ]
-        }
-    }
-});</code></pre>
-</div>
+<div id="player"></div>
 
+<form>
+    <label>
+        Mediation Layer:
+        <select id="mediationLayerSelect">
+            <option value="dfp">DFP</option>
+            <option value="jwp">JW Player</option>
+        </select>
+    </label>
+    <div class="progress-indicator">
+        <input readonly type="checkbox" id="bid-request" value="false">
+        <span class="incomplete">(no ad bid request yet)</span>
+        <span class="complete">The ad Bid Request was fired.</span>
+    </div>
+    <div class="progress-indicator">
+        <input readonly type="checkbox" id="bid-response" value="false">
+        <span class="incomplete">(no ad bid response yet)</span>
+        <span class="complete">The ad Bid Response was fired.</span>
+    </div>
+    <div class="progress-indicator">
+        <input readonly type="checkbox" id="impression" value="false">
+        <span class="incomplete">(no ad Impression yet)</span>
+        <span class="complete">The ad Impression was fired. SpotX <span class="result win">WON</span><span class="result lose">DID NOT WIN</span> the bid.</span>
+    </div>
+</form>
+
+<p>This page demonstrates JW Player's Video Player Bidding solution powered by SpotX.</p>
+<p>For more information, see our <a href="https://support.jwplayer.com/articles/set-up-video-player-bidding" target="_blank">Getting Started</a> guide.</p>
+
+<div id="code-block"></div>
