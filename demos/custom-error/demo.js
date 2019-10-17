@@ -1,20 +1,23 @@
 const playerInstance = jwplayer('player').setup({
-  file: 'not-a-real-video-file.mp4'
+  file: 'not-a-real-video-file.mp4',
+  displaytitle: false,
+  displaydescription: false
 });
 
-function loadError() {
-  playerInstance.load('https://cdn.jwplayer.com/v2/media/7RtXk3vl?sources=236p');
+const handleError = () => {
+  playerInstance.load('https://cdn.jwplayer.com/v2/media/7RtXk3vl');
+  playerInstance.setControls(false);
   playerInstance.play();
-}
+};
 
 // Load custom video file on error
-playerInstance.on('error', loadError);
+playerInstance.on('error', handleError);
 
 let debounce;
 
 // Also load custom video file on buffer
 playerInstance.on('buffer', function() {
-  debounce = setTimeout(loadError, 5000);
+  debounce = setTimeout(handleError, 5000);
 });
 
 playerInstance.on('play', function() {
