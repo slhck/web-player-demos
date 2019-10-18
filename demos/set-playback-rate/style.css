@@ -1,0 +1,11 @@
+#player.publisher .jw-icon-rewind,
+#player.publisher .jw-icon-settings {
+	display: none;
+}
+
+#player.publisher .jw-controlbar,
+#player.publisher .jw-controls-backdrop {
+	opacity: 1;
+	visibility: visible;
+	transition: none !important;
+}
