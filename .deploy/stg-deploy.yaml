@@ -1,0 +1,13 @@
+name: stg
+description: Web Player Demos
+
+replicas: 1
+containers:
+- name: web-player-demos
+  image: jwplayer/web-player-demos:latest
+  ports:
+  - target: 80
+    protocol: TCP
+
+  healthcheck:
+    tcp: 80

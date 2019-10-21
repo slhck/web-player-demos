@@ -55,6 +55,7 @@ demoSlugs.forEach(slug => {
 		partialsPath
 	}
 
+
 	const output = ejs.render(content, config, ejsOptions);
 
 	configs.push(config);
@@ -67,7 +68,7 @@ demoSlugs.forEach(slug => {
 
 	fs.mkdirp(destDir, function(err) {
 		if (err) {
-			console.log(err);
+			// console.log(err);
 			return;
 		}
 

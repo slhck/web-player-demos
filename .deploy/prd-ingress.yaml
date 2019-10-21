@@ -1,0 +1,11 @@
+name: home
+description: Web Player Demos
+
+selector: stg
+expose: external
+ssl_cert: jwplayer.com
+
+ports:
+    - port: 80
+      target: 80
+      protocol: tcp
