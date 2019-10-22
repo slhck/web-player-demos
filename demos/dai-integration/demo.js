@@ -1,103 +1,92 @@
-const playerInstance = jwplayer('playerElement');
+const playerInstance = jwplayer('player');
 
-const setupVodPlayer = function(cmsId = 2477953, videoId = "tears-of-steel") {
-  playerInstance.setup({
-    "playlist": [{
-      "file": "https://cdn.jwplayer.com/manifests/Qlh3p9ly.m3u8",
-      "daiSetting": {
-        "cmsID": cmsId,
-        "videoID": videoId
-      }
-    }],
-    "advertising": {
-      "client": "dai"
+const baseConfig = {
+  playlist: [{
+    file: 'https://cdn.jwplayer.com/manifests/Qlh3p9ly.m3u8'
+  }],
+  advertising: { client: 'dai' }
+}
+
+const customVodCmsID = document.getElementById('cmsID');
+const customVodVideoID = document.getElementById('videoID');
+const customLiveAssetKey = document.getElementById('assetKey');
+const toggles = [...document.getElementsByName('toggle')];
+const codeBlock = document.getElementById('codeblock');
+
+function setupPlayer() {
+  let cmsID;
+  let videoID;
+  let assetKey;
+
+  const thisConfig = Object.assign({}, baseConfig);
+  const checked = toggles.find(t => t.checked).value;
+
+  if (checked.includes('vod')) {
+    cmsID = 2477953;
+    videoID = 'tears-of-steel';
+
+    if (checked.includes('custom')) {
+      cmsID = customVodCmsID.value || cmsID;
+      videoID = customVodVideoID.value || videoID;
     }
-  });
-};
+  }
 
-const setupLivePlayer = function(assetKey = "sN_IYUG8STe1ZzhIIE_ksA") {
-  playerInstance.setup({
-    "playlist": [{
-      "file": "https://cdn.jwplayer.com/manifests/Qlh3p9ly.m3u8",
-      "daiSetting": {
-        "assetKey": assetKey
-      }
-    }],
-    "advertising": {
-      "client": "dai"
+  if (checked.toLowerCase().includes('live')) {
+    assetKey = 'sN_IYUG8STe1ZzhIIE_ksA';
+
+    if (checked.includes('custom')) {
+      assetKey = customLiveAssetKey.value || assetKey;
     }
-  });
-};
+  }
 
-setupVodPlayer();
-
-const toggleButtons = document.querySelectorAll('.button-toggle');
-const reSetupPlayerButton = document.getElementById('reSetupPlayerButton');
-
-const toggle = function(e) {
-  const previousButton = document.querySelector('.button-toggle-on');
-  const previousBody = document.querySelector('.body-toggle-on');
-  previousButton.classList.remove('button-toggle-on');
-  e.target.classList.add('button-toggle-on');
-  previousBody.classList.remove('body-toggle-on');
-
-  document.querySelector('.code-toggle-on').classList.remove('code-toggle-on');
-  document.getElementById('codeBlock_' + e.target.dataset.toggle).classList.add('code-toggle-on');
-
-  const showVodOrLiveBody = function() {
-      reSetupPlayerButton.classList.remove('body-toggle-on');
-      document.getElementById('vodOrLive').classList.add('body-toggle-on');
+  thisConfig.playlist[0].daiSetting = {
+    assetKey,
+    cmsID,
+    videoID
   };
 
-  switch (e.target.dataset.toggle) {
-    case 'vod':
-      showVodOrLiveBody();
-      setupVodPlayer();
+  playerInstance.setup(thisConfig);
+  playerInstance.on('ready', function() {
+    codeBlock.textContent = `jwplayer().setup(${JSON.stringify(thisConfig, null, 2)});`;
+    if (window.hljs) {
+      window.hljs.highlightBlock(codeBlock);
+    }
+  });
+}
 
-      break;
+const resetButton = document.getElementById('reset-button');
+const preconfigured = document.getElementById('preconfigured');
 
-    case 'live':
-      showVodOrLiveBody();
-      setupLivePlayer();
+function showPreconfiguredBody() {
+  resetButton.classList.remove('is-visible');
+  preconfigured.classList.add('is-visible');
+}
 
-      break;
-
-    default:
-      document.getElementById(e.target.dataset.toggle).classList.add('body-toggle-on');
-
-      if (!reSetupPlayerButton.classList.contains('body-toggle-on')) {
-        reSetupPlayerButton.classList.add('body-toggle-on');
-      }
-
-      break;
+function toggle({ target }) {
+  const previousBody = document.querySelector('.is-visible');
+  let detailsId = target.value;
+  if (previousBody) {
+    previousBody.classList.remove('is-visible');
   }
-};
+  target.classList.add('button-toggle-on');
 
-const handleReSetup = function() {
-  const type = document.querySelector('div.body-toggle-on');
-  const inputs = type.querySelectorAll('input');
-
-  switch (type.id) {
-    case 'customVod':
-      const cmsID = inputs[0].value || 2477953;
-      const videoID = inputs[1].value || 'tears-of-steel';
-      document.getElementById('customVod_cmsID').textContent = cmsID;
-      document.getElementById('customVod_videoID').textContent = `"${videoID}"`;
-      setupVodPlayer(cmsID, videoID);
-      break;
-
-    case 'customLive':
-      const assetKey = inputs[0].value || "sN_IYUG8STe1ZzhIIE_ksA";
-      document.getElementById('customLive_assetKey').textContent = `"${assetKey}"`;
-      setupLivePlayer(assetKey);
-      break;
+  if (target.value === 'vod' || target.value === 'live') {
+    detailsId = 'preconfigured';
+    showPreconfiguredBody();
+    setupPlayer();
+    return;
   }
-};
 
-reSetupPlayerButton.addEventListener('click', handleReSetup);
-
-toggleButtons.forEach((button) => {
-  if (button.id !== 'reSetupPlayerButton') {
-    button.addEventListener('click', toggle);
+  document.getElementById(detailsId).classList.add('is-visible');
+  if (!resetButton.classList.contains('is-visible')) {
+    resetButton.classList.add('is-visible');
   }
+}
+
+resetButton.addEventListener('click', e => {
+  e.preventDefault();
+  setupPlayer();
 });
+
+toggles.forEach(t => t.addEventListener('change', toggle));
+toggles.find(t => t.checked).dispatchEvent(new Event('change'));
