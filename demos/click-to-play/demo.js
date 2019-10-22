@@ -16,7 +16,7 @@ function getThumbnails({ playlist }) {
       handleActivePlayer(e, video);
     });
   })
-};
+}
 
 // On click, destroy existing player, setup new player in target div
 function handleActivePlayer({ target }, { mediaid }) {
