@@ -1,6 +1,6 @@
 {
     "title": "Play Queue",
-    "description": "Build your own queue.",
+    "description": "Build your own queue from multiple playlists.",
     "license": "All",
     "showCode": false,
     "layout": "vertical",

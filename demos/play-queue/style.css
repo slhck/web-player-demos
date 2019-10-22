@@ -367,18 +367,18 @@
 	list-style-type: none;
 }
 
-.container {
+.demo-container {
 	position: relative;
 	width: 80px;
 	height: auto;
 }
 
-.container:hover .queue__image {
+.demo-container:hover .queue__image {
 	opacity: 0.3;
 	cursor: pointer;
 }
 
-.container:hover .middle {
+.demo-container:hover .middle {
 	opacity: 1;
 }
 
