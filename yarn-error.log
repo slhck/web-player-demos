@@ -14,7 +14,13 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/Users/monicaparra/jwdeveloper-demos/node_modules/.yarn-integrity'
+  SyntaxError: /Users/monicaparra/jwdeveloper-demos/package.json: Unexpected token } in JSON at position 293
+      at JSON.parse (<anonymous>)
+      at /Users/monicaparra/.yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/monicaparra/.yarn/lib/cli.js:304:30)
+      at /Users/monicaparra/.yarn/lib/cli.js:315:13
+      at <anonymous>
 
 npm manifest: 
   {
@@ -25,7 +31,8 @@ npm manifest:
       "license": "UNLICENSED",
       "private": true,
       "dependencies": {
-          "@design/jw-design-library": "github:jwplayer/jw-design-library#v5.2.4"
+        "@design/ds-layout": "1.0.6",
+        "@design/jw-design-library": "^5.2.3",
       },
       "devDependencies": {
           "@lodder/grunt-postcss": "^1.0.9",

@@ -3,9 +3,11 @@
 	title: 'JW Player web demos',
 	isIndex: true
 }); %>
-<div class="container">
-	<ul>
-		<% configs.forEach(c => { %><li><a href="<%= c.slug %>/"><%= c.title %></a></li><% }); %>
-	</ul>
+<div class="ds-page">
+	<div class="container">
+		<ul>
+			<% configs.forEach(c => { %><a href="<%= c.slug %>/"><li><%= c.title %><p><%= c.description %></p></li></a><% }); %>
+		</ul>
+	</div>
 </div>
 <%- include(`${partialsPath}/footer`, { isIndex: true }); -%>

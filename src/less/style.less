@@ -1,12 +1,16 @@
 @import "@design/jw-design-library/dist/less/brand-colors";
 @import "@design/jw-design-library/dist/less/system-colors";
 @import "@design/jw-design-library/dist/less/fonts";
+// @import "@design/ds-layout/dist/ds-page.css";
 @import "code";
+@import "header";
 
 html,
 body {
 	margin: 0;
 	padding: 0;
+	font-family: @ds-global-font-family-custom;
+	background-color: @ds-color-brand-fog-fade;
 }
 
 html {
@@ -20,64 +24,50 @@ html {
 		}
 	}
 }
+.ds-page {
 
-.container {
-	margin: 0 auto;
-	min-width: 320px;
-	padding: 0 1rem;
-	width: 100%;
-
-	@media screen and (min-width: 768px) {
-		max-width: 46.875rem;
-	}
-	@media screen and (min-width: 992px) {
-		max-width: 60rem;
-	}
-	@media screen and (min-width: 1200px) {
-		max-width: 75rem;
-	}
-}
-
-.jwdeveloper-header {
-	// box-shadow: 0 2px 3px #d8dde6;
-	font: 400 18px @ds-global-font-family-data;
-	margin: 0 auto;
-	padding: 0 20px;
-	width: 100%;
-
-	@media screen and (max-width: 960px) {
-		font-size: 15px;
-		padding: 0;
-	}
-
-	.header-inner {
-		align-items: center;
-		display: flex;
-		height: 80px;
+	.container {
 		margin: 0 auto;
-		max-width: 1510px;
+		min-width: 320px;
+		padding: 0 1rem;
+		width: 100%;
 
-		@media screen and (max-width: 720px) {
-			flex-direction: column;
-			justify-content: flex-start;
+		@media screen and (min-width: 768px) {
+			max-width: 46.875rem;
 		}
-	}
-
-	.logo {
-		margin: 0 0 0 1.25rem;
-
-		svg {
-			width: 128px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		@media screen and (min-width: 992px) {
+			max-width: 60rem;
+		}
+		@media screen and (min-width: 1200px) {
+			max-width: 75rem;
 		}
 
-		@media screen and (max-width: 720px) {
-			margin: 0;
+		ul {
+			margin-top: 40px;
 
-			svg {
-				padding: 10px 0;
+			a {
+				text-decoration: none;
+			}
+
+			li {
+				list-style: none;
+				padding: 30px 20px 20px 30px;
+				margin: 10px;
+				display: inline-flex;
+				flex-direction: column;
+				border-radius: 6px;
+				background-color: @ds-color-system-white;
+				box-shadow: 0 0 5px #d8dde6;
+				border: 1px solid @ds-color-system-white;
+				width: 100%;
+
+				&:hover {
+					border: 1px solid @ds-color-brand-fog;
+				}
+				p {
+					color: @ds-color-system-black;
+					padding-top: 10px;
+				}
 			}
 		}
 	}

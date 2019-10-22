@@ -6,7 +6,8 @@ const path = require('path');
 
 const partialsPath = path.resolve(__dirname, 'partials');
 const demosPath = path.join(__dirname, 'demos');
-const dist = path.join(__dirname, 'dist');
+const dist = path.join(__dirname, 'dist/web-player-demos');
+const baseURL = ('test/');
 
 const ejsOptions = {
 	rmWhitespace: false
@@ -54,7 +55,6 @@ demoSlugs.forEach(slug => {
 		slug,
 		partialsPath
 	}
-
 
 	const output = ejs.render(content, config, ejsOptions);
 

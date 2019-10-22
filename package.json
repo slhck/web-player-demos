@@ -6,7 +6,8 @@
     "license": "UNLICENSED",
     "private": true,
     "dependencies": {
-        "@design/jw-design-library": "github:jwplayer/jw-design-library#v5.2.4"
+      "@design/ds-layout": "1.0.6",
+      "@design/jw-design-library": "^5.2.3"
     },
     "devDependencies": {
         "@lodder/grunt-postcss": "^1.0.9",
