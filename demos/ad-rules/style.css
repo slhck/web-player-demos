@@ -1,8 +1,15 @@
 .player-options {
+	align-items: center;
 	display: flex;
+	justify-content: center;
 	max-width: 480px;
-	margin: 0 auto 35px;
-	justify-content: space-around;
+	margin: 0 auto;
+	padding: 1em 0 2em;
+	width: 100%;
+}
+
+.options-row {
+	margin: 0 1em;
 }
 
 .player-options label {
