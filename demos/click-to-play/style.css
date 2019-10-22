@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:500");
 
 /* keeps the player from applying margin to bottom when clicked */
-.demo-layout-content .jwplayer {
+.jwplayer {
 	margin-bottom: 0;
 }
 
 .video-wall {
+	background-color: #000;
 	font-family: "Quicksand", sans-serif;
 	font-weight: 500;
 	display: flex;
 	margin: 0 auto;
+	max-width: 1000px;
 	flex-direction: column;
-	background: #000;
 }
 
 .header-bar {
