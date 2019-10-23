@@ -1,11 +1,74 @@
-#player.publisher .jw-icon-rewind,
-#player.publisher .jw-icon-settings {
+.player-wrapper {
+	position: relative;
+}
+
+.player-controls {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.player-controls:not(.publisher) {
 	display: none;
 }
 
-#player.publisher .jw-controlbar,
-#player.publisher .jw-controls-backdrop {
-	opacity: 1;
-	visibility: visible;
-	transition: none !important;
+#playback-state,
+#mute-state {
+	display: none;
+}
+
+.jw-flag-controls-hidden .jw-title {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.replay-message {
+	background-color: rgba(0, 0, 0, 0.7);
+	color: #FFF;
+	border-radius: 3px;
+	font-family: 'Open Sans', sans-serif;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	padding: 8px;
+	font-size: 24px;
+	display: none;
+}
+
+.replay-message.is-active {
+	display: block;
+}
+
+.player-controls .control-button {
+	border: none;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 3px;
+	bottom: 8px;
+	display: flex;
+	height: 5%;
+	min-height: 48px;
+	min-width: 48px;
+	justify-content: center;
+	padding: 8px 10px 8px 6px;
+	position: absolute;
+	width: calc(5% * (9 / 16));
+}
+
+.play-button,
+.pause-button {
+	left: 8px;
+}
+
+.mute-button,
+.unmute-button {
+	right: 8px;
+}
+
+.jwplayer.jw-state-playing ~ .player-controls .play-button,
+.jwplayer:not(.jw-state-playing) ~ .player-controls .pause-button,
+.player-controls.is-muted .mute-button,
+.player-controls:not(.is-muted) .unmute-button {
+	display: none;
 }
