@@ -1,0 +1,882 @@
+[
+  {
+    "title": "360° Video & VR",
+    "description": "This demo showcases the 360 Video / VR feature in JW Player for HTML5. JW Player can play spherical 360 videos in magic window mode and immersive VR mode, even in a playlist of mixed media.",
+    "license": "All",
+    "showCode": false,
+    "layout": "horizontal",
+    "apiCalls": [],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Innovation",
+      "directory": "innovation",
+      "description": "Below you can find experimental demos and code examples combining JW Player with other plugins and APIs in fun, creative ways.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "360-video"
+  },
+  {
+    "title": "3D Cube",
+    "description": "This demo renders 6 videos simultaneously in a 3D rotating cube. Each face of the cube is a fully functional JW Player.",
+    "license": "All",
+    "showCode": false,
+    "apiCalls": [
+      "on('play')",
+      "on('beforePlay')",
+      "setMute()",
+      "getState()",
+      "pause()",
+      "resize()"
+    ],
+    "author": {
+      "name": "Wilfred Meier"
+    },
+    "category": {
+      "name": "Innovation",
+      "directory": "innovation",
+      "description": "Below you can find experimental demos and code examples combining JW Player with other plugins and APIs in fun, creative ways.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "3d-cube"
+  },
+  {
+    "title": "Ad Rules",
+    "description": "Ad rules allow publishers to customize when ads get served to their viewers.",
+    "license": "Enterprise",
+    "showCode": false,
+    "layout": "horizontal",
+    "apiCalls": [],
+    "author": {
+      "name": "Alex Bussey",
+      "githubUsername": "waxidiotic"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "ad-rules"
+  },
+  {
+    "title": "Ad Event Verification",
+    "description": "Use JW Player's API to detect and verify when advertising events occur.",
+    "license": "Enterprise",
+    "showCode": true,
+    "apiCalls": [
+      "on('adImpression')",
+      "on('adClick')",
+      "on('adComplete')",
+      "on('adTime')",
+      "on('adSkipped')"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "ad-verification"
+  },
+  {
+    "title": "Adaptive Streaming",
+    "description": "This demo shows JW Player loading fragments by comparing your bandwidth to the available video bitrates.",
+    "license": "All",
+    "showCode": false,
+    "apiCalls": [
+      "on('ready')",
+      "getProvider()",
+      "remove()",
+      "on('playlist')",
+      "on('levels')",
+      "on('meta')",
+      "on('time')",
+      "on('seek')",
+      "on('complete')"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "adaptive-streaming"
+  },
+  {
+    "title": "Adding a Download Button",
+    "description": "This demo shows you how to allow users to easily download a video file.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "addButton()"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "add-download-button"
+  },
+  {
+    "title": "Audio Streaming + Metadata",
+    "description": "Extract timed metadata from a live audio stream and use it to display information such as title, artist, and poster image.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "on('meta')",
+      "on('error')"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "audio-metadata"
+  },
+  {
+    "title": "Autostart Only Once",
+    "description": "A demo setup that autostarts the video - but only for the first time a user visits the page.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "autostart-once"
+  },
+  {
+    "title": "Branded Player Advertising",
+    "description": "A demo of LogoBar's branded player ads and advanced event tracking capabilities. The LogoBar plugin uses JW Player's CSS Skinning model to insert branding and ad creatives.",
+    "license": "Enterprise",
+    "showCode": true,
+    "layout": "vertical",
+    "apiCalls": [
+      "on('time')",
+      "on('seeked')",
+      "on('seek')",
+      "on('pause')",
+      "on('play')",
+      "on('fullscreen')",
+      "on('resize')",
+      "on('firstFrame')",
+      "on('adImpression')",
+      "on('adComplete')"
+    ],
+    "author": {
+      "name": "LogoBar",
+      "githubUsername": "logbartv"
+    },
+    "category": {
+      "name": "Developer Showcase",
+      "directory": "developer-showcase",
+      "description": "Below you can find a starter kit to create your own demo along with demos and code examples submitted by our users.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "branded-player-ads"
+  },
+  {
+    "title": "Captions Styling",
+    "description": "Use the JW Player styling API to allow your users to change the appearance of their captions.",
+    "license": "All",
+    "showCode": false,
+    "layout": "horizontal",
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "apiCalls": [],
+    "category": {
+      "name": "Customization",
+      "directory": "customization",
+      "description": "Below you can find enterprise-oriented demos and code examples to inspire custom implementations that feature your content and brand.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "captions-styling"
+  },
+  {
+    "title": "Chromeless Player",
+    "description": "Hide the default player UI and build a custom interface using the JW Player API. Chromeless playback increases speed by eliminating load time for JW Player skins and controls.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "play()",
+      "pause()"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "chromeless-player"
+  },
+  {
+    "title": "Click-to-Play Video Wall",
+    "description": "Setup and play a video with a single click on a thumbnail within a responsive image grid.",
+    "license": "All",
+    "showCode": true,
+    "layout": "vertical",
+    "apiCalls": [
+      "play()",
+      "on('complete')",
+      "remove()"
+    ],
+    "author": {
+      "name": "Kim Hart",
+      "githubUsername": "kimhart"
+    },
+    "category": {
+      "name": "Innovation",
+      "directory": "innovation",
+      "description": "Below you can find experimental demos and code examples combining JW Player with other plugins and APIs in fun, creative ways.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "click-to-play"
+  },
+  {
+    "title": "Closed Captions",
+    "description": "This demo shows a player rendering closed captions in video display.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "closed-captions"
+  },
+  {
+    "title": "Custom UI for JW8",
+    "description": "How to modify the JW8 player CSS with custom fonts, an inline timeslider, and branded colors in the control bar & settings menu.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [],
+    "layout": "vertical",
+    "author": {
+      "name": "Kim Hart",
+      "githubUsername": "kimhart"
+    },
+    "category": {
+      "name": "Customization",
+      "directory": "customization",
+      "description": "Below you can find enterprise-oriented demos and code examples to inspire custom implementations that feature your content and brand.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "custom-css-demo"
+  },
+  {
+    "title": "A Custom Error Message",
+    "description": "A demo of how users can control player behavior when an error occurs.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "load()",
+      "play()",
+      "on('buffer')",
+      "on('play')"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "custom-error"
+  },
+  {
+    "title": "Custom Icons",
+    "description": "This demo shows how to replace the player's default control icons with your own.",
+    "license": "All",
+    "showCode": false,
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "apiCalls": [],
+    "category": {
+      "name": "Customization",
+      "directory": "customization",
+      "description": "Below you can find enterprise-oriented demos and code examples to inspire custom implementations that feature your content and brand.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "custom-icons"
+  },
+  {
+    "title": "Google Dynamic Ad Insertion (DAI)",
+    "description": "Examples of Google DAI configurations for VOD and Live streams",
+    "license": "Enterprise",
+    "showCode": false,
+    "apiCalls": [],
+    "author": {
+      "name": "Alex Bussey",
+      "githubUsername": "waxidiotic"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "dai-integration"
+  },
+  {
+    "title": "Dynamic Ad Playback",
+    "description": "Trigger an ad to play at a selected point during a video.",
+    "license": "Enterprise",
+    "showCode": true,
+    "apiCalls": [
+      "on('play')",
+      "on('pause')",
+      "on('complete')",
+      "playAd(tag)",
+      "on('adComplete')",
+      "on('adSkipped')",
+      "on('adPlay')",
+      "on('adPause')"
+    ],
+    "author": {
+      "name": "Kim Hart",
+      "githubUsername": "kimhart"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "dynamic-ad-playback"
+  },
+  {
+    "title": "Freewheel Advertising",
+    "description": "Using FreeWheel as your ad manager allows for leveraging the control FreeWheel's platform provides.",
+    "license": "Enterprise",
+    "showCode": true,
+    "layout": "vertical",
+    "apiCalls": [],
+    "author": {
+      "name": "Alex Bussey",
+      "githubUsername": "waxidiotic"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "freewheel"
+  },
+  {
+    "title": "HLS-AES-Token",
+    "description": "This demo shows the ability to pass a token with a key request.",
+    "license": "Enterprise",
+    "showCode": false,
+    "apiCalls": [],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "hls-aes-token"
+  },
+  {
+    "title": "HLSV4 Audio Tracks",
+    "description": "This demo shows built in HLSV4 Audio Track functionality.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "hlsv4-audio-tracks"
+  },
+  {
+    "title": "Interactive Transcripts",
+    "description": "This demo showcases an interactive, searchable transcript for our HTML5 Video Webinar.",
+    "license": "All",
+    "showCode": false,
+    "apiCalls": [
+      "addButton",
+      "on('time')"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Innovation",
+      "directory": "innovation",
+      "description": "Below you can find experimental demos and code examples combining JW Player with other plugins and APIs in fun, creative ways.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "interactive-transcripts"
+  },
+  {
+    "title": "Linking to a Time Offset",
+    "description": "In this demo the video starts from the beginning by default. However, if there is a time offset hash in the URL, the video will start from that time.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "on('ready')",
+      "on('firstFrame')"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "linking-to-time-offset"
+  },
+  {
+    "title": "Live Streaming",
+    "description": "This demo shows the JW Player's live streaming capabilities with multiple streams to choose from.",
+    "license": "Business",
+    "showCode": false,
+    "apiCalls": [],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "live-streaming"
+  },
+  {
+    "title": "Simulating Live TV",
+    "description": "A demo that simulates live TV. The playlist item and position are determined by system date/time.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "on('ready')",
+      "play()",
+      "seek()",
+      "playlistItem()"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "live-tv"
+  },
+  {
+    "title": "Loading New Playlists",
+    "description": "Click on a button to choose a playlist and load it into the player!",
+    "license": "All",
+    "showCode": true,
+    "layout": "horizontal",
+    "apiCalls": [
+      "load(playlist)"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "loading-new-playlists"
+  },
+  {
+    "title": "Minimize + Float Player on Scroll",
+    "description": "A simple approach to minimizing and floating JW Player when the viewer scrolls beyond the video content.",
+    "license": "All",
+    "showCode": true,
+    "layout": "vertical",
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "apiCalls": [],
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "minimize-and-float-video-on-scroll"
+  },
+  {
+    "title": "MPEG-DASH",
+    "description": "This demo shows adaptive streaming with MPEG-DASH.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "mpeg-dash"
+  },
+  {
+    "title": "Multiple Ad Companions",
+    "description": "Use on('adCompanions') to display multiple companion ads from your VAST file",
+    "license": "Enterprise",
+    "showCode": false,
+    "layout": "vertical",
+    "apiCalls": [
+      "on('adCompanions')"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "multiple-ad-companions"
+  },
+  {
+    "title": "Mutually Exclusive Playback",
+    "description": "A demo setup with multiple players. When one of them starts, the others are automatically paused.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "on('play')",
+      "pause()"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "mutually-exclusive"
+  },
+  {
+    "title": "Out-Player Widget on an Article",
+    "description": "Embed a feed of JW Platform-hosted videos on an article to drive user engagement using this JavaScript-based widget.",
+    "license": "All",
+    "showCode": false,
+    "apiCalls": [
+      ".load()",
+      ".getViewable()",
+      ".on('playlistItem')",
+      ".play()"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "out-player-widget-article"
+  },
+  {
+    "title": "Outstream Advertising",
+    "description": "Trigger an in-read ad to autoplay once it comes into view and collapse the video player after ad completion.",
+    "license": "Enterprise",
+    "showCode": true,
+    "layout": "vertical",
+    "apiCalls": [
+      "on('complete')",
+      "on('adComplete')",
+      "on('adError')",
+      "remove()"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "outstream-advertising"
+  },
+  {
+    "title": "Hybrid Peer-to-Peer Delivery",
+    "description": "A visualization of Streamroot’s hybrid webRTC-based P2P video CDN integrated with JW Player in HTML5.",
+    "license": "All",
+    "showCode": false,
+    "apiCalls": [
+      "registerProvider()"
+    ],
+    "author": {
+      "name": "Streamroot",
+      "githubUsername": "streamroot"
+    },
+    "category": {
+      "name": "Developer Showcase",
+      "directory": "developer-showcase",
+      "description": "Below you can find a starter kit to create your own demo along with demos and code examples submitted by our users.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "peer-accelerated-delivery"
+  },
+  {
+    "title": "Performance Tracking",
+    "description": "This demo measures key QoE metrics using the JW Player JavaScript API, including setup time and time to first frame.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      ".on('ready')",
+      ".on('firstFrame')"
+    ],
+    "playerVersion": [
+      "7",
+      "8"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "performance-tracking"
+  },
+  {
+    "title": "Play Queue",
+    "description": "Build your own queue.",
+    "license": "All",
+    "showCode": false,
+    "layout": "vertical",
+    "apiCalls": [
+      "setup()",
+      "on('complete')"
+    ],
+    "author": {
+      "name": "McKenzie Fiege",
+      "githubUsername": "mckenziefiege"
+    },
+    "category": {
+      "name": "Innovation",
+      "directory": "innovation",
+      "description": "Below you can find experimental demos and code examples combining JW Player with other plugins and APIs in fun, creative ways.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "play-queue"
+  },
+  {
+    "title": "Resizing the Player",
+    "description": "A demo setup of JW Player with an external link that resizes the player on the fly.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "getWidth()",
+      "resize()"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Basic",
+      "directory": "basic",
+      "description": "Below you can find basic demos and code examples to show you how to implement the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "resizing-the-player"
+  },
+  {
+    "title": "Resume Playback w/ Cookies",
+    "description": "Use cookies to remember where the user left off and resume playback at the same time offset when revisiting the page.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "on('time')",
+      "on('ready')"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "resume-playback-with-cookies"
+  },
+  {
+    "title": "Set Playback Rate",
+    "description": "Enable playback rate controls to create slow motion video playback without editing the original media or allow users to control their own playback speed.",
+    "license": "All",
+    "showCode": true,
+    "layout": "vertical",
+    "apiCalls": [
+      "play()",
+      "pause()",
+      "seek()",
+      "setPlaybackRate()",
+      "getPosition()",
+      "on('time')",
+      "on('complete')"
+    ],
+    "author": {
+      "name": "Joshua Hatcher",
+      "githubUsername": "joshuahatcher"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "set-playback-rate"
+  },
+  {
+    "title": "Sharing Playbar on Scroll",
+    "description": "Pause playback when the player is out of view and allow viewers to control playback or share the page via an external playbar on scroll.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+      "play()",
+      "on('play')",
+      "on('pause')",
+      "on('complete')",
+      "on('playlistItem')"
+    ],
+    "layout": "vertical",
+    "author": {
+      "name": "Joshua Hatcher",
+      "githubUsername": "joshuahatcher"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "sharing-bar-on-scroll"
+  },
+  {
+    "title": "Resuming Playback",
+    "description": "The startOnSeek ad rule allows publishers to determine whether or not viewers should be shown pre-rolls when seeking on subsequent visits.",
+    "license": "Enterprise",
+    "showCode": true,
+    "layout": "vertical",
+    "apiCalls": [
+      "on('time')"
+    ],
+    "author": {
+      "name": "Alex Bussey",
+      "githubUsername": "waxidiotic"
+    },
+    "category": {
+      "name": "Advanced",
+      "directory": "advanced",
+      "description": "Below you can find advanced demos and code examples extending JW Player feature functionality using the JavaScript API.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "start-on-seek"
+  },
+  {
+    "title": "Video Ad Scheduling",
+    "description": "This demo visualizes the main components of the IAB VAST3 advertising standards, including Skipping, Companions, Overlays and Podding.",
+    "license": "Enterprise",
+    "showCode": false,
+    "apiCalls": [
+      "on('time')",
+      "on('adTime')"
+    ],
+    "author": {
+      "name": "JW Player",
+      "githubUsername": "jwplayer"
+    },
+    "category": {
+      "name": "Innovation",
+      "directory": "innovation",
+      "description": "Below you can find experimental demos and code examples combining JW Player with other plugins and APIs in fun, creative ways.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "video-ad-scheduling"
+  },
+  {
+    "title": "Video Background",
+    "description": "Use JW Player to display a video as a background.",
+    "license": "All",
+    "showCode": true,
+    "layout": "vertical",
+    "apiCalls": [
+      "on('complete')",
+      "on('firstFrame')",
+      "on('time')"
+    ],
+    "author": {
+      "name": "John Kreitlow",
+      "githubUsername": "radium-v"
+    },
+    "category": {
+      "name": "Developer Showcase",
+      "directory": "developer-showcase",
+      "description": "Below you can find a starter kit to create your own demo along with demos and code examples submitted by our users.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "video-background"
+  },
+  {
+    "title": "Video Player Bidding",
+    "description": "All the benefits of Header Bidding are now built directly into your JW Player. With a simple one-click integration, you get access to quality advertising demand at scale with reduced latency.",
+    "license": "Enterprise",
+    "showCode": false,
+    "layout": "vertical",
+    "apiCalls": [
+      "on('adImpression')",
+      "on('adBidRequest')",
+      "on('adBidResponse')"
+    ],
+    "author": {
+      "name": "Ian Boynton",
+      "githubUsername": "boyntoni"
+    },
+    "category": {
+      "name": "Toolbox",
+      "directory": "toolbox",
+      "description": "Below you can find demos and code examples visualizing out of the box JW Player feature functionality.<br>Check back as more demos and examples are added to support new features."
+    },
+    "directory": "video-player-bidding"
+  }
+]
