@@ -20,7 +20,7 @@ module.exports = grunt => {
 		copy: {
 			favicon: {
 				src: 'src/favicon.ico',
-				dest: 'dist/web-player-demos/favicon.io'
+				dest: 'dist/developers/web-player-demos/favicon.io'
 			},
 			assets: {
 				expand: true,
@@ -30,7 +30,7 @@ module.exports = grunt => {
 					'**/*.css',
 					'**/assets/**'
 				],
-				dest: 'dist/web-player-demos'
+				dest: 'dist/developers/web-player-demos'
 			}
 		},
 
@@ -43,8 +43,8 @@ module.exports = grunt => {
 			build: {
 				files: [
 					{
-						cwd: 'dist/web-player-demos/css',
-						dest: 'dist/web-player-demos/css',
+						cwd: 'dist/developers/web-player-demos/css',
+						dest: 'dist/developers/web-player-demos/css',
 						expand: true,
 						src: ['*.min.css']
 					}
@@ -65,7 +65,7 @@ module.exports = grunt => {
 					sourceMap: true
 				},
 				src: ['src/less/style.less'],
-				dest: 'dist/web-player-demos/css/style.min.css'
+				dest: 'dist/developers/web-player-demos/css/style.min.css'
 			}
 		},
 
@@ -76,7 +76,7 @@ module.exports = grunt => {
 			},
 
 			build: {
-				src: ['dist/web-player-demos/css/*.min.css']
+				src: ['dist/developers/web-player-demos/css/*.min.css']
 			}
 		},
 
@@ -86,15 +86,6 @@ module.exports = grunt => {
 				args: [ 'build.js' ]
 			}
 		},
-		//
-		// stylelint: {
-		// 	dev: {
-		// 		options: {
-		// 			configFile: '.stylelintrc'
-		// 		},
-		// 		src: ['src/less/**/*.less']
-		// 	}
-		// },
 
 		watch: {
 			connect: {
@@ -119,7 +110,6 @@ module.exports = grunt => {
 				},
 				files: ['src/less/**/*.less'],
 				tasks: [
-					// 'stylelint',
 					'less:build',
 					'postcss'
 				]
@@ -138,7 +128,6 @@ module.exports = grunt => {
 	grunt.loadNpmTasks('grunt-stylelint');
 
 	grunt.registerTask('default', 'Build assets', [
-		// 'stylelint',
 		'clean',
 		'copy',
 		'less:build',
