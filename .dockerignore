@@ -1,6 +1,7 @@
 .git*
 dist
 Dockerfile
+docker-compose.yaml
 node_modules
 README.md
 yarn.lock

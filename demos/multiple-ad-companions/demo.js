@@ -13,7 +13,7 @@ playerInstance.on('adCompanions', function({ companions }) {
   for (const companion of companions) {
     const  { resource, click } = companion;
     const adElement = adBlocks.find(b => {
-      return b.clientWidth === companion.width && b.clientHeight === companion.height;
+      return b.offsetWidth === companion.width && b.offsetHeight === companion.height;
     });
     if (adElement) {
       insertAd(adElement, resource, click);

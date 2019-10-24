@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url("https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css");
 
 .flex {
@@ -10,27 +11,54 @@
 .settings {
 	text-align: left;
 	margin-right: 20px;
+=======
+.captions-styling-container {
+	align-items: flex-start;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+>>>>>>> origin/jak/rewrite
 }
 
-.settings label {
-	color: #000;
-	display: block;
-	margin-top: 20px;
+.player-container {
+	margin: 0 auto;
+	order: 1;
+	padding: 10px 10px 0;
+	width: 65%;
 }
 
-.settings input {
-	margin-top: 10px;
+form {
+	border: 1px solid #a0acc2;
+	border-radius: 6px;
 	padding: 10px;
-	border-width: 1px;
-	border-style: initial;
+	display: flex;
+	flex-flow: column wrap;
+	margin: 0 auto;
+}
+
+form label {
+	margin-bottom: 1.5em;
+}
+
+input[type=color],
+input[type=range] {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 0;
+}
+
+.ds-select-field { /* FIXME adjust when ds-select component finished */
+	display: inline-flex;
+	flex-flow: column wrap;
+}
+
+select {
+	border: 1px solid #a0acc2;
 	border-radius: 3px;
-	border-color: #000;
-}
-
-.settings select {
-	border: 1px solid @primary-gray;
-}
-
-#player {
-	margin-top: 40px;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 13px;
+	margin: 8px 0;
+	padding: 8px;
+	width: 240px;
 }

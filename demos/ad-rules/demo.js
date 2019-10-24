@@ -7,7 +7,7 @@ function setupPlayer(startOnValue, frequencyValue) {
     playlist: 'https://cdn.jwplayer.com/v2/playlists/JGKehvy1',
     advertising: {
       client: 'vast',
-      tag: 'preroll.xml',
+      tag: 'assets/preroll.xml',
       rules: {
         startOn: startOnValue,
         frequency: frequencyValue

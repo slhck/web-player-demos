@@ -1,7 +1,6 @@
 @import "@design/jw-design-library/dist/less/brand-colors";
 @import "@design/jw-design-library/dist/less/system-colors";
 @import "@design/jw-design-library/dist/less/fonts";
-// @import "@design/ds-layout/dist/ds-page.css";
 @import "code";
 @import "header";
 
@@ -29,7 +28,7 @@ html {
 	.container {
 		margin: 0 auto;
 		min-width: 320px;
-		padding: 0 1rem;
+		padding: 40px 0 0 0;
 		width: 100%;
 
 		@media screen and (min-width: 768px) {
@@ -42,8 +41,13 @@ html {
 			max-width: 75rem;
 		}
 
+		p,li, a {
+			font-size: 14px;
+		}
+
 		ul {
-			margin-top: 40px;
+			margin: 40px 0 0 0;
+			padding: 0;
 
 			a {
 				text-decoration: none;
@@ -80,6 +84,11 @@ html {
 	margin: 0 auto;
 	max-width: 1200px;
 
+	.github-badge {
+		padding-top: 20px;
+		display: block;
+	}
+
 	pre {
 		margin: 40px 0;
 		code {
@@ -88,10 +97,6 @@ html {
 			line-height: 22px;
 			span {
 				font-size: 15px;
-
-				&.hljs-comment {
-					color: @ds-color-brand-fog-darker;
-				}
 			}
 		}
 	}

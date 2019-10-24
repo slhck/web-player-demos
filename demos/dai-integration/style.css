@@ -1,49 +1,19 @@
+<<<<<<< HEAD
 .dai-container {
+=======
+.demo-container {
+>>>>>>> origin/jak/rewrite
 	display: flex;
-	flex-direction: row;
+	flex-flow: row wrap;
 }
 
-.left {
+.left,
+.player-container {
 	width: 50%;
-}
-
-.button {
-	margin: 0 0 1em;
-}
-
-.button-theme-brand-2:not(.button-toggle-on) {
-	background: #dff1ff;
-	color: #0e7ef4;
-}
-
-.button-theme-brand-2:not(.button-toggle-on):hover {
-	background: #b1deff;
-}
-
-.description {
-	margin-bottom: 2rem;
-	padding-bottom: 2rem;
-	border-bottom: 1px solid #ccc;
 }
 
 .content {
 	padding: 0.5em;
-}
-
-.input-group {
-	background: #dff1ff;
-	margin: 1rem auto 0;
-	max-width: 80%;
-}
-
-.input-group label {
-	width: 45%;
-	color: #0e7ef4;
-}
-
-.input-group input {
-	width: 50%;
-	margin-bottom: 10px;
 }
 
 .content button {
@@ -56,22 +26,6 @@
 	margin: 0 auto;
 }
 
-.body-toggle-on {
+.is-visible {
 	display: block;
-}
-
-.codeBlock {
-	border-top: 1px solid #ccc;
-}
-
-.code-toggle {
-	display: none;
-}
-
-.code-toggle-on {
-	display: block;
-}
-
-.playerContainer {
-	width: 50%;
 }

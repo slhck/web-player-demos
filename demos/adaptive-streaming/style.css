@@ -1,3 +1,9 @@
+.demo {
+	display: flex;
+	justify-content: center;
+	flex-flow: column nowrap;
+}
+
 #overlay {
 	background: #ff9400;
 	color: #fff;

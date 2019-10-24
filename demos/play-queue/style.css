@@ -371,18 +371,30 @@
 	list-style-type: none;
 }
 
+<<<<<<< HEAD
 .queue-container {
+=======
+.demo-container {
+>>>>>>> origin/jak/rewrite
 	position: relative;
 	width: 80px;
 	height: auto;
 }
 
+<<<<<<< HEAD
 .queue-container:hover .queue__image {
+=======
+.demo-container:hover .queue__image {
+>>>>>>> origin/jak/rewrite
 	opacity: 0.3;
 	cursor: pointer;
 }
 
+<<<<<<< HEAD
 .queue-container:hover .middle {
+=======
+.demo-container:hover .middle {
+>>>>>>> origin/jak/rewrite
 	opacity: 1;
 }
 
