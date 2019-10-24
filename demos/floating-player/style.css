@@ -6,3 +6,7 @@
 .jwux-demo {
 	min-height: 200vh;
 }
+
+article {
+	margin: 40px 0;
+}

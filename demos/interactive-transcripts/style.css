@@ -4,6 +4,7 @@
 	justify-content: center;
 }
 
+
 .sidebar {
 	background-color: #475470;
 	font-family: Arial, sans-serif;
@@ -12,6 +13,7 @@
 	flex-flow: column nowrap;
 	overflow: hidden;
 	width: 360px;
+	margin: 30px 0;
 }
 
 @media screen and (max-width: 1080px) {
@@ -137,4 +139,6 @@
 
 .caption-copy li {
 	margin-bottom: 10px;
+	font-size: 13px;
+	font-weight: 600;
 }

@@ -1,3 +1,5 @@
+
+
 .hover {
 	cursor: pointer;
 }
@@ -14,6 +16,8 @@
 	display: flex;
 	height: 100vh;
 	text-align: left;
+	width: 100%;
+	margin: 30px 0;
 }
 
 @media (max-width: 790px) {
@@ -367,18 +371,18 @@
 	list-style-type: none;
 }
 
-.container {
+.queue-container {
 	position: relative;
 	width: 80px;
 	height: auto;
 }
 
-.container:hover .queue__image {
+.queue-container:hover .queue__image {
 	opacity: 0.3;
 	cursor: pointer;
 }
 
-.container:hover .middle {
+.queue-container:hover .middle {
 	opacity: 1;
 }
 

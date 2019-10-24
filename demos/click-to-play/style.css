@@ -9,7 +9,7 @@
 	font-family: "Quicksand", sans-serif;
 	font-weight: 500;
 	display: flex;
-	margin: 0 auto;
+	margin-top: 40px;
 	flex-direction: column;
 	background: #000;
 }
