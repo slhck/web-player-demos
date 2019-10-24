@@ -1,0 +1,17 @@
+.complete {
+	color: #090;
+}
+
+.progress-indicator input[type=checkbox],
+.progress-indicator input[type=checkbox]:not(:checked) ~ .complete,
+.progress-indicator input[type=checkbox]:checked ~ .incomplete,
+#impression[value=false] ~ .complete .win,
+#impression[value=true] ~ .complete .lose {
+	display: none;
+}
+
+#impression[value=true]:checked ~ .complete .win,
+#impression[value=false]:checked ~ .complete .lose {
+	display: inline;
+	font-weight: bold;
+}

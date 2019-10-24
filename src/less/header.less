@@ -1,0 +1,62 @@
+.jwdeveloper-header {
+  border-bottom: 1px solid @ds-color-brand-fog;
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+  font-family: @ds-global-font-family-data;
+  font-weight: 400;
+  font-size: 18px;
+  box-shadow: 0 2px 3px #d8dde6;
+  background-color: @ds-color-system-white;
+
+  @media screen and (max-width: 960px) {
+  	font-size: 15px;
+  	padding: 0;
+  }
+
+  .header-inner {
+  	max-width: 1510px;
+  	margin: 0 auto;
+  	display: flex;
+  	align-items: center;
+
+  	@media screen and (max-width: 720px) {
+  		flex-direction: column;
+  		justify-content: flex-start;
+  	}
+  }
+
+  .logo svg {
+  	width: 128px;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+
+  	@media screen and (max-width: 720px) {
+  		padding: 10px 0;
+  	}
+  }
+  .header-item {
+  	width: 100%;
+  	padding: 30px 0;
+  	text-align: center;
+  	text-decoration: none;
+  	color: black;
+  	border-top: 1px solid @ds-color-brand-fog;
+
+  	@media screen and (max-width: 720px) {
+  		text-align: left;
+  		padding: 10px 20px;
+  		background-color: @ds-color-brand-fog-fade;
+  	}
+
+  	&:hover {
+  		text-decoration: underline;
+
+  		@media screen and (max-width: 720px) {
+  			text-decoration: none;
+  			background-color: fade(@ds-color-brand-fog, 50%);
+  		}
+  	}
+  }
+}

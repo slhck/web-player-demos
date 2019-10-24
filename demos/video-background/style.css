@@ -1,0 +1,71 @@
+.video-background-demo {
+	font-family: "Lato";
+	align-items: center;
+	display: flex;
+	height: 80vmin;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.ds-button--primary {
+	text-decoration: none;
+}
+
+.background-video-container {
+	background: 50% 50% / cover no-repeat;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.background-video-container::after {
+	background-color: rgba(61, 56, 65, 0.75);
+	content: "";
+	height: 100%;
+	left: 0;
+	mix-blend-mode: multiply;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.background-video-container .jwplayer {
+	transition: opacity 1s ease-in-out;
+}
+
+.background-video-container.is-fading .jwplayer {
+	opacity: 0;
+}
+
+.background-video-container .jwplayer.jw-flag-aspect-mode {
+	height: 100% !important;
+}
+
+.background-video-container .jw-state-playing {
+	opacity: 1;
+}
+
+.jwplayer.jw-stretch-uniform video {
+	object-fit: cover;
+}
+
+.jw-nextup-container {
+	display: none;
+}
+
+.video-background-demo .content {
+	color: #fff;
+	position: relative;
+	text-align: center;
+	width: 80%;
+	z-index: 1;
+}
+
+.video-background-demo .content h2 {
+	font-size: 2rem;
+	margin: 0 auto 2rem;
+	width: 80%;
+}

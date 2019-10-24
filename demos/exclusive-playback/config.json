@@ -1,0 +1,15 @@
+{
+    "title": "Exclusive Playback",
+    "description": "A demo setup with multiple players. When one of them starts, the others are automatically paused.",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [
+        "on('play')",
+        "pause()"
+    ],
+    "author": {
+        "name": "JW Player",
+        "githubUsername": "jwplayer"
+    },
+    "library": "ElBXYHpj"
+}

@@ -1,0 +1,63 @@
+<<<<<<< HEAD
+<div class="description">
+  <p>This page demonstrates JW Player's Google Dynamic Ad Insertion (DAI) Integration for server side ad insertion.</p>
+  <p>For more information, see our <a href="https://support.jwplayer.com/articles/getting-started-with-dai" target="_blank">Getting Started with DAI</a> support article.</p>
+</div>
+
+<div class="dai-container">
+  <div class="left">
+=======
+<div class="demo-container">
+  <form class="left" autocomplete="off">
+>>>>>>> origin/jak/rewrite
+    <div class="button-container">
+      <label class="ds-radioinput-field">
+        <input class="ds-radioinput" type="radio" name="toggle" value="vod" checked>
+        <span class="ds-radioinput-label">VOD</span>
+      </label>
+      <label class="ds-radioinput-field">
+        <input class="ds-radioinput" type="radio" name="toggle" value="live">
+        <span class="ds-radioinput-label">Live</span>
+      </label>
+      <label class="ds-radioinput-field">
+        <input class="ds-radioinput" type="radio" name="toggle" value="custom-vod">
+        <span class="ds-radioinput-label">Custom VOD</span>
+      </label>
+      <label class="ds-radioinput-field">
+        <input class="ds-radioinput" type="radio" name="toggle" value="custom-live">
+        <span class="ds-radioinput-label">Custom Live</span>
+      </label>
+    </div>
+    <div class="content">
+      <div id="preconfigured" class="body-toggle">
+        <p>In all examples, the specified "file" is a fallback option, in the event that there is a network error, or the timeout (3000ms) is reached.</p>
+      </div>
+      <div id="custom-vod" class="body-toggle">
+        <p>In this example, you can insert your <strong>cmsID</strong> and <strong>videoID</strong> values and click the <strong>Re-Setup Player</strong> button to setup the player with those values.</p>
+        <div class="ds-textinput-field">
+          <label class="ds-textinput-label" for="cmsID">cmsID</label>
+          <input class="ds-textinput" type="text" name="cmsID" id="cmsID">
+        </div>
+        <div class="ds-textinput-field">
+          <label class="ds-textinput-label" for="videoID">videoID</label>
+          <input class="ds-textinput" type="text" name="videoID" id="videoID">
+        </div>
+      </div>
+      <div id="custom-live" class="body-toggle">
+        <p>In this example, you can insert your <strong>assetKey</strong> value and click the <strong>Re-Setup Player</strong> button to setup the player with that value.</p>
+
+        <div class="ds-textinput-field">
+          <label class="ds-textinput-label" for="assetKey">assetKey</label>
+          <input class="ds-textinput" type="text" name="assetKey" id="assetKey">
+        </div>
+      </div>
+      <button id="reset-button" class="ds-button--primary button-toggle button-toggle-on body-toggle">Re-setup Player</button>
+    </div>
+  </form>
+  <div class="player-container">
+    <div id="player"></div>
+  </div>
+</div>
+<pre><code id="codeblock" class="js"></code></pre>
+<p>This page demonstrates JW Player's Google Dynamic Ad Insertion (DAI) Integration for server side ad insertion.</p>
+<p>For more information, see our <a href="https://support.jwplayer.com/articles/getting-started-with-dai" target="_blank">Getting Started with DAI</a> support article.</p>

@@ -1,0 +1,7 @@
+version: '3.2'
+services:
+  local:
+    build: .
+    image: jwplayer/web-player-demos:staging
+    ports:
+      - '80:3000'

@@ -1,0 +1,11 @@
+{
+    "title": "Closed Captions",
+    "description": "This demo shows a player rendering closed captions in video display.",
+    "license": "All",
+    "showCode": true,
+    "author": {
+        "name": "JW Player",
+        "githubUsername": "jwplayer"
+    },
+    "library": "lqsWlr4Z"
+}

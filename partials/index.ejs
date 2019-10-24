@@ -1,0 +1,15 @@
+<%- include(`${partialsPath}/head`, {
+	description: 'JW Player web demos',
+	title: 'JW Player web demos',
+	isIndex: true
+}); %>
+<div class="ds-page">
+	<div class="container">
+		<h1>Web Player Demos</h1>
+		<p>Below you can find demos and code examples for all levels of developers implementing JW Player. Check back as more demos and examples are added to support new features.</p>
+		<ul>
+			<% configs.forEach(c => { %><a href="<%= c.slug %>/"><li><%= c.title %><p><%= c.description %></p></li></a><% }); %>
+		</ul>
+	</div>
+</div>
+<%- include(`${partialsPath}/footer`, { isIndex: true }); -%>

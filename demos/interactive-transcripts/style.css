@@ -1,0 +1,144 @@
+.player-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+.sidebar {
+	background-color: #475470;
+	font-family: Arial, sans-serif;
+	height: 360px;
+	display: flex;
+	flex-flow: column nowrap;
+	overflow: hidden;
+	width: 360px;
+	margin: 30px 0;
+}
+
+@media screen and (max-width: 1080px) {
+	.sidebar {
+		margin-bottom: 20px;
+		width: 640px;
+	}
+}
+
+.sidebar h3 {
+	color: #fff;
+	font-size: 14px;
+	margin: 0;
+	padding: 20px;
+	text-align: left;
+}
+
+.searchbox {
+	display: block;
+	margin: 10px 20px;
+	position: relative;
+}
+
+.searchbox input {
+	background: #fff url("assets/search.png") no-repeat top left;
+	border-radius: 3px;
+	border: none;
+	color: #000;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 5px 20px 5px 30px;
+	width: 100%;
+}
+
+.searchbox .match {
+	color: #000;
+	font-size: 14px;
+	line-height: 20px;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.transcript {
+	padding: 0 20px;
+	overflow: auto;
+	flex: 1 1 auto;
+}
+
+.transcript p {
+	font-size: 15px;
+	overflow: hidden;
+	text-align: left;
+	color: #fff;
+	line-height: 20px;
+}
+
+.transcript p:empty {
+	display: none;
+}
+
+.transcript span {
+	display: inline;
+	padding: 4px 2px;
+	line-height: 24px;
+	cursor: pointer;
+	color: #fff;
+}
+
+.transcript span.current {
+	background: #00f096;
+	color: #000;
+}
+
+.transcript span:hover {
+	color: #00f096;
+}
+
+.transcript span.current:hover {
+	color: #000;
+}
+
+.transcript span em {
+	background: #666;
+	color: #fff;
+	font-style: normal;
+}
+
+.transcript span em.current {
+	background: #ff0046;
+}
+
+.transcript h4 {
+	margin: 25px 0 15px;
+	text-align: left;
+	color: #fff;
+	font-weight: bold;
+}
+
+.caption-copy {
+	max-width: 640px;
+	margin: 20px auto;
+	text-align: left;
+	padding: 10px;
+}
+
+.caption-copy div,
+.caption-copy ol,
+.caption-copy li {
+	text-align: left;
+	font-size: 20px;
+}
+
+.caption-copy div {
+	font-weight: 400;
+	margin: 15px 0;
+}
+
+.caption-copy ol {
+	margin-left: 15px;
+	margin-top: 20px;
+}
+
+.caption-copy li {
+	margin-bottom: 10px;
+	font-size: 13px;
+	font-weight: 600;
+}

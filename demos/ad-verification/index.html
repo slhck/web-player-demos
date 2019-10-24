@@ -1,0 +1,29 @@
+<div id="player"></div>
+
+<form autocomplete="off">
+	<div class="progress-indicator">
+		<input readonly type="checkbox" id="impression" value="false">
+		<span class="incomplete">(no ad impression yet)</span>
+		<span class="complete">The ad impression was fired.</span>
+	</div>
+	<div class="progress-indicator">
+		<input readonly type="checkbox" id="progress" value="false">
+		<span class="incomplete">(no ad progress yet)</span>
+		<span class="complete">The ad completes in <data id="remaining"></data> seconds.</span>
+	</div>
+	<div class="progress-indicator">
+		<input readonly type="checkbox" id="click" value="false">
+		<span class="incomplete">(no ad click yet)</span>
+		<span class="complete">The user clicked the ad.</span>
+	</div>
+	<div class="progress-indicator">
+		<input readonly type="checkbox" id="skip" value="false">
+		<span class="incomplete">(no ad skip yet)</span>
+		<span class="complete">The ad was skipped.</span>
+	</div>
+	<div class="progress-indicator">
+		<input readonly type="checkbox" id="complete" value="false">
+		<span class="incomplete">(no ad complete yet)</span>
+		<span class="complete">The ad was completely watched.</span>
+	</div>
+</form>

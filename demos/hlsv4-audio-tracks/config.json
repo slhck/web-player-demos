@@ -1,0 +1,11 @@
+{
+    "title": "HLSV4 Audio Tracks",
+    "description": "This demo shows built in HLSV4 Audio Track functionality.",
+    "license": "All",
+    "showCode": true,
+    "author": {
+        "name": "JW Player",
+        "githubUsername": "jwplayer"
+    },
+    "library": "wr6i4gal"
+}

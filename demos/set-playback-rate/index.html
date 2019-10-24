@@ -1,0 +1,42 @@
+<div class="player-wrapper">
+  <div id="player"></div>
+  <form id="custom-controls" class="player-controls">
+    <button id="play-button" class="control-button play-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
+        <path fill="#FFF" d="M16.5 8.5l-14 7v-14l14 7z"/>
+      </svg>
+    </button>
+    <button id="pause-button" class="control-button pause-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 17">
+        <path fill="#FFF" d="M10.5 15.5v-14h4v14h-4zm-8-14h4v14h-4v-14z"/>
+      </svg>
+    </button>
+    <button id="mute-button" class="control-button mute-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" viewBox="0 292 19 17">
+          <path fill="#FFF" d="M15.1 307l-.6-.5c1.5-1.6 2.4-3.7 2.4-6s-.9-4.4-2.4-6l.6-.5c1.6 1.7 2.6 4 2.6 6.5s-1 4.8-2.6 6.5zm-2.4-1.9l-.6-.5c1.1-1 1.8-2.5 1.8-4.1 0-1.6-.7-3.1-1.8-4.1l.6-.5c1.2 1.2 2 2.8 2 4.6 0 1.8-.8 3.4-2 4.6zm-2.9-2.6c.6-.4 1.1-1.1 1.1-2s-.4-1.5-1.1-2l.6-.5c.8.6 1.2 1.5 1.2 2.5s-.5 1.9-1.2 2.5l-.6-.5zm-8.1 0v-4h3l4-3v9.9l-4-3h-3z"/>
+        </svg>
+    </button>
+    <button id="unmute-button" class="control-button unmute-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" viewBox="-389 271 79.9 60">
+          <path fill="#FFF" d="M-346.8 331l-24.1-17.9H-389v-24.2h18.1l24.1-17.9v60zM-309.1 290.1l-4.1-4.1-10.9 10.9-10.8-10.9-4.2 4.1 10.9 10.9-10.9 10.9 4.2 4.1 10.8-10.9 10.9 10.9 4.1-4.1-10.8-10.9z"/>
+        </svg>
+    </button>
+    <div id="replay-message" class="replay-message">Instant Replay</div>
+  </form>
+</div>
+
+<form>
+  <label for="swap">View Example:</label>
+  <select class="ds-select" id="swap">
+    <option value="user">User-controlled</option>
+    <option value="publisher">Publisher-curated</option>
+  </select>
+</form>
+
+<p>
+  Use our API to create slow motion video playback without editing the original media. At 20s, the player seeks back to the start of an impressive moment, plays it back at half-speed, and then continues playback at normal speed.
+</p>
+<p>
+  Toggle playback speed by clicking on the settings gear in the control bar and selecting a new speed under the clock
+  icon. Here we set custom speeds, but you can also use default ones.
+</p>
