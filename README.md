@@ -1,6 +1,6 @@
 # JW Developer Demos
 
-This repository is for managing the [JW Player Developer Demos](//developer.jwplayer.com/jw-player/demos/). It includes demos and code samples from the JW Player team as well as a Developer Showcase highlighting demos submitted by our developer community.
+This repository is for managing the [JW Player Developer Demos](https://www.jwplayer.com/developers/web-player-demos/). It includes demos and code samples from the JW Player team as well as a Developer Showcase highlighting demos submitted by our developer community.
 
 ## Demo Setup
 
@@ -10,7 +10,7 @@ All JW Developer demos can be downloaded and run locally. Build instructions and
 
 If you don't already have Node.js, please [download and install](//nodejs.org/en/download/) it now.
 
-Then, from the project root directory, `jwdeveloper-demos/`:
+Then, from the project root directory, `web-player-demos/`:
 
 Install node dependencies:
 
@@ -27,8 +27,10 @@ grunt
 Run Grunt to compile changes and serve locally:
 
 ```
-grunt serve
+yarn start
 ```
+
+## Contributing a Demo
 
 ### Demo Structure
 
@@ -46,22 +48,6 @@ Only `index.html` and `config.json` are required for the build. In a basic setup
 
 Local assets (such as images, .txt files, etc...) referenced within the demo should be saved in the `assets` directory.
 
-We encourage you to use our [Demo Starter Kit](//github.com/jwplayer/jwdeveloper-demos/tree/master/demos/developer-showcase/demo-starter-kit) as the basis for your project.
-
-## Contributing a Demo
-
-Our developer community continues to amaze us with unique implementations of our player. We have created our Developer Showcase to help show off your work to other developers.
-
-### Submissions
-
-Submitting a demo for consideration for the [JW Developer Showcase](//developer.jwplayer.com/jw-player/demos/developer-showcase/) is easy.
-
-1. Fork this repository
-2. Duplicate the demo starter kit and build your demo
-3. Update your config file (see instructions below)
-4. Submit a pull request
-
-Our Developer Relations Manager will review all submissions. Please note that we only publish a few, carefully selected apps on the JW Developer Showcase and that we do not reply to submissions personally.
 
 #### Please note
 By submitting you are agreeing to license your demo under the Apache 2.0 license.
@@ -96,6 +82,3 @@ Key | Type | Value Description
 `author.name` | `string` | Your name
 `author.githubUsername` | `string` | Your GitHub username
 
-## JW Developer Community
-
-You can [join the JW Developer Community](//developer.jwplayer.com/sign-up/) and follow us on Twitter [@JWDevelopers](//twitter.com/JWDevelopers) to be among the first to know about beta test opportunities, new developer documentation and toolkits, developer community events, and more.
