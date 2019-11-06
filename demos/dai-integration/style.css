@@ -1,0 +1,31 @@
+<<<<<<< HEAD
+.dai-container {
+=======
+.demo-container {
+>>>>>>> origin/jak/rewrite
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.left,
+.player-container {
+	width: 50%;
+}
+
+.content {
+	padding: 0.5em;
+}
+
+.content button {
+	margin: 10px auto 0;
+}
+
+.body-toggle {
+	display: none;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+.is-visible {
+	display: block;
+}

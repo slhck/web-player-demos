@@ -1,0 +1,62 @@
+<div class="captions-styling-container">
+	<div class="player-container">
+		<div id="player"></div>
+		<pre><code id="config-values" class="js"></code></pre>
+	</div>
+
+	<form id="captions-styling-form" autocomplete="off">
+		<label class="ds-textinput-field">
+			<span class="ds-textinput-label">Text Color</span>
+			<input class="ds-textinput" type="color" id="color" value="#ffffff">
+		</label>
+
+		<label class="ds-textinput-field">
+			<span class="ds-textinput-label">Font Opacity</span>
+			<input class="ds-textinput" type="range" id="fontOpacity" min="0" max="100" value="100">
+		</label>
+
+		<label class="ds-select-field">
+			<span class="ds-select-label">Font Family:</span>
+			<select class="ds-select" id="fontFamily">
+				<option value="default">Default</option>
+				<option value="serif">Serif</option>
+				<option value="sans-serif">Sans Serif</option>
+				<option value="monospace">Monospace</option>
+				<option value="fantasy">Fantasy</option>
+				<option value="cursive">Cursive</option>
+			</select>
+			<small><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family" target="_blank">Valid CSS font-family values are supported.</a></small>
+		</label>
+
+		<label class="ds-textinput-field">
+			<span class="ds-textinput-label">Background Color</span>
+			<input class="ds-textinput" type="color" id="backgroundColor" value="#000000">
+		</label>
+
+		<label class="ds-textinput-field">
+			<span class="ds-textinput-label">Background Opacity</span>
+			<input class="ds-textinput" type="range" id="backgroundOpacity" min="0" max="100" value="50">
+		</label>
+
+		<label class="ds-select-field">
+			<span class="ds-select-label">Edge Style:</span>
+			<select class="ds-select" id="edgeStyle">
+				<option value="none">None</option>
+				<option value="dropshadow">Drop Shadow</option>
+				<option value="raised">Raised</option>
+				<option value="depressed">Depressed</option>
+				<option value="uniform">Uniform</option>
+			</select>
+		</label>
+
+		<label class="ds-textinput-field">
+			<span class="ds-textinput-label">Window Color</span>
+			<input class="ds-textinput" type="color" id="windowColor" value="#000000">
+		</label>
+
+		<label class="ds-textinput-field">
+			<span class="ds-textinput-label">Window Opacity</span>
+			<input class="ds-textinput" type="range" id="windowOpacity" min="0" max="100" value="0">
+		</label>
+	</form>
+</div>

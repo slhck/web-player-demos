@@ -1,0 +1,31 @@
+<div id="player"></div>
+
+<form>
+    <label>
+        Mediation Layer:
+        <select id="mediationLayerSelect">
+            <option value="dfp">DFP</option>
+            <option value="jwp">JW Player</option>
+        </select>
+    </label>
+    <div class="progress-indicator">
+        <input readonly type="checkbox" id="bid-request" value="false">
+        <span class="incomplete">(no ad bid request yet)</span>
+        <span class="complete">The ad Bid Request was fired.</span>
+    </div>
+    <div class="progress-indicator">
+        <input readonly type="checkbox" id="bid-response" value="false">
+        <span class="incomplete">(no ad bid response yet)</span>
+        <span class="complete">The ad Bid Response was fired.</span>
+    </div>
+    <div class="progress-indicator">
+        <input readonly type="checkbox" id="impression" value="false">
+        <span class="incomplete">(no ad Impression yet)</span>
+        <span class="complete">The ad Impression was fired. SpotX <span class="result win">WON</span><span class="result lose">DID NOT WIN</span> the bid.</span>
+    </div>
+</form>
+
+<p>This page demonstrates JW Player's Video Player Bidding solution powered by SpotX.</p>
+<p>For more information, see our <a href="https://support.jwplayer.com/articles/set-up-video-player-bidding" target="_blank">Getting Started</a> guide.</p>
+
+<div id="code-block"></div>

@@ -1,0 +1,7 @@
+.features ul li {
+	display: inline;
+}
+
+.features ul li::before {
+	content: " • ";
+}

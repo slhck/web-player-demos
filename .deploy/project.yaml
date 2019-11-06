@@ -1,0 +1,8 @@
+name: web-player-demos
+description: Web Player Demos
+team: team_design
+members:
+    - group: team_design
+      role: admin
+    - entity: jenkins
+      role: editor

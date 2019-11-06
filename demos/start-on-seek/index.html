@@ -1,0 +1,18 @@
+<div id="player"></div>
+
+<form id="demo-form">
+	<label class="ds-switchinput-field">
+		<input checked class="ds-switchinput" type="checkbox" name="startOnSeek" id="startOnSeek">
+		<span class="ds-switchinput-helper"></span>
+		<span class="ds-switchinput-label">Show pre-roll on next visit</span>
+	</label>
+	<button id="refresh" class="ds-button--primary">Refresh Page</button>
+</form>
+
+<p class="explanation">
+	The viewer's position will be saved in the browser's local storage. When the
+	viewer leaves the page and returns, the player will
+	<span class="with-preroll is-shown">display the pre-roll and then</span>
+	seek to the viewer's last position<span class="without-preroll"> without displaying the pre-roll</span>.
+</p>
+<p><a href="https://developer.jwplayer.com/jw-player/docs/developer-guide/customization/configuration-reference/#advertising-rules">Click here</a> to see the ad rules configuration options available.</p>

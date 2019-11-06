@@ -1,0 +1,7 @@
+<%_ if (locals.player) { _%><script src="https://cdn.jwplayer.com/players/<%= player %>.js"></script><%_ } _%>
+<%_ if (locals.showCode === true && locals.scriptContent) { _%>
+<pre><code class="javascript"><%= locals.scriptContent %></code></pre>
+<%_ } _%>
+<%_ if (locals.showCode === "css" && locals.styleContent) { _%>
+<pre><code class="css"><%= locals.styleContent %></code></pre>
+<%_ } %>

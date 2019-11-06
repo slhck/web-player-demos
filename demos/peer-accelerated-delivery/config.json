@@ -1,0 +1,21 @@
+{
+    "title": "Hybrid Peer-to-Peer Delivery",
+    "description": "A visualization of Streamroot’s hybrid webRTC-based P2P video CDN integrated with JW Player in HTML5.",
+    "license": "All",
+    "showCode": false,
+    "apiCalls": [
+        "registerProvider()"
+    ],
+    "author": {
+        "name": "Streamroot",
+        "githubUsername": "streamroot"
+    },
+    "library": "wEbP32x6",
+    "scripts": [
+        "https://streamroot.io/wp-content/uploads/2018/11/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners",
+        "https://streamroot.io/wp-content/themes/website-theme/js/demo/graphs.js"
+    ],
+    "stylesheets": [
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap"
+    ]
+}
