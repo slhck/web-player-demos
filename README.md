@@ -8,27 +8,10 @@ All JW Developer demos can be downloaded and run locally. Build instructions and
 
 ### Build Instructions
 
-If you don't already have Node.js, please [download and install](//nodejs.org/en/download/) it now.
-
-Then, from the project root directory, `web-player-demos/`:
-
-Install node dependencies:
-
-```
-yarn install
-```
-
-Run Grunt to compile changes:
-
-```
-grunt
-```
-
-Run Grunt to compile changes and serve locally:
-
-```
-yarn start
-```
+This project uses [Yarn](https://yarnpkg.com/) and
+[Node.js](https://nodejs.org/en/download/). Install Node dependencies with
+`yarn install`, then build the project with Grunt with `yarn build`. You can
+also start a local server and watch changes locally with `yarn start`.
 
 ## Contributing a Demo
 
@@ -37,37 +20,46 @@ yarn start
 Each demo contains the following elements:
 
 	assets/
-	css/
-		style.css
-	js/
-		main.js
 	config.json
+	demo.js
 	index.html
+	style.css
 
-Only `index.html` and `config.json` are required for the build. In a basic setup, `index.html` must contain a single line player embed and `config.json` must include the demo title, description, and license.
+Only `index.html` and `config.json` are required for the build. `index.html`
+should contain a single-line player embed and `config.json` must include the
+demo `title` and `description`.
 
-Local assets (such as images, .txt files, etc...) referenced within the demo should be saved in the `assets` directory.
+You can add a `library` property to your demo's `config.json` to automatically
+load a JW Player JavaScript API library. You can then call `jwplayer()` in your
+`demo.js` script. Alternatively, you can provide a full player id from a
+single-line embed with the `player` property.
 
+Local assets (such as ad schedules or images) referenced within the demo should
+be saved in the `assets` directory. You can add additional scripts and
+stylesheets to the `scripts` and `stylesheets` arrays, respectively.
 
 #### Please note
-By submitting you are agreeing to license your demo under the Apache 2.0 license.
+By submitting a demo, you are agreeing to license your demo under the Apache 2.0
+license.
 
 ### Config File
-
-The `config.json` file provides metadata about your demo. It will be used to populate information about your demo on the page. Only title, description, and license are required to build the demo, but we ask that you complete all fields for Developer Showcase demo submissions.
-
+The `config.json` file provides metadata about your demo. It will be used to
+populate information about your demo on the page. Only title and description are
+required to build the demo, but we ask that you complete all fields for demo
+submissions.
 ```
 {
   "title": "",
   "description": "",
   "license": "Free|Premium|Ads|Enterprise",
-  "showCode": true|false,
-  "layout": "horizontal|vertical",
+  "showCode": true|false|"css",
   "apiCalls": [],
   "author": {
   	"name": "",
   	"githubUsername": ""
-  }
+  },
+  "library": "",
+  "player": ""
 }
 ```
 
@@ -76,9 +68,11 @@ Key | Type | Value Description
 `title` | `string` | Demo title*
 `description` | `string` | A brief description of your demo*
 `license` | `string` | The license type necessary to recreate your demo*
-`showCode` | `boolean` | Displays demo player with code snippet when `true`, without code snippet when `false`
+`showCode` | `boolean` \| `string` | Displays demo player with code snippet when `true`, without code snippet when `false`
 `layout` | `string` | Displays code snippet to right of demo player on `horizontal` or under demo player on `vertical`
 `apiCalls` | `array` | List of JW Player Javascript API calls used in your demo. For example: `.on('ready')`
 `author.name` | `string` | Your name
 `author.githubUsername` | `string` | Your GitHub username
+`library` | `string` | A JW Player library id. It will automatically add a `script` tag and include the library to be used in `demo.js`.
+`player` | `string` | A JW Player full id, containing a library id and a media id. This will automatically add a `script` tag containing a single-line embed on the page.
 
