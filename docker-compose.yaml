@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+  # It's not necessary to run both services at the same time! The express
+  # service is for running a grunt watcher and should not be used in production.
+  # Use `docker-compose up express` to run the express service on port 8000.
+  # Use `docker-compose up nginx` to run the nginx service on port 80.
+  express:
+    build:
+      context: .
+      target: builder
+    ports:
+      - '8000:8000'
+      - '35729:35729'
+    volumes:
+      - ./demos:/demos
+      - ./partials:/partials
+      - ./src:/src
+    command: yarn start
+
+  nginx:
+    build:
+      context: .
+      target: dist
+
+    ports:
+      - '80:80'

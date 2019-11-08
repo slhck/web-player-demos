@@ -1,23 +1,8 @@
-<<<<<<< HEAD
-@import url("https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css");
-
-.flex {
-	display: flex;
-	flex-direction: row;
-}
-.flex-column {
-	flex: 1;
-}
-.settings {
-	text-align: left;
-	margin-right: 20px;
-=======
 .captions-styling-container {
 	align-items: flex-start;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
->>>>>>> origin/jak/rewrite
 }
 
 .player-container {

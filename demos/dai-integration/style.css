@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-.dai-container {
-=======
 .demo-container {
->>>>>>> origin/jak/rewrite
 	display: flex;
 	flex-flow: row wrap;
 }

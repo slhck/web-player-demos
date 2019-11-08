@@ -1,6 +1,6 @@
 .demo {
+	align-items: center;
 	display: flex;
-	justify-content: center;
 	flex-flow: column nowrap;
 }
 
@@ -20,6 +20,7 @@
 }
 
 #grid {
+	margin: 0 auto;
 	width: 860px;
 }
 

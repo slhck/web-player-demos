@@ -10,12 +10,8 @@
 	font-family: "Quicksand", sans-serif;
 	font-weight: 500;
 	display: flex;
-<<<<<<< HEAD
-	margin-top: 40px;
-=======
 	margin: 0 auto;
 	max-width: 1000px;
->>>>>>> origin/jak/rewrite
 	flex-direction: column;
 }
 
