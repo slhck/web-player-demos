@@ -23,8 +23,8 @@ html {
 		}
 	}
 }
-.ds-page {
 
+.ds-page {
 	.container {
 		margin: 0 auto;
 		min-width: 320px;
@@ -34,15 +34,23 @@ html {
 		@media screen and (min-width: 768px) {
 			max-width: 46.875rem;
 		}
+
 		@media screen and (min-width: 992px) {
 			max-width: 60rem;
 		}
+
 		@media screen and (min-width: 1200px) {
 			max-width: 75rem;
 		}
 
-		p,li, a {
+		p,
+		li,
+		a {
 			font-size: 14px;
+		}
+
+		header {
+			width: 100%;
 		}
 
 		ul {
@@ -68,6 +76,7 @@ html {
 				&:hover {
 					border: 1px solid @ds-color-brand-fog;
 				}
+
 				p {
 					color: @ds-color-system-black;
 					padding-top: 10px;
@@ -76,10 +85,12 @@ html {
 		}
 	}
 }
+
 .container.jwux-demo {
 	text-align: left;
 	padding: 40px 0;
 }
+
 .jwux-demo {
 	margin: 0 auto;
 	max-width: 1200px;
@@ -91,18 +102,19 @@ html {
 
 	pre {
 		margin: 40px 0;
+
 		code {
 			padding: 20px;
 			font-size: 15px;
 			line-height: 22px;
+
 			span {
 				font-size: 15px;
+
+				&.hljs-comment {
+					color: @ds-color-brand-fog-darker;
+				}
 			}
 		}
 	}
-
-	.jwplayer {
-		margin: 30px 0;
-	}
-
 }

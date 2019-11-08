@@ -4,9 +4,12 @@
   "license": "Enterprise",
   "showCode": true,
   "layout": "vertical",
-  "apiCalls": [ "on('time')" ],
+  "apiCalls": [
+    "on('time')"
+  ],
   "author": {
     "name": "Alex Bussey",
     "githubUsername": "waxidiotic"
-  }
+  },
+  "library": "lqsWlr4Z"
 }
