@@ -5,6 +5,8 @@ RUN yarn install
 FROM node:12-alpine as builder
 COPY . .
 COPY --from=packages node_modules ./node_modules
+ARG GTM_ID
+ENV GTM_ID=${GTM_ID}
 RUN yarn build
 
 FROM nginx:alpine as dist
