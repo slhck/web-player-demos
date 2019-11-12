@@ -10,9 +10,11 @@
 	<link rel="stylesheet" href="https://hook.jwplayer.com/ds-layout/1.0.6/ds-page.css">
 	<link rel="stylesheet" href="/developers/web-player-demos/css/style.min.css">
 	<% if (locals.styleContent) { %><link rel="stylesheet" href="style.css"><% } %>
-	<% if (locals.stylesheets) { locals.stylesheets.forEach(s => { %><link rel="stylesheet" href="<%= s %>"><% }); } %>
+	<%_ if (locals.stylesheets) { locals.stylesheets.forEach(s => { %><link rel="stylesheet" href="<%= s %>"><% }); } _%>
+	<%_ if (locals.gtm_id) { %><%- include(`${partialsPath}/gtm-head`); %><% } _%>
 </head>
 <body>
+<% if (locals.gtm_id) { %><%- include(`${partialsPath}/gtm-body`); %><% } %>
 <%- include(`${partialsPath}/header`); %>
 <%_ if (!locals.isIndex) { _%>
 	<section class="container jwux-demo">

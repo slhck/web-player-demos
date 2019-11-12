@@ -7,7 +7,7 @@ const path = require('path');
 const partialsPath = path.resolve(__dirname, 'partials');
 const demosPath = path.join(__dirname, 'demos');
 const dist = path.join(__dirname, 'dist/developers/web-player-demos');
-const baseURL = ('test/');
+const gtm_id = process.env.GTM_ID || null;
 
 const ejsOptions = {
 	rmWhitespace: false
@@ -53,7 +53,8 @@ demoSlugs.forEach(slug => {
 		scriptContent,
 		styleContent,
 		slug,
-		partialsPath
+		partialsPath,
+		gtm_id
 	}
 
 	const output = ejs.render(content, config, ejsOptions);
@@ -82,7 +83,8 @@ const indexTemplate = fs.readFileSync(`${partialsPath}/index.ejs`, 'utf8');
 const index = ejs.render(indexTemplate, {
 	demoSlugs,
 	partialsPath,
-	configs
+	configs,
+	gtm_id
 });
 
 fs.writeFileSync(path.format({
