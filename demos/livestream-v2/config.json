@@ -1,0 +1,15 @@
+{
+	"title": "JW Player Live 2.0",
+	"description": "This demo demonstrates how to use the new JW Live 2.0 APIs in order to replace a VOD asset with a livestream whenever a JW Live 2.0 channel becomes available.",
+	"license": "Enterprise",
+	"showCode": true,
+	"apiCalls": [
+		""
+	],
+	"layout": "horizontal",
+	"author": {
+		"name": "JW Player",
+		"githubUsername": "jwplayer"
+	},
+	"library": "lqsWlr4Z"
+}
