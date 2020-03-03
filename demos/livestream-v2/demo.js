@@ -1,9 +1,11 @@
 const selectButton = document.getElementById('select-channel');
 const channelInput = document.getElementById('channel-input');
+const statusMessage = document.getElementById('status-message');
 
 /** The player config to use in order to initialize the player */
 const VOD_CONFIG = {
   playlist: 'https://cdn.jwplayer.com/v2/media/8L4m9FJB',
+  // Repeat the VOD indefinitely while we wait for the livestream to become available.
   repeat: true
 };
 
@@ -38,11 +40,12 @@ selectButton.addEventListener('click', (event) => {
 
   // Validate the provided channel id.
   channelId = channelInput.value;
-
   if (!channelId.match(/[a-zA-Z0-9]{8}/)) {
     alert("The provided channel id is not a valid JW Live 2.0 channel id.");
     return;
   }
+
+  statusMessage.textContent = `Waiting for channel ${channelId} to become active.`;
 
   // Start the update loop.
   checkChannelStatus();
@@ -63,12 +66,14 @@ function checkChannelStatus() {
       // Determine the id of the active event based on the returned status.
       const eventId = channelStatus['current_event'];
       configurePlayer(eventId).catch((error) => {
-        alert(`Failed to start livestream playback: ${error}`);
+        statusMessage.textContent = `Failed to start livestream playback: ${error}`;
       });
       clearInterval(intervalId);
     }
   }, (error) => {
-    console.error(`Unable to fetch the channel status for ${channelId}: ${error}`);
+    statusMessage.textContent = `Unable to fetch the channel status for ${channelId}: ${error}`;
+    // If we fail to retrieve the channel status, then give up.
+    clearInterval(intervalId);
   });
 }
 
@@ -81,6 +86,7 @@ async function configurePlayer(eventId) {
   // a playlist, we will load it on the player and start playback of the livestream.
   let playlist;
   let attempts = 0;
+  statusMessage.textContent = `Fetching livestream playlist for ${eventId}.`;
   while (!playlist) {
     try {
       playlist = await getPlaylist(eventId);
@@ -97,10 +103,13 @@ async function configurePlayer(eventId) {
   }
 
   // Once a playlist is available, use it to configure the player.
+  playerInstance.setConfig({
+    repeat: false,
+  });
   playerInstance.load(playlist.playlist);
   // Start playback
-  console.log('Starting livestream playback.');
   playerInstance.play();
+  statusMessage.textContent = 'Playing livestream.';
 }
 
 /**
