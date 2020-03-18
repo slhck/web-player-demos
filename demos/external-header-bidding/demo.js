@@ -1,5 +1,5 @@
 function performAsyncBidding(item, index) {
-	// Handle external bidding, in this case returning the new ad tag
+	// This is a mock function to demonstrate async. behavior
 	return new Promise((resolve, reject) => {
 		const adTags = [
 			'http://playertest.longtailvideo.com/mid.xml',
@@ -9,9 +9,15 @@ function performAsyncBidding(item, index) {
 	});
 }
 
-jwplayer('player').setPlaylistItemCallback(function(item, index) {
-	return new Promise(function(resolve, reject) {
+jwplayer('player').setPlaylistItemCallback((item, index) => {
+	// Resolve accepts a playlist item, this can be modified
+	// The playlist item that is scheduled to load is
+	// passed in as 'item'
+	// Reject can be used to cancel a scheduled item from being loaded
+	return new Promise((resolve, reject) => {
+	  // Handle external bidding and, in this example, return a modified tag
 	  return performAsyncBidding(item).then(adTag => {
+		// Update the playlist item and pass it to resolve.
 		const updatedAdSchedule = { tag: adTag, offset: 'pre' };
 		const updatedPlaylistItem = Object.assign({}, item, { adschedule: updatedAdSchedule });
 		resolve(updatedPlaylistItem);

@@ -6,7 +6,8 @@
   "layout": "vertical",
   "apiCalls": [],
   "author": {
-  	"name": "CancelPlaylistItem",
+  	"name": "Ian Boynton",
   	"githubUsername": "boyntoni"
-  }
+  },
+  "library": "wr6i4gal"
 }

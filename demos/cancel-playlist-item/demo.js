@@ -7,12 +7,20 @@ function isUserAuthorized(item, index) {
 	});
 }
 
-jwplayer().setPlaylistItemCallback(function(item, index) {
-	return new Promise(function(resolve, reject) {
+jwplayer().setPlaylistItemCallback((item, index) => {
+	// Resolve accepts a playlist item, this can be modified
+	// The playlist item that is scheduled to load is
+	// passed in as 'item'
+	// Reject can be used to cancel a scheduled item from being loaded
+	return new Promise((resolve, reject) => {
+	  // Handle external bidding and, in this example, return a boolean indicating
+	  // whether user is authorized
 	  return isUserAuthorized(item, index).then(isAuthorized => {
 		if (!isAuthorized) {
+			// Reject cancels playback and skips to next item.
 			reject();
 		}
+		// If authorized, load and play item.
 		resolve(item);
 	  });
 	}); 
