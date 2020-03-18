@@ -1,0 +1,12 @@
+{
+  "title": "Async. API: External Header Bidding",
+  "description": "A demo showing how to use the setPlaylistItemCallback to run external header bidding between playlist items",
+  "license": "Enterprise",
+  "showCode": true,
+  "layout": "vertical",
+  "apiCalls": [],
+  "author": {
+  	"name": "ExternalHeaderBidding",
+  	"githubUsername": "boyntoni"
+  }
+}
