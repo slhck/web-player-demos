@@ -2,12 +2,30 @@ function isUserAuthorized(item, index) {
 	// Handle any asynchronous custom logic
 	return new Promise((resolve, reject) => {
 		// Simulated to skip second playlist item
-		const shouldCancel = index === 1;
-		resolve(shouldCancel);
+		const isAuthorized = index !== 1;
+		resolve(isAuthorized);
 	});
 }
 
-jwplayer().setPlaylistItemCallback((item, index) => {
+jwplayer('player').setup({
+  playlist: [
+		{
+			file: "//playertest.longtailvideo.com/adaptive/bunny/manifest-no-captions.m3u8",
+		},
+		{
+			file: "//playertest.longtailvideo.com/adaptive/bunny/manifest-no-captions.m3u8",
+		},
+		{
+			file: "//playertest.longtailvideo.com/adaptive/bunny/manifest-no-captions.m3u8",
+		},
+  ],
+  height: 400,
+  width: 600,
+  autostart: true,
+  mute: true,
+});
+
+jwplayer('player').setPlaylistItemCallback((item, index) => {
 	// Resolve accepts a playlist item, this can be modified
 	// The playlist item that is scheduled to load is
 	// passed in as 'item'
@@ -24,30 +42,4 @@ jwplayer().setPlaylistItemCallback((item, index) => {
 		resolve(item);
 	  });
 	}); 
-});
-
-
-jwplayer('player').setup({
-  playlist: [
-		{
-			file: "//content.jwplatform.com/videos/aeZLVVPv-v7C1BfDE.mp4",
-			image: "//content.jwplatform.com/thumbs/aeZLVVPv-480.jpg",
-			height: "100%",
-			width: "70%"
-		},
-		{
-			file: "//content.jwplatform.com/videos/aeZLVVPv-v7C1BfDE.mp4",
-			image: "//content.jwplatform.com/thumbs/aeZLVVPv-480.jpg",
-			height: "100%",
-			width: "70%"
-		},
-		{
-			file: "//content.jwplatform.com/videos/aeZLVVPv-v7C1BfDE.mp4",
-			image: "//content.jwplatform.com/thumbs/aeZLVVPv-480.jpg",
-			height: "100%",
-			width: "70%"
-		},
-  ],
-  autostart: true,
-  mute: true,
 });

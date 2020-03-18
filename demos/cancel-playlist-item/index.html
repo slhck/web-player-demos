@@ -1,6 +1,16 @@
 <p>
-	Below is a player configured with three playlist items. In this example, each playlist item is assigned
-	a new ad tag. This demonstrates how a user would conduct external header bidding, through solutions such as
-	Amazon A9. While this example updates the advertising tag, anything on the playlist item can be modified.
+	This is a demo for using the <strong>setPlaylistItemCallback</strong> API to cancel playback of the next item.
+	The <strong>setPlaylistItemCallback</strong> API accepts a callback which returns a promise.
+</p>
+<p>This callback is invoked between each playlist item, and blocks playback of the next playlist item until the promise is resolved, or rejected.</p>
+<ul>
+	<li><code>resolve</code> will load a playlist item, either modified or not, for playback.</p></li>
+	<li><code>reject</code> cancels playback of the next scheduled item, skipping to the next playlist item (at which point, <strong>setPlaylistItemCallback</strong> will be called again).</li>
+</ul>
+
+<h3>Demonstration</h3>
+<p>
+	In this example, the player is configured with three playlist items, the second of which will be skipped (simulated), representing
+	an unauthorized user. After failing the authorization check, the third playlist item will be loaded.
 </p>
 <div id='player'></div>
