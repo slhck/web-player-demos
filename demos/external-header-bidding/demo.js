@@ -32,23 +32,21 @@ jwplayer('player').setup({
   mute: true,
 })
 
-jwplayer('player').on('ready', () => {
-	jwplayer('player').setPlaylistItemCallback((item, index) => {
-		// Resolve accepts a playlist item, this can be modified
-		// The playlist item that is scheduled to load is
-		// passed in as 'item'
-		// Reject can be used to cancel a scheduled item from being loaded
-		return new Promise((resolve, reject) => {
-		  // Handle external bidding and, in this example, return a modified tag
-		  return performAsyncBidding(item, index).then(adTag => {
-			// Update the playlist item and pass it to resolve.
-			const updatedAdSchedule = { tag: adTag, offset: 'pre' };
-			const updatedPlaylistItem = Object.assign({}, item, { adschedule: [updatedAdSchedule] });
-			resolve(updatedPlaylistItem);
-		  }).catch(() => {
-			  // If bidding fails, resolve with original, unmodified playlist item
-			  resolve(item);
-		  });
-		}); 
-	  });
+jwplayer('player').setPlaylistItemCallback((item, index) => {
+	// Resolve accepts a playlist item, this can be modified
+	// The playlist item that is scheduled to load is
+	// passed in as 'item'
+	// Reject can be used to cancel a scheduled item from being loaded
+	return new Promise((resolve, reject) => {
+		// Handle external bidding and, in this example, return a modified tag
+		return performAsyncBidding(item, index).then(adTag => {
+		// Update the playlist item and pass it to resolve.
+		const updatedAdSchedule = { tag: adTag, offset: 'pre' };
+		const updatedPlaylistItem = Object.assign({}, item, { adschedule: [updatedAdSchedule] });
+		resolve(updatedPlaylistItem);
+		}).catch(() => {
+			// If bidding fails, resolve with original, unmodified playlist item
+			resolve();
+		});
+	}); 
 });

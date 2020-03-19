@@ -1,10 +1,10 @@
 function isUserAuthorized(item, index) {
 	// Handle any asynchronous custom logic
-	return new Promise((resolve, reject) => {
-		// Simulated to skip second playlist item
-		const isAuthorized = index !== 1;
-		resolve(isAuthorized);
-	});
+  return new Promise((resolve, reject) => {
+	// Simulated to skip second playlist item
+	const isAuthorized = index !== 1;
+	resolve(isAuthorized);
+  });
 }
 
 jwplayer('player').setup({
@@ -34,12 +34,12 @@ jwplayer('player').setPlaylistItemCallback((item, index) => {
 	  // Handle external bidding and, in this example, return a boolean indicating
 	  // whether user is authorized
 	  return isUserAuthorized(item, index).then(isAuthorized => {
-		if (!isAuthorized) {
-			// Reject cancels playback and skips to next item.
-			reject();
+	    if (!isAuthorized) {
+		  // Reject cancels playback and skips to next item.
+		  reject();
 		}
 		// If authorized, load and play item.
-		resolve(item);
+		resolve();
 	  });
 	}); 
 });
