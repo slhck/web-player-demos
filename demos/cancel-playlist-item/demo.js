@@ -35,11 +35,11 @@ jwplayer('player').setPlaylistItemCallback((item, index) => {
 	  // whether user is authorized
 	  return isUserAuthorized(item, index).then(isAuthorized => {
 	    if (!isAuthorized) {
-		  // Reject cancels playback and skips to next item.
-		  reject();
-		}
-		// If authorized, load and play item.
-		resolve();
+		    // Reject cancels playback and skips to next item.
+		    reject();
+		  }
+  		// If authorized, load and play item.
+  		resolve();
 	  });
 	}); 
 });
