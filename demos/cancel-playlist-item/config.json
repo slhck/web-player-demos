@@ -1,5 +1,5 @@
 {
-  "title": "Async. API: Cancel a Playlist Item",
+  "title": "Async API: Cancel a Playlist Item",
   "description": "A demo showing how to use the setPlaylistItemCallback to run asynchronous code to determine whether to cancel a subsequent playlist item",
   "license": "Enterprise",
   "showCode": true,
