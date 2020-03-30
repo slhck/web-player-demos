@@ -19,8 +19,7 @@ jwplayer('player').setup({
 			file: "//playertest.longtailvideo.com/adaptive/bunny/manifest-no-captions.m3u8",
 		},
   ],
-  height: 400,
-  width: 600,
+  width: `50%`,
   autostart: true,
   mute: true,
 });
@@ -41,5 +40,5 @@ jwplayer('player').setPlaylistItemCallback((item, index) => {
   		// If authorized, load and play item.
   		resolve();
 	  });
-	}); 
+	});
 });
