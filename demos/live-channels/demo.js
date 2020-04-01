@@ -45,7 +45,7 @@ selectButton.addEventListener('click', (event) => {
     return;
   }
 
-  statusMessage.textContent = `Waiting for channel ${channelId} to become active.`;
+  statusMessage.textContent = `Waiting for live channel ${channelId} to become active.`;
 
   // Start the update loop.
   checkChannelStatus();
@@ -65,8 +65,9 @@ function checkChannelStatus() {
     if (channelStatus['status'] === 'active') {
       // Determine the id of the active event based on the returned status.
       const eventId = channelStatus['current_event'];
+      // Attempt to configure the player in order to start livestream playback.
       configurePlayer(eventId).catch((error) => {
-        statusMessage.textContent = `Failed to start livestream playback: ${error}`;
+        statusMessage.textContent = `Failed to start live event stream playback: ${error}`;
       });
       clearInterval(intervalId);
     }
@@ -86,7 +87,7 @@ async function configurePlayer(eventId) {
   // a playlist, we will load it on the player and start playback of the livestream.
   let playlist;
   let attempts = 0;
-  statusMessage.textContent = `Fetching livestream playlist for ${eventId}.`;
+  statusMessage.textContent = `Fetching playlist for ${eventId}.`;
   while (!playlist) {
     try {
       playlist = await getPlaylist(eventId);
@@ -109,7 +110,7 @@ async function configurePlayer(eventId) {
   playerInstance.load(playlist.playlist);
   // Start playback
   playerInstance.play();
-  statusMessage.textContent = 'Playing livestream.';
+  statusMessage.textContent = 'Playing live event stream.';
 }
 
 /**
