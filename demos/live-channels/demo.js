@@ -41,11 +41,11 @@ selectButton.addEventListener('click', (event) => {
   // Validate the provided channel id.
   channelId = channelInput.value;
   if (!channelId.match(/[a-zA-Z0-9]{8}/)) {
-    alert("The provided channel id is not a valid Live Channels channel id.");
+    alert("The provided Channel ID is not a valid Live Channels channel ID.");
     return;
   }
 
-  statusMessage.textContent = `Waiting for live channel ${channelId} to become active.`;
+  statusMessage.textContent = `Waiting for Live Channel ${channelId} to become active.`;
 
   // Start the update loop.
   checkChannelStatus();
@@ -138,7 +138,7 @@ function getChannelStatus(channelId) {
 }
 
 /**
- * Fetches a JW Platform playlist for a particular media item.
+ * Fetches a JW Platform feed for a particular media item.
  *
  * @param mediaId The media id to fetch a single item playlist for.
  */
