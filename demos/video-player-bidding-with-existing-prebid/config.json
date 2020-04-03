@@ -1,0 +1,18 @@
+{
+    "title": "Video Player Bidding with Existing Prebid.js",
+    "description": "Video Player Bidding combined with an existing instance of Prebid.js to support third-party SSPs.",
+    "license": "Enterprise",
+    "showCode": true,
+    "layout": "vertical",
+    "apiCalls": [
+        "on('adImpression')", "on('adBidRequest')", "on('adBidResponse')"
+    ],
+    "author": {
+        "name": "Mark van Seventer",
+        "githubUsername": "vseventer"
+    },
+    "library": "lqsWlr4Z",
+    "scripts": [
+        "assets/prebid3.14.0.js"
+    ]
+}
