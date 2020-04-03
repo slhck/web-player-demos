@@ -5,7 +5,7 @@ const statusMessage = document.getElementById('status-message');
 /** The player config to use in order to initialize the player */
 const VOD_CONFIG = {
   playlist: 'https://cdn.jwplayer.com/v2/media/8L4m9FJB',
-  // Repeat the VOD indefinitely while we wait for the livestream to become available.
+  // Repeat the VOD indefinitely while we wait for the live event stream to become available.
   repeat: true
 };
 
@@ -41,7 +41,7 @@ selectButton.addEventListener('click', (event) => {
   // Validate the provided channel id.
   channelId = channelInput.value;
   if (!channelId.match(/[a-zA-Z0-9]{8}/)) {
-    alert("The provided channel id is not a valid JW Live 2.0 channel id.");
+    alert("The provided channel id is not a valid Live Channels channel id.");
     return;
   }
 
@@ -128,7 +128,7 @@ async function fetchJSON(url) {
 }
 
 /**
- * Fetches the current status of a JW Live 2.0 channel.
+ * Fetches the current status of a Live Channel.
  * Returns a promise that will yield the status for a particular channel.
  *
  * @param channelId The channel to fetch the status for.
