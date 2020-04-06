@@ -1,0 +1,13 @@
+{
+  "title": "Async API: Cancel a Playlist Item",
+  "description": "A demo showing how to use the setPlaylistItemCallback to run asynchronous code to determine whether to cancel a subsequent playlist item",
+  "license": "Enterprise",
+  "showCode": true,
+  "layout": "vertical",
+  "apiCalls": [],
+  "author": {
+  	"name": "Ian Boynton",
+  	"githubUsername": "boyntoni"
+  },
+  "library": "wr6i4gal"
+}
