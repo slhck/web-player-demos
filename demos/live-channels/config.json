@@ -1,0 +1,15 @@
+{
+	"title": "Live Channels",
+	"description": "This demo demonstrates how to use the new Live Channels APIs in order to replace a VOD asset with a live event stream whenever a Live Channel becomes available.",
+	"license": "Enterprise",
+	"showCode": true,
+	"apiCalls": [
+		""
+	],
+	"layout": "horizontal",
+	"author": {
+		"name": "JW Player",
+		"githubUsername": "jwplayer"
+	},
+	"library": "lqsWlr4Z"
+}
