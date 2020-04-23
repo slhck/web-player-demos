@@ -112,7 +112,7 @@ function handleLivestreamFinished() {
   // Reload the VOD playlist.
   playerInstance.load(VOD_CONFIG.playlist);
   if (channelId) {
-    // Start checking for a new event, after a grace period of 10 seconds.
+    // Start checking for a new event.
     checkChannelStatus();
   }
   playerInstance.play();
