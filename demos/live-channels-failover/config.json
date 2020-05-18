@@ -1,0 +1,15 @@
+{
+	"title": "Live Channels Failover",
+	"description": "This demo demonstrates how to use the new Live Channels APIs in order to implement a failover to a secondary live event stream if issues with the active stream occur.",
+	"license": "Enterprise",
+	"showCode": true,
+	"apiCalls": [
+		""
+	],
+	"layout": "horizontal",
+	"author": {
+		"name": "JW Player",
+		"githubUsername": "jwplayer"
+	},
+	"library": "lqsWlr4Z"
+}
