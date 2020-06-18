@@ -1,3 +1,10 @@
+.alert {
+	padding: 20px;
+	background-color: #FFDCA1;
+	border-radius: 2px;
+	margin-bottom: 20px;
+}
+
 .features ul li {
 	display: inline;
 }
