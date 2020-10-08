@@ -196,8 +196,8 @@ async function configurePlayer(eventId) {
  * Utility function to fetch a JSON document.
  * @param url
  */
-async function fetchJSON(url) {
-  return await fetch(url)
+async function fetchJSON(url, init) {
+  return await fetch(url, init)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Unable to fetch ${url}: ${response.statusText}`);
@@ -222,7 +222,7 @@ function getChannelStatus(channelId) {
  * @param mediaId The media id to fetch a single item playlist for.
  */
 function getPlaylist(mediaId) {
-  return fetchJSON(`https://cdn.jwplayer.com/v2/media/${mediaId}`);
+  return fetchJSON(`https://cdn.jwplayer.com/v2/media/${mediaId}`, { cache: "no-cache" });
 }
 
 /**
