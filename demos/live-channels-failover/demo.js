@@ -29,7 +29,7 @@ const HLS_BUFFER_STALL_WARNING = 334001;
  * The maximum number of times we'll try before giving up configuring a player.
  * @type {number}
  */
-const MAX_RETRIES = 5;
+const MAX_RETRIES = 3;
 
 /** A reference to the active playerInstance on the page if any. */
 let playerInstance;
@@ -173,7 +173,14 @@ async function configurePlayer(eventId) {
       ++attempts;
       console.error(e);
       if (attempts >= MAX_RETRIES) {
-        throw e;
+        // Manually set up the player if we were not able to retrieve the playlist after 3 retries
+        playlist = {
+          'playlist': [{
+            'mediaid': eventId,
+            'file': `https://cdn.jwplayer.com/live/events/${eventId}.m3u8`
+          }]
+        };
+        break;
       }
       // Retry with exponential backoff, i.e. first retry after 5, 10, 20, 40, 80 seconds
       // after which we ultimately give up.
