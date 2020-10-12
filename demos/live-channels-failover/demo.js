@@ -182,8 +182,7 @@ async function configurePlayer(eventId) {
         };
         break;
       }
-      // Retry with exponential backoff, i.e. first retry after 5, 10, 20, 40, 80 seconds
-      // after which we ultimately give up.
+      // Retry with exponential backoff, i.e. retry after 5, 10 and 20 seconds
       await sleep(2 ** (attempts - 1) * 5 * 1000);
     }
   }
@@ -275,6 +274,7 @@ function registerPlaybackEventListeners(playerInstance) {
 /**
  * Utility function to fetch a JSON document.
  * @param url
+ * @param init
  */
 async function fetchJSON(url, init) {
   return await fetch(url, init)
