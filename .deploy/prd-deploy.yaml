@@ -1,4 +1,4 @@
-name: prd
+name: prd-2
 description: Web Player Demos
 
 replicas: 1

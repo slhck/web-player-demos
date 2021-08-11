@@ -1,7 +1,7 @@
-name: home
+name: app
 description: Web Player Demos
 
-selector: prd
+selector: prd-2
 expose: external
 ssl_cert: jwplayer.com
 

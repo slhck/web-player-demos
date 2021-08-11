@@ -20,7 +20,7 @@ module.exports = grunt => {
 		copy: {
 			favicon: {
 				src: 'src/favicon.ico',
-				dest: 'dist/developers/web-player-demos/favicon.io'
+				dest: 'dist/favicon.io'
 			},
 			assets: {
 				expand: true,
@@ -30,7 +30,7 @@ module.exports = grunt => {
 					'**/*.css',
 					'**/assets/**'
 				],
-				dest: 'dist/developers/web-player-demos'
+				dest: 'dist/'
 			}
 		},
 
@@ -43,8 +43,8 @@ module.exports = grunt => {
 			build: {
 				files: [
 					{
-						cwd: 'dist/developers/web-player-demos/css',
-						dest: 'dist/developers/web-player-demos/css',
+						cwd: 'dist/css',
+						dest: 'dist/css',
 						expand: true,
 						src: ['*.min.css']
 					}
@@ -65,7 +65,7 @@ module.exports = grunt => {
 					sourceMap: true
 				},
 				src: ['src/less/style.less'],
-				dest: 'dist/developers/web-player-demos/css/style.min.css'
+				dest: 'dist/css/style.min.css'
 			}
 		},
 
@@ -76,7 +76,7 @@ module.exports = grunt => {
 			},
 
 			build: {
-				src: ['dist/developers/web-player-demos/css/*.min.css']
+				src: ['dist/css/*.min.css']
 			}
 		},
 

@@ -6,7 +6,7 @@ const path = require('path');
 
 const partialsPath = path.resolve(__dirname, 'partials');
 const demosPath = path.join(__dirname, 'demos');
-const dist = path.join(__dirname, 'dist/developers/web-player-demos');
+const dist = path.join(__dirname, 'dist/');
 const gtm_id = process.env.GTM_ID || null;
 
 const ejsOptions = {
