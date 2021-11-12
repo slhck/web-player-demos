@@ -1,0 +1,12 @@
+{
+    "title": "Prevent seeking to unbuffered range",
+    "description": "A simple demo setup to prevent seeking to an undefined range",
+    "license": "All",
+    "showCode": true,
+    "apiCalls": [],
+    "author": {
+        "name": "Werner Robitza",
+        "githubUsername": "slhck"
+    },
+    "library": "Jq6HIbgz"
+}
